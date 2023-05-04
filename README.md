@@ -101,16 +101,16 @@ First and foremost, authenticate your pipeline connection using one of the follo
 
 ```ruby
 # api_key token based authentication:
-account = Pipeline.account_auth(api_key: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
+account = Pipeline.authenticate(api_key: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
 
 # jwt_token based authentication:
-account = Pipeline.account_auth(jwt: { token: 'abcd1234', expiration: time, refresh_token: 'abcd1234', refresh_expiration: time }, app_key: 'xxxxxxxxxxxxx')
+account = Pipeline.authenticate(jwt: { token: 'abcd1234', expiration: time, refresh_token: 'abcd1234', refresh_expiration: time }, app_key: 'xxxxxxxxxxxxx')
 
 # username/password based authentication (which will use jwt under the hood):
-account = Pipeline.account_auth(username: 'abcd1234', password: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
+account = Pipeline.authenticate(username: 'abcd1234', password: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
 
 # account_key based authentication:
-account = Pipeline.account_auth(account_key: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
+account = Pipeline.authenticate(account_key: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
 ```
 
 ### Getting a single deal, person, or company:
