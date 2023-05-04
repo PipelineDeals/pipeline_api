@@ -18,23 +18,27 @@ Or install it yourself as:
 
 ## Usage
 
-First and foremost, authenticate your pipeline connection using one of the following methods:
+First and foremost, register your api key:
 
 ```ruby
-# api_key token based authentication:
-pipeline = Pipeline.new(api_key: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
+Pipeline.configure do |config|
+  config.api_key = 'abcd1234'
+end
+```
 
-# jwt_token based authentication:
-pipeline = Pipeline.new(jwt: { token: 'abcd1234', expiration: time, refresh_token: 'abcd1234', refresh_expiration: time }, app_key: 'xxxxxxxxxxxxx')
+If you have an app_key, register this along with your api key:
 
-# username/password based authentication (which will use jwt under the hood):
-pipeline = Pipeline.new(username: 'abcd1234', password: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
+```ruby
+Pipeline.configure do |config|
+  config.api_key = 'abcd1234'
+  config.app_key = 'xxxxxxxxxxxxx'
+end
 ```
 
 ## Getting a single deal, person, or company:
 
 ```ruby
-deal = pipeline.deals.find(1234)      # find the deal by id
+deal = Pipeline::Deal.find(1234)      # find the deal
 deal.name = 'blah2'         # change an attribute
 deal.save                   # re-save the deal to the site
 deal.people                 # associations are respected
@@ -45,9 +49,9 @@ deal.person_ids
 ## Fetching collections of deals, people, or companies
 
 ```ruby
-deals = pipeline.deals.find(:all)                                             # find(:all) is supported
-deals = pipeline.deals.find(:all, params: {conditions: {deal_name: 'blah'}})
-deals = pipeline.deals.where(conditions: {deal_name: 'blah'})
+deals = Pipeline::Deal.find(:all)                                             # find(:all) is supported
+deals = Pipeline::Deal.find(:all, params: {conditions: {deal_name: 'blah'}})
+deals = Pipeline::Deal.where(conditions: {deal_name: 'blah'})
 ```
 
 ### Filtering
@@ -56,7 +60,7 @@ You can filter your list by adding a `conditions` parameter.  All
 conditions are listed in the [Pipeline API documentation](https://www.pipelinecrm.com/api/docs)
 
 ```ruby
-deals = pipeline.deals.where(conditions: {deal_value: {from: '500', to: '1000'}})
+deals = Pipeline::Deal.where(conditions: {deal_value: {from: '500', to: '1000'}})
 ```
 
 ### Pagination
@@ -66,7 +70,7 @@ All list of things in the Pipeline API are paginated.  The default number of ite
 You can access the current page and total by calling `.pagination` on the list:
 
 ```ruby
-deals = pipeline.deals.find(:all)
+deals = Pipeline::Deal.find(:all)
 deals.pagination
 => {"per_page"=>200, "total"=>14, "page_var"=>"page", "pages"=>1, "page"=>1}
 ```
@@ -74,15 +78,15 @@ deals.pagination
 You can modify the page you are on when requesting:
 
 ```ruby
-deals = pipeline.deals.find(:all, params: { page: 2})
+deals = Pipeline::Deal.find(:all, params: { page: 2})
 # or you can use where
-deals = pipeline.deals.where({page: 2})
+deals = Deal.where({page: 2})
 ```
 
 You can modify the number per page as well:
 
 ```ruby
-deals = pipeline.deals.where(per_page: 2, page: 3)
+deals = Pipeline::Deal.where(per_page: 2, page: 3)
 deals.pagination
 => {"per_page"=>3, "total"=>14, "page_var"=>"page", "pages"=>8, "page"=>2}
 ```
