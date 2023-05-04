@@ -8,7 +8,8 @@ Dir[File.dirname(__FILE__) + '/resources/*.rb'].each {|file| p "requring #{file}
 
 module Pipeline
   class << self
-    attr_accessor :account_key, :api_key, :app_key, :app_version
+    include ThreadsafeAttributes
+    threadsafe_attribute :account_key, :api_key, :app_key, :app_version
 
     def site
       Pipeline::Resource.site
