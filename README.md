@@ -95,7 +95,7 @@ deals.pagination
 
 Admin data is currently read-only.
 
-## Usage: `account` Object Methodology
+## Usage: `account` Object-based Methodology
 
 First and foremost, authenticate your pipeline connection using one of the following methods:
 
