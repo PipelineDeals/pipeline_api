@@ -28,7 +28,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=ddca432e0e9b34a033d4969805a6395d; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8
@@ -78,7 +78,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=6fcacf0be69d9c9ed531cffd115e5415; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8
@@ -126,7 +126,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=f8cc0d2efb1a79c888683ac4c975bfa1; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8
@@ -174,7 +174,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=28697eab4a1ebf89d932f9d7ebae8546; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8

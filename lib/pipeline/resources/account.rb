@@ -1,5 +1,5 @@
-module PipelineDeals
-  class Account < PipelineDeals::Resource
+module Pipeline
+  class Account < Pipeline::Resource
     include ActiveResource::Singleton
     def self.account(options = {})
       add_keys(options[:params] ||= {})

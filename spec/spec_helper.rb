@@ -14,7 +14,7 @@ require 'support/has_calendar_entries'
 require 'support/has_people'
 require 'support/has_deals'
 
-PipelineDeals.configure do |c|
+Pipeline.configure do |c|
   c.site = ENV['PIPELINEDEALS_URL'] || "http://localhost:3000"
   c.api_key = ENV['PIPELINEDEALS_API_KEY'] || 'iJHyFkMUBSfjUovt29'
 end

@@ -1,4 +1,4 @@
-module PipelineDeals
+module Pipeline
   class Collection < ActiveResource::Collection
     attr_accessor :pagination
     def initialize(parsed = {})

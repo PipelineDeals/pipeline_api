@@ -1,21 +1,21 @@
 require 'rubygems'
 require 'active_resource'
-require_relative 'pipeline_deals/resources'
-require_relative 'pipeline_deals/version'
-require_relative 'pipeline_deals/resources/definitions'
+require_relative 'pipeline/resources'
+require_relative 'pipeline/version'
+require_relative 'pipeline/resources/definitions'
 
 Dir[File.dirname(__FILE__) + '/resources/*.rb'].each {|file| p "requring #{file}"; require file }
 
-module PipelineDeals
+module Pipeline
   class << self
     attr_accessor :account_key, :api_key, :app_key, :app_version
 
     def site
-      PipelineDeals::Resource.site
+      Pipeline::Resource.site
     end
 
     def site=(site)
-      PipelineDeals::Resource.site = site
+      Pipeline::Resource.site = site
     end
   end
 

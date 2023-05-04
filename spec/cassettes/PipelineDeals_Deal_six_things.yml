@@ -34,7 +34,7 @@ http_interactions:
       - application/json; charset=utf-8
       Set-Cookie:
       - _session_id=7a1239ce97958972884bf2aaaab3f8b4; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       X-Runtime:
       - '224'

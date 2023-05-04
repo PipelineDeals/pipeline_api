@@ -35,7 +35,7 @@ http_interactions:
       Content-Length:
       - '7901'
       Set-Cookie:
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
     body:
       encoding: US-ASCII
