@@ -6,8 +6,10 @@ module Pipeline
     self.site = "https://api.pipelinecrm.com"
 
     def self.add_keys(hash)
-      hash[:api_key] = Pipeline.api_key unless Pipeline.account_key
+      hash[:api_key] = Pipeline.api_key if !Pipeline.account_key && Pipeline.api_key
       hash[:account_key] = Pipeline.account_key if Pipeline.account_key
+      self.auth_type = Pipeline.auth_type if Pipeline.auth_type
+      self.bearer_token = Pipeline.bearer_token if Pipeline.bearer_token
 
       hash[:app_key] = Pipeline.app_key if Pipeline.app_key
       hash[:app_version] = Pipeline.app_version if Pipeline.app_version
