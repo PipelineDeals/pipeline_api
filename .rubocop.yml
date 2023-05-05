@@ -1,0 +1,102 @@
+require:
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'node_modules/**/*'
+    - 'webpack/**/*'
+    - 'Gemfile'
+    - 'script/dirty_cop'
+    - 'vendor/cache/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+
+Metrics/AbcSize:
+  Max: 25 # Default: 15
+Metrics/LineLength:
+  Max: 160 # Default: 80
+Metrics/MethodLength:
+  Max: 25 # Default: 10
+Metrics/ClassLength:
+  Max: 150 # Default: 100
+Metrics/ModuleLength:
+  Max: 200 # Default: 100
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+Metrics/CyclomaticComplexity:
+  Max: 12 # Default: 6
+Metrics/PerceivedComplexity:
+  Max: 14 # Default: 7
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/GlobalVars:
+  Exclude:
+    - 'spec/**/*.rb'
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: true
+Style/WordArray:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+Style/SingleLineBlockParams:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/RaiseArgs:
+  EnforcedStyle: compact
+Style/RegexpLiteral:
+  AllowInnerSlashes: true
+Style/ParallelAssignment:
+  Enabled: false
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/CaseIndentation:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Naming/ConstantName:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 5
+RSpec/NestedGroups:
+  Max: 5
+RSpec/ExampleLength:
+  Max: 25
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+RSpec/InstanceVariable:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/SubjectStub:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/FilePath:
+  Enabled: false

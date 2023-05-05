@@ -3,8 +3,14 @@ source "https://rubygems.org"
 
 gem 'activeresource'
 
-group :test do
+group :development, :test, :ci do
   gem 'rspec'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+end
+
+group :test do
+  gem 'rspec_junit_formatter', '0.4.1'
   gem 'pry'
   gem 'vcr'
   gem 'webmock'
