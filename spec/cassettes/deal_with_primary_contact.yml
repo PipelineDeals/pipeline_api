@@ -28,7 +28,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=f10f9c1a9f467d4f31dc47e8fa61f956; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8

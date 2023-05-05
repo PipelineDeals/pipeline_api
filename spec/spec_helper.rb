@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'vcr'
-require 'pipeline_deals'
+require 'pipeline'
 
 begin
   require 'pry'
@@ -14,7 +14,7 @@ require 'support/has_calendar_entries'
 require 'support/has_people'
 require 'support/has_deals'
 
-PipelineDeals.configure do |c|
+Pipeline.configure do |c|
   c.site = ENV['PIPELINEDEALS_URL'] || "http://localhost:3000"
   c.api_key = ENV['PIPELINEDEALS_API_KEY'] || 'iJHyFkMUBSfjUovt29'
 end
@@ -25,10 +25,6 @@ VCR.configure do |c|
   c.cassette_library_dir     = './spec/cassettes'
   c.hook_into                :webmock
   c.default_cassette_options = { :record => :new_episodes }
-end
-
-RSpec.configure do |c|
-  c.extend VCR::RSpec::Macros
 end
 
 def cassette(append)

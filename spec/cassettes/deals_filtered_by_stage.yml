@@ -34,7 +34,7 @@ http_interactions:
       - application/json; charset=utf-8
       Set-Cookie:
       - _session_id=2e782373eebf2efb1010f68454942505; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       X-Runtime:
       - '56'
@@ -85,7 +85,7 @@ http_interactions:
       - application/json; charset=utf-8
       Set-Cookie:
       - _session_id=9764a4360965206c9e0496166475de5c; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       X-Runtime:
       - '207'

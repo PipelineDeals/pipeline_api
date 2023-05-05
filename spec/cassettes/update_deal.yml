@@ -33,7 +33,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=992ce8bc41d6d031fe3f9d44f5da0495; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8
@@ -81,7 +81,7 @@ http_interactions:
       - private, max-age=0, must-revalidate
       Set-Cookie:
       - _session_id=d7b7223c22193c1d556c567509c26c24; path=/; HttpOnly
-      - is_legacy_user=; domain=pipelinedeals.com; path=/; expires=Thu, 01-Jan-1970
+      - is_legacy_user=; domain=pipelinecrm.com; path=/; expires=Thu, 01-Jan-1970
         00:00:00 GMT
       Content-Type:
       - application/json; charset=utf-8

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PipelineDeals::Company do
+describe Pipeline::Company do
   it_should_behave_like "a paginated collection"
 
   let(:docs_obj) { company }
@@ -8,7 +8,7 @@ describe PipelineDeals::Company do
   it_should_behave_like "an object that can have documents"
   it_should_behave_like "an object that can have people"
 
-  let(:company) { VCR.use_cassette(:get_a_company) { PipelineDeals::Company.find 3 } }
+  let(:company) { VCR.use_cassette(:get_a_company) { Pipeline::Company.find 3 } }
 
   it "has many deals" do
     VCR.use_cassette(:company_deals) do
