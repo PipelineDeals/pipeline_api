@@ -13,6 +13,7 @@ module Pipeline
   class Deal < Pipeline::Resource; end
   class Person < Pipeline::Resource; end
   class Company < Pipeline::Resource; end
+  class Customer < Pipeline::Resource; end
   class Activity < Pipeline::Resource; end
   class CalendarEntry < Pipeline::Resource; end
   class CalendarTask < Pipeline::Resource; end
