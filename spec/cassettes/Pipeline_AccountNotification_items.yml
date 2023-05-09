@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://pld.com/api/v3/account_notifications.json?api_key=OarV2UVz6e_VKBhWG9AL&app_key=be475137b519a79c903492e2693dc9b9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.23.3
+      Date:
+      - Tue, 09 May 2023 15:30:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '9'
+      X-Ratelimit-Reset:
+      - '1683646239'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"c77e1945cff3e66f202d93b4c6744010"
+      X-Request-Id:
+      - 6790f800-1d91-4f18-9426-8e357aef03dc
+      X-Runtime:
+      - '0.047419'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[{"id":5,"account_id":null,"user_id":377,"text":"Interested
+        in customizing PipelineDeals?\u003cbr/\u003e\u003ca href=\"/admin\" onclick=\"trackableEvent.clickAcctSettingsNotification()\"\u003eClick
+        here\u003c/a\u003e to see your options.","read_at":null,"created_at":"2021/01/21
+        11:08:34 -0500","updated_at":"2021/01/21 11:08:34 -0500","seen":true},{"id":6,"account_id":null,"user_id":377,"text":"Please
+        \u003ca href=''/accounts/resend_verification_email'' data-toggle=''modal''data-target=''#resend-verification-email''
+        data-remote=''/accounts/resend_verification_email''\u003evalidate your email
+        address\u003c/a\u003e","read_at":null,"created_at":"2021/01/21 11:08:34 -0500","updated_at":"2021/01/21
+        11:08:34 -0500","seen":true},{"id":145,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:05:32 -0400","updated_at":"2023/05/09 11:05:32 -0400","seen":true},{"id":146,"account_id":null,"user_id":377,"text":"Testing
+        Notification","read_at":null,"created_at":"2023/05/09 11:19:35 -0400","updated_at":"2023/05/09
+        11:19:35 -0400","seen":true},{"id":147,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:21 -0400","updated_at":"2023/05/09 11:20:21 -0400","seen":true},{"id":148,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:24 -0400","updated_at":"2023/05/09 11:20:24 -0400","seen":true},{"id":149,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:25 -0400","updated_at":"2023/05/09 11:20:25 -0400","seen":true},{"id":150,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:26 -0400","updated_at":"2023/05/09 11:20:26 -0400","seen":true},{"id":151,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:27 -0400","updated_at":"2023/05/09 11:20:27 -0400","seen":true}],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":9}}'
+  recorded_at: Tue, 09 May 2023 15:30:38 GMT
+recorded_with: VCR 6.1.0
