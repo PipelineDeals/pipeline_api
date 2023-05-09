@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://pld.com/api/v3/account_notifications.json?api_key=OarV2UVz6e_VKBhWG9AL&app_key=be475137b519a79c903492e2693dc9b9&per_page=7
+    uri: http://localhost:3000/api/v3/account_notifications.json?api_key=iJHyFkMUBSfjUovt29&per_page=7
     body:
       encoding: US-ASCII
       string: ''
@@ -18,32 +18,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.23.3
       Date:
-      - Tue, 09 May 2023 15:30:38 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - Tue, 09 May 2023 15:59:46 GMT
       Connection:
-      - keep-alive
+      - close
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
       - '8'
       X-Ratelimit-Reset:
-      - '1683646239'
+      - '1683647987'
       Cache-Control:
       - no-store
+      Content-Type:
+      - application/json; charset=utf-8
       Vary:
       - Origin
       Etag:
       - W/"91ab8f1122427d49be8ebea0c932c05c"
       X-Request-Id:
-      - 56df86fb-f489-4861-aa1e-a88156a66303
+      - c979ccc2-05f3-4138-9f5d-c581b8cc9d9e
       X-Runtime:
-      - '0.044452'
+      - '0.059290'
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
@@ -70,5 +66,5 @@ http_interactions:
         11:20:21 -0400","updated_at":"2023/05/09 11:20:21 -0400","seen":true},{"id":148,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
         11:20:24 -0400","updated_at":"2023/05/09 11:20:24 -0400","seen":true},{"id":149,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
         11:20:25 -0400","updated_at":"2023/05/09 11:20:25 -0400","seen":true}],"pagination":{"page":1,"page_var":"page","per_page":7,"pages":2,"total":9}}'
-  recorded_at: Tue, 09 May 2023 15:30:38 GMT
+  recorded_at: Tue, 09 May 2023 15:59:46 GMT
 recorded_with: VCR 6.1.0

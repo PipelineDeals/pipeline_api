@@ -1,124 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://localhost:3000/api/v3/account_notifications.json?account_id=65&api_key=OarV2UVz6e_VKBhWG9AL&app_key=be475137b519a79c903492e2693dc9b9
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 09 May 2023 14:45:46 GMT
-      Connection:
-      - close
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '9'
-      X-Ratelimit-Reset:
-      - '1683643547'
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json; charset=utf-8
-      Vary:
-      - Origin
-      Etag:
-      - W/"38a378aa602a0f930858fcaa0e294dc5"
-      X-Request-Id:
-      - 42c9a20a-2afc-458f-b64f-4bc7c0b3d378
-      X-Runtime:
-      - '0.036732'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-    body:
-      encoding: UTF-8
-      string: '{"entries":[{"id":5,"account_id":null,"user_id":377,"text":"Interested
-        in customizing PipelineDeals?\u003cbr/\u003e\u003ca href=\"/admin\" onclick=\"trackableEvent.clickAcctSettingsNotification()\"\u003eClick
-        here\u003c/a\u003e to see your options.","read_at":null,"created_at":"2021/01/21
-        11:08:34 -0500","updated_at":"2021/01/21 11:08:34 -0500","seen":true},{"id":6,"account_id":null,"user_id":377,"text":"Please
-        \u003ca href=''/accounts/resend_verification_email'' data-toggle=''modal''data-target=''#resend-verification-email''
-        data-remote=''/accounts/resend_verification_email''\u003evalidate your email
-        address\u003c/a\u003e","read_at":null,"created_at":"2021/01/21 11:08:34 -0500","updated_at":"2021/01/21
-        11:08:34 -0500","seen":true}],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":2}}'
-  recorded_at: Tue, 09 May 2023 14:45:46 GMT
-- request:
     method: post
-    uri: http://localhost:3000/api/v3/account_notifications.json?api_key=OarV2UVz6e_VKBhWG9AL&app_key=be475137b519a79c903492e2693dc9b9
-    body:
-      encoding: UTF-8
-      string: '{"account_notification":{}}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Tue, 09 May 2023 14:46:26 GMT
-      Connection:
-      - close
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '9'
-      X-Ratelimit-Reset:
-      - '1683643587'
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json; charset=utf-8
-      Vary:
-      - Origin
-      X-Request-Id:
-      - a5feb4b7-80f0-4cef-ad9b-44830a5a099f
-      X-Runtime:
-      - '0.044330'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-    body:
-      encoding: UTF-8
-      string: '{"error":"Text cannot be blank. You have to pass parameters like: account_notification:
-        {user_id: 1000, text: \"message\", hide_popup: true"}'
-  recorded_at: Tue, 09 May 2023 14:46:26 GMT
-- request:
-    method: post
-    uri: http://pld.com/api/v3/account_notifications.json?api_key=OarV2UVz6e_VKBhWG9AL&app_key=be475137b519a79c903492e2693dc9b9
+    uri: http://localhost:3000/api/v3/account_notifications.json?api_key=iJHyFkMUBSfjUovt29
     body:
       encoding: UTF-8
       string: '{"account_notification":{"text":"Testing Notification"}}'
@@ -136,32 +20,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.23.3
       Date:
-      - Tue, 09 May 2023 15:19:36 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - Tue, 09 May 2023 16:00:09 GMT
       Connection:
-      - keep-alive
+      - close
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
       - '9'
       X-Ratelimit-Reset:
-      - '1683645576'
+      - '1683648009'
       Cache-Control:
       - no-store
+      Content-Type:
+      - application/json; charset=utf-8
       Vary:
       - Origin
       Etag:
-      - W/"34338a531b12ec87af20527a32a5f5da"
+      - W/"b3e92001ce9fc4bcc38873281e0f70b9"
       X-Request-Id:
-      - f2a629b1-d5af-4900-bbad-d2f1f33ad25a
+      - f92ddc1c-d02b-46e7-812f-facd05b49c5b
       X-Runtime:
-      - '0.639951'
+      - '0.462219'
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
@@ -174,7 +54,7 @@ http_interactions:
       - none
     body:
       encoding: UTF-8
-      string: '{"id":146,"account_id":null,"user_id":377,"text":"Testing Notification","read_at":null,"created_at":"2023/05/09
-        11:19:35 -0400","updated_at":"2023/05/09 11:19:35 -0400","seen":false}'
-  recorded_at: Tue, 09 May 2023 15:19:36 GMT
+      string: '{"id":152,"account_id":null,"user_id":377,"text":"Testing Notification","read_at":null,"created_at":"2023/05/09
+        12:00:08 -0400","updated_at":"2023/05/09 12:00:08 -0400","seen":false}'
+  recorded_at: Tue, 09 May 2023 16:00:09 GMT
 recorded_with: VCR 6.1.0
