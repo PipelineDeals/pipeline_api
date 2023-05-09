@@ -28,5 +28,6 @@ module Pipeline
     has_many :lead_sources, class_name: "Pipeline::AdminResource"
     has_many :predefined_contacts_tags, class_name: "Pipeline::AdminResource"
     has_many :event_categories, class_name: "Pipeline::AdminResource"
+    has_many :webhooks, class_name: "Pipeline::Webhooks"
   end
 end

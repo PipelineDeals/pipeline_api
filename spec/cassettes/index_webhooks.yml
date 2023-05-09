@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v3/admin/webhooks.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 May 2023 21:11:19 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '9'
+      X-Ratelimit-Reset:
+      - '1683666680'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Etag:
+      - W/"3f0e6dc35f5aa8b515cffb881b6af9a5"
+      X-Request-Id:
+      - e1742d04-b20a-4503-a325-7ad408c8e329
+      X-Runtime:
+      - '0.149854'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"webhooks":[{"id":25,"event_model":"person","name":"Testing JWT person:create","is_activated":true,"created_at":"2023-05-09T21:10:43.824Z","updated_at":"2023-05-09T21:10:43.824Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"create","description":"Testing
+        JWT person:create =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":26,"event_model":"person","name":"Testing
+        JWT person:update","is_activated":true,"created_at":"2023-05-09T21:10:43.996Z","updated_at":"2023-05-09T21:10:43.996Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"update","description":"Testing
+        JWT person:update =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":27,"event_model":"person","name":"Testing
+        JWT person:destroy","is_activated":true,"created_at":"2023-05-09T21:10:44.179Z","updated_at":"2023-05-09T21:10:44.179Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"destroy","description":"Testing
+        JWT person:destroy =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":28,"event_model":"deal","name":"Testing
+        JWT deal:create","is_activated":true,"created_at":"2023-05-09T21:10:44.363Z","updated_at":"2023-05-09T21:10:44.363Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"create","description":"Testing
+        JWT deal:create =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":29,"event_model":"deal","name":"Testing
+        JWT deal:update","is_activated":true,"created_at":"2023-05-09T21:10:44.514Z","updated_at":"2023-05-09T21:10:44.514Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"update","description":"Testing
+        JWT deal:update =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":30,"event_model":"deal","name":"Testing
+        JWT deal:destroy","is_activated":true,"created_at":"2023-05-09T21:10:44.689Z","updated_at":"2023-05-09T21:10:44.689Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"destroy","description":"Testing
+        JWT deal:destroy =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":31,"event_model":"company","name":"Testing
+        JWT company:create","is_activated":true,"created_at":"2023-05-09T21:10:44.923Z","updated_at":"2023-05-09T21:10:44.923Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"create","description":"Testing
+        JWT company:create =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":32,"event_model":"company","name":"Testing
+        JWT company:update","is_activated":true,"created_at":"2023-05-09T21:10:45.098Z","updated_at":"2023-05-09T21:10:45.098Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"update","description":"Testing
+        JWT company:update =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"},{"id":33,"event_model":"company","name":"Testing
+        JWT company:destroy","is_activated":true,"created_at":"2023-05-09T21:10:45.258Z","updated_at":"2023-05-09T21:10:45.258Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"destroy","description":"Testing
+        JWT company:destroy =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"}]}'
+  recorded_at: Tue, 09 May 2023 21:11:19 GMT
+recorded_with: VCR 6.1.0
