@@ -22,6 +22,8 @@ describe Pipeline::Webhook do
         described_class.create(event_model: "company", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
         described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
       ]
+      expect(webhooks.map(&:id).compact.count).to eq(9)
+      # Just wanted to leave thigns as they were before
       webhooks.map(&:destroy)
     end
   end
@@ -36,18 +38,16 @@ describe Pipeline::Webhook do
   it "deletes a webhook" do
     VCR.use_cassette(:webhooks_delete) do
       webhook = described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
-      Pipeline::Webhook.delete(webhook.id)
-      expect(webhook.exists?).to be_falsey
-      webhooks = described_class.all
+      described_class.delete(webhook.id)
+      expect(webhook).not_to exist
     end
   end
-
 
   it "destroys a webhook" do
     VCR.use_cassette(:webhooks_destroy) do
       webhook = described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
       webhook.destroy
-      expect(webhook.exists?).to be_falsey
+      expect(webhook).not_to exist
     end
   end
 end
