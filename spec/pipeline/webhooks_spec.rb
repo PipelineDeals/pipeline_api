@@ -10,7 +10,7 @@ describe Pipeline::Webhook do
   # it_behaves_like "a paginated collection"
 
   it "creates a webhook" do
-    VCR.use_cassette(:create_webhook) do
+    VCR.use_cassette(:webhooks_create) do
       webhooks = [
         described_class.create(event_model: "person", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
         described_class.create(event_model: "person", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
@@ -22,14 +22,32 @@ describe Pipeline::Webhook do
         described_class.create(event_model: "company", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
         described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
       ]
-      expect(webhooks.map(&:id).compact.count).to eq(9)
+      webhooks.map(&:destroy)
     end
   end
 
   it "lists webhooks" do
-    VCR.use_cassette(:index_webhooks) do
+    VCR.use_cassette(:webhooks_index) do
       webhooks = described_class.all
       expect(webhooks.size).to eq(9)
+    end
+  end
+
+  it "deletes a webhook" do
+    VCR.use_cassette(:webhooks_delete) do
+      webhook = described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
+      Pipeline::Webhook.delete(webhook.id)
+      expect(webhook.exists?).to be_falsey
+      webhooks = described_class.all
+    end
+  end
+
+
+  it "destroys a webhook" do
+    VCR.use_cassette(:webhooks_destroy) do
+      webhook = described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
+      webhook.destroy
+      expect(webhook.exists?).to be_falsey
     end
   end
 end

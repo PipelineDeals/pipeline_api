@@ -1,0 +1,158 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v3/admin/webhooks.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    body:
+      encoding: UTF-8
+      string: '{"webhook":{"event_model":"company","event_action":"destroy","failure_email":"test@test.com","url":"http://this.pld.com"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 May 2023 18:11:34 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '1683742295'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Etag:
+      - W/"1d54cffb5e8f3e537d0fd36ac5b53c5b"
+      X-Request-Id:
+      - cd3bd490-e056-45d1-abbe-9f04fc37d367
+      X-Runtime:
+      - '0.163011'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":103,"event_model":"company","name":"Testing JWT company:destroy","is_activated":true,"created_at":"2023-05-10T18:11:34.690Z","updated_at":"2023-05-10T18:11:34.690Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"destroy","description":"Testing
+        JWT company:destroy =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"}'
+  recorded_at: Wed, 10 May 2023 18:11:34 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/v3/admin/webhooks/103.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 May 2023 18:11:34 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '7'
+      X-Ratelimit-Reset:
+      - '1683742295'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Etag:
+      - W/"74234e98afe7498fb5daf1f36ac2d78a"
+      X-Request-Id:
+      - 3eb43a4c-f308-474a-b84e-1e30dfba5e96
+      X-Runtime:
+      - '0.164307'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: 'null'
+  recorded_at: Wed, 10 May 2023 18:11:34 GMT
+- request:
+    method: head
+    uri: http://localhost:3000/api/v3/admin/webhooks/103.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Wed, 10 May 2023 18:11:36 GMT
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '694949'
+      X-Request-Id:
+      - 65ccab57-0646-41f8-bb5f-f1675fc346e2
+      X-Runtime:
+      - '1.150811'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 10 May 2023 18:11:36 GMT
+recorded_with: VCR 6.1.0

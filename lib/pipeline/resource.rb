@@ -29,5 +29,29 @@ module Pipeline
 
       super
     end
+
+    def exists?
+      Pipeline::Resource.add_keys(prefix_options)
+
+      super
+    end
+
+    def destroy
+      Pipeline::Resource.add_keys(prefix_options)
+
+      super
+    end
+
+    def self.exists?(id, options = {})
+      add_keys(options)
+
+      super(id, options)
+    end
+
+    def self.delete(id, options = {})
+      add_keys(options)
+
+      super(id, options)
+    end
   end
 end
