@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v3/account_notifications.json?api_key=iJHyFkMUBSfjUovt29&page=2&per_page=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 May 2023 15:59:46 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '6'
+      X-Ratelimit-Reset:
+      - '1683647987'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Etag:
+      - W/"8ace2b38ba296e9846afde0bcebee315"
+      X-Request-Id:
+      - c8b97a5d-d19b-42bc-b6f6-25d7231ac245
+      X-Runtime:
+      - '0.045917'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[{"id":146,"account_id":null,"user_id":377,"text":"Testing
+        Notification","read_at":null,"created_at":"2023/05/09 11:19:35 -0400","updated_at":"2023/05/09
+        11:19:35 -0400","seen":true},{"id":147,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:21 -0400","updated_at":"2023/05/09 11:20:21 -0400","seen":true},{"id":148,"account_id":null,"user_id":377,"text":"test","read_at":null,"created_at":"2023/05/09
+        11:20:24 -0400","updated_at":"2023/05/09 11:20:24 -0400","seen":true}],"pagination":{"page":2,"page_var":"page","per_page":3,"pages":3,"total":9}}'
+  recorded_at: Tue, 09 May 2023 15:59:46 GMT
+recorded_with: VCR 6.1.0

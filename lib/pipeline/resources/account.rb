@@ -16,6 +16,7 @@ module Pipeline
     has_many :calendar_tasks, class_name: "Pipeline::CalendarTask"
     has_many :calendar_event, class_name: "Pipeline::CalendarEvent"
     has_many :users, class_name: "Pipeline::User"
+    has_many :notifications, class_name: "Pipeline::AccountNotification"
 
     has_many :deal_stages, class_name: "Pipeline::DealStage"
     has_many :note_categories, class_name: "Pipeline::AdminResource"

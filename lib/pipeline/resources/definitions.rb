@@ -21,4 +21,5 @@ module Pipeline
   class Document < Pipeline::Resource; end
   class User < Pipeline::Resource; end
   class Note < Pipeline::Resource; end
+  class AccountNotification < Pipeline::Resource; end
 end
