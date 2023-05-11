@@ -14,7 +14,7 @@ module Pipeline
     has_many :notes, class_name: "Pipeline::Note"
     has_many :calendar_entries, class_name: "Pipeline::CalendarEntry"
     has_many :calendar_tasks, class_name: "Pipeline::CalendarTask"
-    has_many :calendar_event, class_name: "Pipeline::CalendarEvent"
+    has_many :calendar_events, class_name: "Pipeline::CalendarEvent"
     has_many :users, class_name: "Pipeline::User"
     has_many :notifications, class_name: "Pipeline::AccountNotification"
 
