@@ -15,7 +15,10 @@ module Pipeline
         Pipeline::User.find(auth.user.id)
       else
         configure_api_key(auth)
-        # For some reason, this path does not return the user within a hash, so the user id is at the top level.
+        # This path does not return the user within a hash, so the user id is at the top level.
+        # It turns out that if the return hash only has one key, then it always assumes it is a "root" and removes
+        # that level:
+        # https://github.com/rails/activeresource/blob/main/lib/active_resource/base.rb#L1477-L1479
         Pipeline::User.find(auth.id)
       end
     end
