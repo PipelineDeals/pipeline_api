@@ -9,6 +9,7 @@ module Pipeline
   class LeadSource < Pipeline::AdminResource; end
   class PredefinedContactsTag < Pipeline::AdminResource; end
   class EventCategory < Pipeline::AdminResource; end
+  class Webhook < Pipeline::AdminResource; end
 
   class Deal < Pipeline::Resource; end
   class Person < Pipeline::Resource; end
