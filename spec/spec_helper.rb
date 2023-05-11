@@ -14,10 +14,17 @@ require 'support/has_calendar_entries'
 require 'support/has_people'
 require 'support/has_deals'
 
-Pipeline.configure do |c|
-  c.site = ENV['PIPELINEDEALS_URL'] || "http://localhost:3000"
-  c.api_key = ENV['PIPELINEDEALS_API_KEY'] || 'iJHyFkMUBSfjUovt29'
+def reset_config
+  Pipeline.configure do |c|
+    c.site = ENV['PIPELINEDEALS_URL'] || "http://localhost:3000"
+    c.api_key = ENV['PIPELINEDEALS_API_KEY'] || 'iJHyFkMUBSfjUovt29'
+    c.app_key = nil
+    c.auth_type = nil
+    c.bearer_token = nil
+  end
 end
+
+reset_config
 
 #ActiveResource::Base.logger = Logger.new(STDOUT)
 

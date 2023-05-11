@@ -7947,4 +7947,48 @@ http_interactions:
         &quot;localhost&quot;\nSERVER_PROTOCOL: &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2
         class=\"response-heading\">Response</h2>\n<p><b>Headers</b>:</p> <pre>None</pre>\n\n</main>\n\n\n</body>\n</html>\n"
   recorded_at: Thu, 11 May 2023 13:34:12 GMT
+- request:
+    method: head
+    uri: http://localhost:3000/api/v3/users/451.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 11 May 2023 22:44:07 GMT
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 25839a8d-c79c-4c21-b228-5739785a21c3
+      X-Runtime:
+      - '0.085142'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 11 May 2023 22:44:07 GMT
 recorded_with: VCR 6.1.0

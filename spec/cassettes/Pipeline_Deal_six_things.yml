@@ -29,7 +29,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0, must-revalidate
       Etag:
-      - ! '"be5fcdc55118856251e019b620ba82a3"'
+      - '"be5fcdc55118856251e019b620ba82a3"'
       Content-Type:
       - application/json; charset=utf-8
       Set-Cookie:
@@ -40,7 +40,7 @@ http_interactions:
       - '224'
     body:
       encoding: US-ASCII
-      string: ! '{"pagination":{"per_page":6,"total":81,"pages":14,"page_var":"page","page":1},"entries":[{"shared_user_ids":[],"updated_at":"2013/06/15
+      string: '{"pagination":{"per_page":6,"total":81,"pages":14,"page_var":"page","page":1},"entries":[{"shared_user_ids":[],"updated_at":"2013/06/15
         10:25:03 -0400","is_example":null,"closed_time":"2013/06/03 15:25:21 -0400","deal_stage":{"name":"Qualified
         Lead","percent":10,"id":2},"value_in_cents":45600,"summary":null,"status":2,"is_archived":false,"collaborators":[],"company":null,"possible_notify_user_ids":[],"probability":0,"name":"architect
         open-source bandwidth","deal_stage_id":2,"people":[{"last_name":"Grimes","id":27,"first_name":"Josue"}],"source":{"name":"Website","id":5},"primary_contact_id":27,"id":1,"user_id":1,"created_at":"2013/05/31
@@ -60,6 +60,64 @@ http_interactions:
         13:10:31 -0400","is_example":null,"closed_time":null,"deal_stage":null,"value_in_cents":9452766,"summary":null,"status":0,"is_archived":false,"collaborators":[],"company":null,"possible_notify_user_ids":[],"probability":99,"name":"target
         turn-key markets","deal_stage_id":null,"people":[],"primary_contact_id":null,"id":6,"user_id":1,"created_at":"2013/05/31
         13:10:31 -0400","primary_contact":null,"user":{"last_name":"hoboson","id":1,"first_name":"hobo"},"custom_fields":{"custom_label_29":null,"custom_label_28":93581,"custom_label_27":null,"custom_label_26":null,"custom_label_25":null},"person_ids":[],"import_id":null,"expected_close_date":null,"company_id":null,"source_id":null,"expected_close_date_event_id":null}]}'
-    http_version: 
   recorded_at: Sat, 15 Jun 2013 15:13:20 GMT
-recorded_with: VCR 2.3.0
+- request:
+    method: get
+    uri: http://localhost:3000/api/v3/deals.json?api_key=OpSyY94xKOGaJS7XMqSI&page=1&per_page=6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6IjIwOGE0ZGIwLWQyMmUtMDEzYi01MjU1LTJjZGU0ODAwMTEyMiJ9.jBsR2ExMJdEuS5GwWZOt0js1XBDp9l13DCxfu_gxst0
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 11 May 2023 21:50:21 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '7'
+      X-Ratelimit-Reset:
+      - '1683841821'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Etag:
+      - W/"0af2d676f75addb62ae971c7d34bdd77"
+      X-Request-Id:
+      - 331cac04-d312-427f-b9e8-05d3300665d2
+      X-Runtime:
+      - '0.135684'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[{"id":15487,"name":"a new deal","summary":null,"user_id":451,"created_at":"2023/05/11
+        17:50:19 -0400","updated_at":"2023/05/11 17:50:19 -0400","is_archived":false,"is_example":null,"source_id":null,"primary_contact_id":null,"deal_stage_id":null,"probability":null,"status":null,"expected_close_date":null,"closed_time":null,"expected_close_date_event_id":null,"company_id":null,"import_id":null,"next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"value":null,"deal_loss_reason_id":null,"deal_loss_reason_notes":null,"is_sample":false,"revenue_type_id":null,"deal_pipeline_id":2,"created_by_user_id":451,"deal_won_reason_id":null,"deal_won_reason_notes":null,"updated_by_user_id":451,"person_ids":[],"shared_user_ids":[],"value_in_cents":null,"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"days_in_stage":null,"user":{"id":451,"first_name":"x","last_name":"y"},"people":[],"currency":{"name":"United
+        States Dollar","code":"USD","symbol":"$"},"created_by_user":{"id":451,"first_name":"x","last_name":"y"},"updated_by_user":{"id":451,"first_name":"x","last_name":"y"},"deal_pipeline":{"id":2,"name":"Sales
+        Pipeline","default":true},"deal_stage":null,"deal_loss_reason":null,"deal_won_reason":null,"primary_contact":null,"company":null,"revenue_type":null,"deal_copy":null,"collaborators":[],"custom_fields":{"custom_label_2498":null,"custom_label_2668":null},"deal_product_lines_ids":[]}],"pagination":{"page":1,"page_var":"page","per_page":6,"pages":1,"total":1}}'
+  recorded_at: Thu, 11 May 2023 21:50:21 GMT
+recorded_with: VCR 6.1.0

@@ -3,6 +3,8 @@
 require "spec_helper"
 
 describe Pipeline::Auth do
+  after { reset_config }
+
   it "authenticates a user with jwt token" do
     VCR.use_cassette(:auth_jwt_success) do
       a = described_class.authenticate("x@gmail.com", "abc123$$$$", nil, app_key: "010a14be40ff5deafb7de7e773b8bff0")
