@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'active_resource'
+require 'pipeline/collection'
+require 'pipeline/resource'
+require 'pipeline/resources/account'
 require_relative 'pipeline/resources'
 require_relative 'pipeline/version'
 require_relative 'pipeline/resources/definitions'

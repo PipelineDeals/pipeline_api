@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v3/auth.json?api_key=iJHyFkMUBSfjUovt29
+    body:
+      encoding: UTF-8
+      string: '{"app_key":"010a14be40ff5deafb7de7e773b8bff0","api_key":"iJHyFkMUBSfjUovt29","email_or_username":"x@gmail.com","password":"xabc123$$$$","mfa_code":null}'
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImYxY2VkMWQwLWQxYzUtMDEzYi01MjU0LTJjZGU0ODAwMTEyMiJ9.2NjSe-l7GPwBPaTepekSrhfqA-8BlcBDaBjWZmuBBnM
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Thu, 11 May 2023 01:06:12 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '1683767173'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      X-Request-Id:
+      - 1c4e8a33-fdee-42e6-9bfc-c31d68b0d72d
+      X-Runtime:
+      - '0.092612'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '[{"humanized_field":"Base","field":"base","msg":"Email or username/Password
+        combination is not valid"}]'
+  recorded_at: Thu, 11 May 2023 01:06:12 GMT
+recorded_with: VCR 6.1.0
