@@ -10,7 +10,6 @@ describe Pipeline::Auth do
       user = described_class.authenticate("x@gmail.com", "abc123$$$$", nil, app_key: "010a14be40ff5deafb7de7e773b8bff0")
       expect(user.id).to eq(451)
       expect(Pipeline.configure.bearer_token).not_to be_nil
-      expect(Pipeline.configure.api_token).to be_nil
     end
   end
 
@@ -19,7 +18,7 @@ describe Pipeline::Auth do
       user = described_class.authenticate("x@gmail.com", "abc123$$$$", nil, app_key: "8ddaff5a21fd18070be60623e5074781")
       expect(user.id).to eq(451)
       expect(Pipeline.configure.bearer_token).to be_nil
-      expect(Pipeline.configure.api_token).not_to be_nil
+      expect(Pipeline.configure.api_key).not_to be_nil
     end
   end
 

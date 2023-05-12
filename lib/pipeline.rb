@@ -29,7 +29,6 @@ module Pipeline
   end
 
   def self.configure
-    yield self
-    true
+    block_given? ? yield(self) : self
   end
 end
