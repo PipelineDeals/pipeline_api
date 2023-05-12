@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Pipeline
   class Auth < Pipeline::Resource
     include ActiveResource::Singleton
@@ -21,8 +23,6 @@ module Pipeline
       Pipeline::User.find(user.id)
     end
 
-    private
-
     def self.configure_api_key(auth)
       Pipeline.configure { |c| c.api_key = auth.api_key }
       # This path does not return the user within a hash, so the user id is at the top level.
@@ -33,7 +33,11 @@ module Pipeline
     end
 
     def self.configure_jwt_token(auth)
-      Pipeline.configure { |c| c.app_key = nil; c.auth_type = :bearer; c.bearer_token = auth.token }
+      Pipeline.configure do |c|
+        c.app_key = nil
+        c.auth_type = :bearer
+        c.bearer_token = auth.token
+      end
       auth.user
     end
   end
