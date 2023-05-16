@@ -29,7 +29,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0, must-revalidate
       Etag:
-      - ! '"31e5a31e34207f7f79962a7e3bf1820c"'
+      - '"31e5a31e34207f7f79962a7e3bf1820c"'
       Content-Type:
       - application/json; charset=utf-8
       Set-Cookie:
@@ -40,7 +40,7 @@ http_interactions:
       - '2671'
     body:
       encoding: US-ASCII
-      string: ! '{"pagination":{"per_page":200,"total":108,"pages":1,"page_var":"page","page":1},"entries":[{"phone1_desc":null,"updated_at":"2013/05/31
+      string: '{"pagination":{"per_page":200,"total":108,"pages":1,"page_var":"page","page":1},"entries":[{"phone1_desc":null,"updated_at":"2013/05/31
         13:09:24 -0400","total_pipeline":0,"postal_code":null,"description":null,"image_thumb_url":"/images/thumb/missing_company.png","phone2_desc":null,"email":null,"country":null,"possible_notify_user_ids":[],"won_deals_total":0,"name":"Greenfelder
         and Sons","phone3_desc":null,"id":1,"city":null,"created_at":"2013/05/31 13:09:23
         -0400","phone4":null,"phone3":null,"phone2":null,"phone1":null,"custom_fields":{},"phone4_desc":null,"import_id":null,"address_2":null,"address_1":null,"web":null,"state":null,"fax":null},{"phone1_desc":null,"updated_at":"2013/05/31
@@ -330,6 +330,61 @@ http_interactions:
         13:10:24 -0400","phone4":null,"phone3":null,"phone2":null,"phone1":null,"custom_fields":{},"phone4_desc":null,"import_id":null,"address_2":null,"address_1":null,"web":null,"state":null,"fax":null},{"phone1_desc":null,"updated_at":"2013/06/13
         10:35:53 -0400","total_pipeline":0,"postal_code":null,"description":null,"image_thumb_url":"https://s3.amazonaws.com/pipelinedeals_company_logos_development/company_logo/108/thumb/crazy_eyes.jpg","phone2_desc":null,"email":null,"country":null,"possible_notify_user_ids":[],"won_deals_total":0,"name":"Hoeger-Wiegand","phone3_desc":null,"id":108,"city":null,"created_at":"2013/05/31
         13:10:26 -0400","phone4":null,"phone3":null,"phone2":null,"phone1":null,"custom_fields":{},"phone4_desc":null,"import_id":null,"address_2":null,"address_1":null,"web":null,"state":null,"fax":null}]}'
-    http_version: 
   recorded_at: Sat, 15 Jun 2013 15:22:26 GMT
-recorded_with: VCR 2.3.0
+- request:
+    method: get
+    uri: http://localhost:3000/api/v3/companies.json?api_key=OpSyY94xKOGaJS7XMqSI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6IjIwOGE0ZGIwLWQyMmUtMDEzYi01MjU1LTJjZGU0ODAwMTEyMiJ9.jBsR2ExMJdEuS5GwWZOt0js1XBDp9l13DCxfu_gxst0
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 11 May 2023 21:50:18 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '1683841819'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      Etag:
+      - W/"45ea7c2bbd1a94d22ac27a0198377553"
+      X-Request-Id:
+      - 67769a29-806b-4c51-b300-3ba559b11198
+      X-Runtime:
+      - '0.543408'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":0}}'
+  recorded_at: Thu, 11 May 2023 21:50:18 GMT
+recorded_with: VCR 6.1.0

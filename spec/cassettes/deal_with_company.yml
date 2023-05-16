@@ -29,7 +29,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0, must-revalidate
       Etag:
-      - ! '"bfd6554e98e01545b5cf30a9229c56a1"'
+      - '"bfd6554e98e01545b5cf30a9229c56a1"'
       Content-Type:
       - application/json; charset=utf-8
       Set-Cookie:
@@ -40,10 +40,65 @@ http_interactions:
       - '58'
     body:
       encoding: US-ASCII
-      string: ! '{"shared_user_ids":[],"updated_at":"2013/06/15 10:54:41 -0400","is_example":null,"closed_time":null,"deal_stage":null,"value_in_cents":6759800,"summary":null,"status":2,"is_archived":false,"collaborators":[],"company":{"name":"Tillman
+      string: '{"shared_user_ids":[],"updated_at":"2013/06/15 10:54:41 -0400","is_example":null,"closed_time":null,"deal_stage":null,"value_in_cents":6759800,"summary":null,"status":2,"is_archived":false,"collaborators":[],"company":{"name":"Tillman
         Inc","id":3},"possible_notify_user_ids":[],"probability":6,"name":"disintermediate
         value-added technologies","deal_stage_id":null,"people":[],"primary_contact_id":null,"id":81,"user_id":1,"created_at":"2013/05/31
         13:11:17 -0400","primary_contact":null,"user":{"last_name":"hoboson","id":1,"first_name":"hobo"},"custom_fields":{"custom_label_29":null,"custom_label_28":4055,"custom_label_27":null,"custom_label_26":null,"custom_label_25":null},"person_ids":[],"import_id":null,"expected_close_date":null,"company_id":3,"source_id":null,"expected_close_date_event_id":null}'
-    http_version: 
   recorded_at: Sat, 15 Jun 2013 14:55:23 GMT
-recorded_with: VCR 2.3.0
+- request:
+    method: get
+    uri: http://localhost:3000/api/v3/deals/81.json?api_key=OpSyY94xKOGaJS7XMqSI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6IjIwOGE0ZGIwLWQyMmUtMDEzYi01MjU1LTJjZGU0ODAwMTEyMiJ9.jBsR2ExMJdEuS5GwWZOt0js1XBDp9l13DCxfu_gxst0
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 11 May 2023 21:50:22 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '3'
+      X-Ratelimit-Reset:
+      - '1683841823'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      X-Request-Id:
+      - 1c8e4ec8-895c-48ac-9e6a-6a72648bc584
+      X-Runtime:
+      - '0.062425'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"error":"Deal not found. The URL provided does not correspond to a
+        valid deal. This may be caused by a typo in the link, or the deal is no longer
+        visible to you."}'
+  recorded_at: Thu, 11 May 2023 21:50:22 GMT
+recorded_with: VCR 6.1.0

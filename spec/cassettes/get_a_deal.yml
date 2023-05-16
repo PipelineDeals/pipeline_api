@@ -33,19 +33,74 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - ! '"df75fd71847d9713b362b1a71487bf70"'
+      - '"df75fd71847d9713b362b1a71487bf70"'
       Content-Length:
       - '853'
       X-Runtime:
       - '235'
     body:
       encoding: US-ASCII
-      string: ! '{"value_in_cents":45600,"is_example":null,"company_id":null,"shared_user_ids":[],"user_id":1,"import_id":null,"deal_stage_id":2,"deal_stage":{"percent":10,"id":2,"name":"Qualified
+      string: '{"value_in_cents":45600,"is_example":null,"company_id":null,"shared_user_ids":[],"user_id":1,"import_id":null,"deal_stage_id":2,"deal_stage":{"percent":10,"id":2,"name":"Qualified
         Lead"},"collaborators":[],"company":null,"summary":null,"possible_notify_user_ids":[],"updated_at":"2013/06/14
         19:54:48 -0400","source_id":2,"source":{"id":2,"name":"Cold Call"},"probability":0,"primary_contact_id":null,"created_at":"2013/05/31
         13:10:26 -0400","expected_close_date_event_id":null,"id":1,"expected_close_date":null,"primary_contact":null,"user":{"last_name":"hoboson","first_name":"hobo","id":1},"closed_time":"2013/06/03
         15:25:21 -0400","custom_fields":{"custom_label_29":10,"custom_label_28":0,"custom_label_27":8,"custom_label_26":5,"custom_label_25":2},"person_ids":[],"status":2,"name":"architect
         open-source bandwidth","people":[],"is_archived":false}'
-    http_version: 
   recorded_at: Fri, 14 Jun 2013 23:55:57 GMT
-recorded_with: VCR 2.3.0
+- request:
+    method: get
+    uri: http://localhost:3000/api/v3/deals/1.json?api_key=OpSyY94xKOGaJS7XMqSI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6IjIwOGE0ZGIwLWQyMmUtMDEzYi01MjU1LTJjZGU0ODAwMTEyMiJ9.jBsR2ExMJdEuS5GwWZOt0js1XBDp9l13DCxfu_gxst0
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 11 May 2023 21:50:21 GMT
+      Connection:
+      - close
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '6'
+      X-Ratelimit-Reset:
+      - '1683841822'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      X-Request-Id:
+      - f900b043-c0c8-4874-bdd6-dda3b94bed57
+      X-Runtime:
+      - '0.070965'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"error":"Deal not found. The URL provided does not correspond to a
+        valid deal. This may be caused by a typo in the link, or the deal is no longer
+        visible to you."}'
+  recorded_at: Thu, 11 May 2023 21:50:21 GMT
+recorded_with: VCR 6.1.0

@@ -1,4 +1,6 @@
 module Pipeline
+  class Account < Pipeline::Resource; end
+  class Auth < Pipeline::Resource; end
   class DealStage < Pipeline::AdminResource; end
   class NoteCategory < Pipeline::AdminResource; end
   class DealCustomFieldLabel < Pipeline::AdminResource; end
