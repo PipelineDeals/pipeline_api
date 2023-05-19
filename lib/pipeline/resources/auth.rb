@@ -42,7 +42,7 @@ module Pipeline
         c.bearer_token = auth.token
       end
       add_keys(options)
-      auth.user
+      auth.user if auth.respond_to?(:user)
     end
   end
 end
