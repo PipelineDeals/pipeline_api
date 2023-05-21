@@ -16,8 +16,6 @@ end
 
 module Pipeline
   class << self
-    include ThreadsafeAttributes
-    threadsafe_attribute :account_key, :api_key, :app_key, :app_version, :bearer_token, :auth_type
 
     def site
       Pipeline::Resource.site
@@ -29,6 +27,6 @@ module Pipeline
   end
 
   def self.configure
-    block_given? ? yield(self) : self
+    block_given? ? yield(Pipeline::Resource) : Pipeline::Resource
   end
 end
