@@ -11,7 +11,6 @@ describe Pipeline::Auth do
       c.bearer_token = nil
       c.auth_type = nil
     end
-#    Pipeline::Auth.add_keys({})
   end
 
   after { reset_config }
