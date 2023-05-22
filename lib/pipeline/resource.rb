@@ -1,18 +1,21 @@
 module Pipeline
   class Resource < ActiveResource::Base
+    class << self
+      include ThreadsafeAttributes
+      threadsafe_attribute :account_key, :api_key, :app_key, :app_version, :bearer_token, :auth_type
+    end
+
     self.collection_parser = Pipeline::Collection
     self.include_root_in_json = true
     self.prefix = "/api/v3/"
     self.site = "https://api.pipelinecrm.com"
 
     def self.add_keys(hash)
-      hash[:api_key] = Pipeline.api_key if !Pipeline.account_key && Pipeline.api_key
-      hash[:account_key] = Pipeline.account_key if Pipeline.account_key
-      self.auth_type = Pipeline.auth_type if Pipeline.auth_type
-      self.bearer_token = Pipeline.bearer_token if Pipeline.bearer_token
+      hash[:api_key] = Pipeline::Resource.api_key if Pipeline::Resource.api_key && !Pipeline::Resource.account_key && !Pipeline::Resource.bearer_token
+      hash[:account_key] = Pipeline::Resource.account_key if Pipeline::Resource.account_key
 
-      hash[:app_key] = Pipeline.app_key if Pipeline.app_key
-      hash[:app_version] = Pipeline.app_version if Pipeline.app_version
+      hash[:app_key] = Pipeline::Resource.app_key if Pipeline::Resource.app_key
+      hash[:app_version] = Pipeline::Resource.app_version if Pipeline::Resource.app_version
     end
 
     def self.find(*arguments)

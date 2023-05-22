@@ -4,8 +4,9 @@ module Pipeline
   class Auth < Pipeline::Resource
     include ActiveResource::Singleton
 
+    self.collection_name = "auth"
+
     def self.authenticate(email, password, mfa_code = nil, options = {})
-      add_keys(options)
       options.merge!(email_or_username: email, password: password, mfa_code: mfa_code)
 
       self.include_root_in_json = false
@@ -35,10 +36,11 @@ module Pipeline
     def self.configure_jwt_token(auth)
       Pipeline.configure do |c|
         c.app_key = nil
+        c.api_key = nil
         c.auth_type = :bearer
         c.bearer_token = auth.token
       end
-      auth.user
+      auth.user if auth.respond_to?(:user)
     end
   end
 end
