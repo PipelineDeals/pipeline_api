@@ -11,7 +11,19 @@ class Pipeline::Collection < Pipeline::Base
   def find(id)
     raise "find doesn't honor where or order." if conditions.present? || sort_by.present?
 
-    "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline, hash: _get("#{collection_name}/#{id}.json"))
+    "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline, id: id)
+  end
+
+  def new(hash = nil)
+    entry = "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline)
+    entry.attributes = hash if hash
+    entry
+  end
+
+  def create(hash)
+    entry = new(hash)
+    entry.save
+    entry
   end
 
   def where(conditions)

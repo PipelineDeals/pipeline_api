@@ -10,28 +10,28 @@ class Pipeline::Base
     @collection_name = self.class.name.sub(/.*::/, "").underscore.pluralize
   end
 
-  def _create(endpoint, query: {}, params: {}, headers: {})
-    HTTParty.create(full_endpoint(endpoint), query: query.merge(common_query), params: params, headers: headers.merge(common_headers))
+  def _create(endpoint, query: {}, body: {}, headers: {})
+    HTTParty.create(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)).parsed_response
   end
 
   def _get(endpoint, query: {}, headers: {})
-    HTTParty.get(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers))
+    HTTParty.get(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers)).parsed_response
   end
 
-  def _put(endpoint, query: {}, params: {}, headers: {})
-    HTTParty.put(full_endpoint(endpoint), query: query.merge(common_query), params: params, headers: headers.merge(common_headers))
+  def _put(endpoint, query: {}, body: {}, headers: {})
+    HTTParty.put(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)).parsed_response
   end
 
-  def _patch(endpoint, query: {}, params: {}, headers: {})
-    HTTParty.patch(full_endpoint(endpoint), query: query.merge(common_query), params: params, headers: headers.merge(common_headers))
+  def _patch(endpoint, query: {}, body: {}, headers: {})
+    HTTParty.patch(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)).parsed_response
   end
 
-  def _post(endpoint, query: {}, params: {}, headers: {})
-    HTTParty.post(full_endpoint(endpoint), query: query.merge(common_query), params: params, headers: headers.merge(common_headers))
+  def _post(endpoint, query: {}, body: {}, headers: {})
+    HTTParty.post(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)).parsed_response
   end
 
   def _destroy(endpoint, query: {}, headers: {})
-    HTTParty.delete(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers))
+    HTTParty.delete(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers)).parsed_response
   end
 
   def full_endpoint(endpoint)
