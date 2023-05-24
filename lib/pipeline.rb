@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "rubygems"
-#require_relative "pipeline/version"
+require_relative "pipeline/version"
 
 class Pipeline
   attr_reader :url, :prefix, :api_key, :app_key, :jwt
@@ -14,18 +14,15 @@ class Pipeline
     @jwt = jwt
   end
 
-  def authenticate(email:, password:, mfa_code: nil)
-  end
+  def authenticate(email:, password:, mfa_code: nil); end
 
   def authenticated?
     jwt.present? || (api_key.present? && app_key.present?)
   end
 
-  def revoke_jwt
-  end
+  def revoke_jwt; end
 
-  def refresh_jwt
-  end
+  def refresh_jwt; end
 
   def people
     Pipeline::People.new(pipeline: self)
