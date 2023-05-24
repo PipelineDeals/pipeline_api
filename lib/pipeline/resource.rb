@@ -7,13 +7,16 @@ class Pipeline::Resource < Pipeline::Base
 
   attr_reader :hash, :before, :changes, :_id
 
-  def initialize(pipeline:, id: nil)
+  def initialize(pipeline:, id: nil, hash: nil)
     super(pipeline: pipeline)
-    @hash = {}
+    if id
+      @hash = load
+    else
+      @hash = hash
+    end
     @before = {}
     @changes = {}
-    @_id = id
-    reload
+    @_id = send("id") || id
   end
 
   def save
@@ -52,10 +55,16 @@ class Pipeline::Resource < Pipeline::Base
   end
 
   def reload
-    @before = @_id ? _get("#{collection_name}/#{@_id}.json") : {}
+    @before = load
     @hash = @before.clone
     @changes = {}
     self
+  end
+
+  private
+
+  def load
+    @_id ? _get("#{collection_name}/#{@_id}.json") : {}
   end
 end
 
