@@ -6,12 +6,12 @@ class Pipeline::Collection < Pipeline::Base
   end
 
   attr_reader :conditions
-  attr_reader :order
+  attr_reader :sort_by
 
   def find(id)
-    raise "find doesn't honor where or order." if conditions.present? || order.present?
+    raise "find doesn't honor where or order." if conditions.present? || sort_by.present?
 
-    "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline:).new(pipeline:, hash: _get("#{collection_name}/#{id}.json")[collection_name.singularize])
+    "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline, hash: _get("#{collection_name}/#{id}.json"))
   end
 
   def where(conditions)
@@ -19,8 +19,8 @@ class Pipeline::Collection < Pipeline::Base
     @conditions.merge!(conditions)
   end
 
-  def order(order)
-    @order ||= order
+  def order(sort_by)
+    @sort_by = sort_by
   end
 
   def each
