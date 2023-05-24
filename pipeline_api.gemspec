@@ -6,10 +6,10 @@ require './lib/pipeline/version'
 Gem::Specification.new do |gem|
   gem.name          = "pipeline"
   gem.version       = Pipeline::VERSION
-  gem.authors       = ["Grant Ammons"]
-  gem.email         = ["gammons@gmail.com"]
+  gem.authors       = ["Scott Gibson"]
+  gem.email         = ["sevgibson@gmail.com"]
   gem.description   = %q{The pipeline gem is a ruby wrapper around the Pipeline API.}
-  gem.summary   = %q{The pipeline gem is a ruby wrapper around the Pipeline API.}
+  gem.summary       = %q{The pipeline gem is a ruby wrapper around the Pipeline API.}
   gem.homepage      = "https://github.com/Pipeline/pipeline_api"
 
   gem.files         = `git ls-files`.split($/)
@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency('activeresource')
+  gem.add_dependency('activesupport')
 
   gem.add_development_dependency('rspec')
   gem.add_development_dependency('webmock')

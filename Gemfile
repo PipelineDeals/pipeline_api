@@ -1,7 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'activeresource'
+gem 'activesupport'
 
 group :development, :test, :ci do
   gem 'rspec'
