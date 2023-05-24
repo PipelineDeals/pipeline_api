@@ -35,9 +35,8 @@ class Pipeline::Collection < Pipeline::Base
     pages = nil
     while pages.nil? || page < pages
       response = read_page(page: page)
-      puts "response: #{response.inspect}"
-      pages ||= response.is_a?(Array) ? 1 : response["pagination"]["pages"]
-      list = response.is_a?(Array) ? response : response["entries"]
+      pages ||= (response.is_a?(Array) || response[collection_name]) ? 1 : response["pagination"]["pages"]
+      list = response.is_a?(Array) ? response : (response[collection_name] || response["entries"])
       list.each do |hash|
         entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, hash: hash)
         yield(entry)
@@ -54,7 +53,9 @@ class Pipeline::Collection < Pipeline::Base
   private
 
   def read_page(page: 1, per_page: 200)
-    _get("#{collection_name}.json", query: { conditions: conditions, page: page, per_page: per_page })
+    query = { page: page, per_page: per_page }
+    query.merge!(conditions: conditions) if conditions.present?
+    _get("#{collection_name}.json", query: query)
   end
 end
 

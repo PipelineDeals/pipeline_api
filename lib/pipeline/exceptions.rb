@@ -6,6 +6,7 @@ module Pipeline::Exceptions
   class RecordNotFoundError < StandardError; end
   class NotAcceptableError < StandardError; end
   class TooManyRequestsError < StandardError; end
+  class InternalPipelineError < StandardError; end
   class ApiError < StandardError
     attr_reader :code
     def initialize(message, code)

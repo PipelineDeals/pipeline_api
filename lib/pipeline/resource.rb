@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class Pipeline::Resource < Pipeline::Base
-  def self.extended(base)
-    puts "extended #{base}"
-  end
-
   attr_reader :hash, :before, :changes, :_id
 
   def initialize(pipeline:, id: nil, hash: nil)
@@ -12,7 +8,7 @@ class Pipeline::Resource < Pipeline::Base
     if id
       @hash = load
     else
-      @hash = hash
+      @hash = hash || {}
     end
     @before = {}
     @changes = {}
@@ -81,3 +77,5 @@ Pipeline::CalendarTask = Class.new(Pipeline::Resource)
 module Pipeline::Admin
   Webhook = Class.new(Pipeline::Resource)
 end
+
+require "pipeline/auth"

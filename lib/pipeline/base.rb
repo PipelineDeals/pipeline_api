@@ -13,11 +13,11 @@ class Pipeline::Base
     @pipeline = pipeline
     @collection_name = self.class.name.sub(/.*::/, "").underscore.pluralize
     @admin = self.class.name.include?("::Admin::") ? "/admin" : ""
-    @module_name = self.class.name.sub(/::#{collection_name.singularize.camelize}$/, "")
+    @module_name = self.class.name.sub(/::#{collection_name.singularize.camelize}$/, "").sub(/::#{collection_name.camelize}$/, "")
   end
 
-  def _create(endpoint, query: {}, body: {}, headers: {})
-    handle_errors(HTTParty.create(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)).parsed_response)
+  def _post(endpoint, query: {}, body: {}, headers: {})
+    handle_errors(HTTParty.post(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
   def _get(endpoint, query: {}, headers: {})
@@ -30,10 +30,6 @@ class Pipeline::Base
 
   def _patch(endpoint, query: {}, body: {}, headers: {})
     handle_errors(HTTParty.patch(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
-  end
-
-  def _post(endpoint, query: {}, body: {}, headers: {})
-    handle_errors(HTTParty.post(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
   def _destroy(endpoint, query: {}, headers: {})
@@ -64,15 +60,17 @@ class Pipeline::Base
   end
 
   def handle_errors(response)
-    if response.code != "200"
-      puts "#{response.code} #{response.parsed_response}"
-      raise Pipeline::Exceptions::BadRequestError.new(response.parsed_response["error"]) if response.code == 400
-      raise Pipeline::Exceptions::NotAuthorizedError.new(response.parsed_response["error"]) if response.code == 401
-      raise Pipeline::Exceptions::PermissionDeniedError.new(response.parsed_response["error"]) if response.code == 403
-      raise Pipeline::Exceptions::RecordNotFoundError.new(response.parsed_response["error"]) if response.code == 404
-      raise Pipeline::Exceptions::NotAcceptableError.new(response.parsed_response["error"]) if response.code == 406
-      raise Pipeline::Exceptions::TooManyRequestsError.new(response.parsed_response["error"]) if response.code == 429
-      raise Pipeline::Exceptions::ApiError.new(response.parsed_response["error"], response.code)
+    if response.code != 200
+      puts "#{response.code}"
+      message = "#{response.code} #{response.parsed_response.is_a?(Hash) && response.parsed_response["error"] || "Error"}"
+      raise Pipeline::Exceptions::BadRequestError.new(message) if response.code == 400
+      raise Pipeline::Exceptions::NotAuthorizedError.new(message) if response.code == 401
+      raise Pipeline::Exceptions::PermissionDeniedError.new(message) if response.code == 403
+      raise Pipeline::Exceptions::RecordNotFoundError.new(message) if response.code == 404
+      raise Pipeline::Exceptions::NotAcceptableError.new(message) if response.code == 406
+      raise Pipeline::Exceptions::TooManyRequestsError.new(message) if response.code == 429
+      raise Pipeline::Exceptions::InternalPipelineError.new(message) if response.code == 500
+      raise Pipeline::Exceptions::ApiError.new(message, response.code)
     end
     response.parsed_response
   end

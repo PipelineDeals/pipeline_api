@@ -5,7 +5,8 @@ require "rubygems"
 class Pipeline
   def self.VERSION = "1.0.0"
 
-  attr_reader :url, :prefix, :api_key, :app_key, :jwt
+  attr_reader :url, :prefix
+  attr_accessor :api_key, :app_key, :jwt
 
   def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, jwt: nil)
     @url = url
@@ -15,15 +16,20 @@ class Pipeline
     @jwt = jwt
   end
 
-  def authenticate(email:, password:, mfa_code: nil); end
+  def authenticate(app_key, email, password, mfa_code = nil)
+    Pipeline::Auth.new(pipeline: self).authenticate(app_key, email, password, mfa_code = nil)
+  end
 
   def authenticated?
     jwt.present? || (api_key.present? && app_key.present?)
   end
 
-  def revoke_jwt; end
+  def revoke_jwt
+#  Pipeline::Auth.delete(:revoke)
+  end
 
-  def refresh_jwt; end
+  def refresh_jwt
+  end
 
   def people
     Pipeline::People.new(pipeline: self)
