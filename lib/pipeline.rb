@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require "rubygems"
-require_relative "pipeline/version"
 
 class Pipeline
+  def self.VERSION = "1.0.0"
+
   attr_reader :url, :prefix, :api_key, :app_key, :jwt
 
   def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, jwt: nil)
