@@ -1,22 +1,16 @@
 # frozen_string_literal: true
 
-# frozen_string_literals: true
-
 class Pipeline::Collection < Pipeline::Base
-  def self.extended(base)
-    puts "extended #{base}"
-  end
-
   attr_reader :conditions, :sort_by
 
   def find(id)
     raise "find doesn't honor where or order." if conditions.present? || sort_by.present?
 
-    "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline, id: id)
+    [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, id: id)
   end
 
   def new(hash = nil)
-    entry = "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline)
+    entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline)
     entry.attributes = hash if hash
     entry
   end
@@ -41,9 +35,11 @@ class Pipeline::Collection < Pipeline::Base
     pages = nil
     while pages.nil? || page < pages
       response = read_page(page: page)
-      pages ||= response["pagination"]["pages"]
-      response["entries"].each do |hash|
-        entry = "Pipeline::#{collection_name.singularize.camelize}".constantize.new(pipeline: pipeline, hash: hash)
+      puts "response: #{response.inspect}"
+      pages ||= response.is_a?(Array) ? 1 : response["pagination"]["pages"]
+      list = response.is_a?(Array) ? response : response["entries"]
+      list.each do |hash|
+        entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, hash: hash)
         yield(entry)
       end
     end
@@ -72,3 +68,6 @@ Pipeline::Notes = Class.new(Pipeline::Collection)
 Pipeline::CalendarEntries = Class.new(Pipeline::Collection)
 Pipeline::CalendarEvents = Class.new(Pipeline::Collection)
 Pipeline::CalendarTasks = Class.new(Pipeline::Collection)
+module Pipeline::Admin
+  Webhooks = Class.new(Pipeline::Collection)
+end

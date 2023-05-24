@@ -65,6 +65,10 @@ class Pipeline
     Pipeline::CalendarTasks.new(pipeline: self)
   end
 
+  def webhooks
+    Pipeline::Admin::Webhooks.new(pipeline: self)
+  end
+
   # account
   # user
   # users

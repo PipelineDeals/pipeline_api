@@ -78,3 +78,6 @@ Pipeline::Note = Class.new(Pipeline::Resource)
 Pipeline::CalendarEntry = Class.new(Pipeline::Resource)
 Pipeline::CalendarEvent = Class.new(Pipeline::Resource)
 Pipeline::CalendarTask = Class.new(Pipeline::Resource)
+module Pipeline::Admin
+  Webhook = Class.new(Pipeline::Resource)
+end
