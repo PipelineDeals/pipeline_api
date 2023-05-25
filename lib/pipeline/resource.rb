@@ -69,6 +69,14 @@ class Pipeline::Resource < Pipeline::Base
 
   private
 
+  # Explicitlyl for loading an entity from a non-standard endpoint...
+  def get(endpoint)
+    @attributes_before = _get(endpoint)
+    @attributes = @attributes_before.clone
+    @changes = {}
+    self
+  end
+
   def check_writable_attribute_key(key)
     return if self.class.writable_attributes.nil? || self.class.writable_attributes.include?(key.to_sym)
 

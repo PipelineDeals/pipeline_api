@@ -33,11 +33,11 @@ class Pipeline
   end
 
   def user
-    @user ||= Pipeline::User.new(pipeline: self, attributes: Pipeline::User.new(pipeline: self)._get("profile.json"))
+    @user ||= Pipeline::User.new(pipeline: self).send(:get, "profile.json")
   end
 
   def account
-    @account ||= Pipeline::Account.new(pipeline: self, attributes: Pipeline::Account.new(pipeline: self)._get("account.json"))
+    @account ||= Pipeline::Account.new(pipeline: self).send(:get, "account.json")
   end
 
   def people

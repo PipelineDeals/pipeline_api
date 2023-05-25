@@ -2,8 +2,8 @@
 
 require "spec_helper"
 
-describe Pipeline::User do
-  let(:pipeline) { Pipeline.new(url: "http://pld.com") }
+describe Pipeline do
+  let(:pipeline) { described_class.new(url: "http://pld.com") }
   let(:authenticate) { pipeline.authenticate(app_key: app_key, email: email, password: password, mfa_code: mfa_code) }
   let(:app_key) { "010a14be40ff5deafb7de7e773b8bff0" }
   let(:email) { "y@gmail.com" }
@@ -44,6 +44,24 @@ describe Pipeline::User do
         #expect(pipeline.app_key).not_to be_nil
         #expect(pipeline.api_key).not_to be_nil
         expect(pipeline.people.all.count).to eq(15)
+      end
+    end
+  end
+
+  describe "#user" do
+    it "returns the authenticated user" do
+      VCR.use_cassette(:pipeline_user) do
+        authenticate
+        expect(pipeline.user.id).to eq(452)
+      end
+    end
+  end
+
+  describe "#account" do
+    it "returns the authenticated account" do
+      VCR.use_cassette(:pipeline_account) do
+        authenticate
+        expect(pipeline.account.id).to eq(65)
       end
     end
   end
