@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Pipeline::Auth do
+describe Pipeline::User do
   let(:pipeline) { Pipeline.new(url: "http://pld.com") }
   let(:authenticate) { pipeline.authenticate(app_key, email, password, mfa_code) }
   let(:app_key) { "010a14be40ff5deafb7de7e773b8bff0" }

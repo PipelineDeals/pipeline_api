@@ -6,11 +6,11 @@ class Pipeline::Resource < Pipeline::Base
     @attributes = {}
     @attributes_before = {}
     @changes = {}
-    @attributes = if id
-              load(id)
-            else
-              attributes.clone || {}
-            end
+    if id
+      reload(id)
+    else
+      @attributes = attributes.clone || {}
+    end
   end
 
   def save
@@ -52,8 +52,8 @@ class Pipeline::Resource < Pipeline::Base
     end
   end
 
-  def reload
-    @attributes_before = load
+  def reload(id = send("id"))
+    @attributes_before = load(id)
     @attributes = @attributes_before.clone
     @changes = {}
     self
@@ -61,7 +61,7 @@ class Pipeline::Resource < Pipeline::Base
 
   private
 
-  def load(id = send("id"))
+  def load(id)
     id ? _get("#{collection_name}/#{id}.json") : {}
   end
 end
@@ -69,7 +69,6 @@ end
 Pipeline::Deal = Class.new(Pipeline::Resource)
 Pipeline::Person = Class.new(Pipeline::Resource)
 Pipeline::Company = Class.new(Pipeline::Resource)
-Pipeline::User = Class.new(Pipeline::Resource)
 Pipeline::AccountNotification = Class.new(Pipeline::Resource)
 Pipeline::Document = Class.new(Pipeline::Resource)
 Pipeline::Note = Class.new(Pipeline::Resource)
@@ -80,4 +79,4 @@ module Pipeline::Admin
   Webhook = Class.new(Pipeline::Resource)
 end
 
-require "pipeline/auth"
+require "pipeline/user"

@@ -39,22 +39,18 @@ class Pipeline::Base
   end
 
   def common_query
-    return @common_query if @common_query
-
-    @common_query = {}
+    common_query = {}
     unless pipeline.jwt && pipeline.jwt[:token]
-      @common_query.merge!(api_key: pipeline.api_key) if pipeline.api_key
-      @common_query.merge!(app_key: pipeline.app_key) if pipeline.app_key
+      common_query.merge!(api_key: pipeline.api_key) if pipeline.api_key
+      common_query.merge!(app_key: pipeline.app_key) if pipeline.app_key
     end
-    @common_query
+    common_query
   end
 
   def common_headers
-    return @common_headers if @common_headers
-
-    @common_headers = { "Content-Type": "application/json" }
-    @common_headers.merge!(Authorization: "Bearer #{pipeline.jwt[:token]}") if pipeline.jwt && pipeline.jwt[:token]
-    @common_headers
+    common_headers = { "Content-Type": "application/json" }
+    common_headers.merge!(Authorization: "Bearer #{pipeline.jwt[:token]}") if pipeline.jwt && pipeline.jwt[:token]
+    common_headers
   end
 
   def handle_errors(response)

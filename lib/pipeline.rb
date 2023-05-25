@@ -17,7 +17,7 @@ class Pipeline
   end
 
   def authenticate(app_key, email, password, mfa_code = nil)
-    Pipeline::Auth.new(pipeline: self).authenticate(app_key, email, password, mfa_code)
+    @user = Pipeline::User.new(pipeline: self).authenticate(app_key, email, password, mfa_code)
   end
 
   def authenticated?
@@ -25,10 +25,12 @@ class Pipeline
   end
 
   def revoke_jwt
-    #  Pipeline::Auth.delete(:revoke)
+    @user.revoke_jwt
   end
 
-  def refresh_jwt; end
+  def renew_jwt
+    @user.renew_jwt
+  end
 
   def people
     Pipeline::People.new(pipeline: self)
