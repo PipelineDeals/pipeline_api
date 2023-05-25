@@ -32,7 +32,7 @@ class Pipeline::Base
     handle_errors(HTTParty.patch(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
-  def _destroy(endpoint, query: {}, headers: {})
+  def _delete(endpoint, query: {}, headers: {})
     handle_errors(HTTParty.delete(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers)))
   end
 
@@ -66,7 +66,7 @@ class Pipeline::Base
       raise Pipeline::Exceptions::BadRequestError.new(message) if response.code == 400
       raise Pipeline::Exceptions::NotAuthorizedError.new(message) if response.code == 401
       raise Pipeline::Exceptions::PermissionDeniedError.new(message) if response.code == 403
-      raise Pipeline::Exceptions::RecordNotFoundError.new(message) if response.code == 404
+      raise Pipeline::Exceptions::NotFoundError.new(message) if response.code == 404
       raise Pipeline::Exceptions::NotAcceptableError.new(message) if response.code == 406
       raise Pipeline::Exceptions::TooManyRequestsError.new(message) if response.code == 429
       raise Pipeline::Exceptions::InternalPipelineError.new(message) if response.code == 500

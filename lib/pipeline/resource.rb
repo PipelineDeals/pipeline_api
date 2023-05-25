@@ -1,29 +1,33 @@
 # frozen_string_literal: true
 
 class Pipeline::Resource < Pipeline::Base
-  attr_reader :hash, :before, :changes, :_id
+  attr_reader :hash, :before, :changes
 
   def initialize(pipeline:, id: nil, hash: nil)
     super(pipeline: pipeline)
+    @hash = {}
+    @before = {}
+    @changes = {}
     if id
-      @hash = load
+      @hash = load(id)
     else
       @hash = hash || {}
     end
-    @before = {}
-    @changes = {}
-    @_id = send("id") || id
   end
 
   def save
-    @before = if _id
-                _put("#{collection_name}/#{@_id}.json", body: { collection_name.singularize => @hash.slice(*changes.keys) })
+    @before = if id
+                _put("#{collection_name}/#{id}.json", body: { collection_name.singularize => @hash.slice(*changes.keys) })
               else
                 _post("#{collection_name}.json", body: { collection_name.singularize => @hash.slice(*changes.keys) })
               end
     @hash = @before.clone
     @changes = {}
     true
+  end
+
+  def destroy
+    _delete("#{collection_name}/#{id}.json") if id
   end
 
   def attributes
@@ -59,8 +63,8 @@ class Pipeline::Resource < Pipeline::Base
 
   private
 
-  def load
-    @_id ? _get("#{collection_name}/#{@_id}.json") : {}
+  def load(id = send("id"))
+    id ? _get("#{collection_name}/#{id}.json") : {}
   end
 end
 

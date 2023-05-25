@@ -3,7 +3,9 @@
 require "rubygems"
 
 class Pipeline
-  def self.VERSION = "1.0.0"
+  def self.VERSION
+    "1.0.0"
+  end
 
   attr_reader :url, :prefix
   attr_accessor :api_key, :app_key, :jwt
