@@ -3,9 +3,7 @@
 require "rubygems"
 
 class Pipeline
-  def self.VERSION
-    "1.0.0"
-  end
+  VERSION = "1.0.0"
 
   attr_reader :url, :prefix
   attr_accessor :api_key, :app_key, :jwt
@@ -18,8 +16,8 @@ class Pipeline
     @jwt = jwt
   end
 
-  def authenticate(app_key, email, password, mfa_code = nil)
-    Pipeline::Auth.new(pipeline: self).authenticate(app_key, email, password, mfa_code = nil)
+  def authenticate(app_key, email, password, _mfa_code = nil)
+    Pipeline::Auth.new(pipeline: self).authenticate(app_key, email, password, mfa_code)
   end
 
   def authenticated?
@@ -27,11 +25,10 @@ class Pipeline
   end
 
   def revoke_jwt
-#  Pipeline::Auth.delete(:revoke)
+    #  Pipeline::Auth.delete(:revoke)
   end
 
-  def refresh_jwt
-  end
+  def refresh_jwt; end
 
   def people
     Pipeline::People.new(pipeline: self)

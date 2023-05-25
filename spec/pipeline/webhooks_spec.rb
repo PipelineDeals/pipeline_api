@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe Pipeline::Admin::Webhook do
-  let(:pipeline) { Pipeline.new(url: "http://pld.com", jwt: { token: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImJmZmNlNzkwLWRjYWYtMDEzYi0wZmIxLTJjZGU0ODAwMTEyMiJ9.Yz_l8laGdXwhBQcb7ymODeh4ajH_K7p3FJIfcmLcpKA"}) }
+  let(:pipeline) { Pipeline.new(url: "http://pld.com", jwt: { token: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImJmZmNlNzkwLWRjYWYtMDEzYi0wZmIxLTJjZGU0ODAwMTEyMiJ9.Yz_l8laGdXwhBQcb7ymODeh4ajH_K7p3FJIfcmLcpKA" }) }
 
   # it_behaves_like "a paginated collection"
 
