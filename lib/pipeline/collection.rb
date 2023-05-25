@@ -47,6 +47,12 @@ class Pipeline::Collection < Pipeline::Base
     end
   end
 
+  def map
+    values = []
+    each { |entry| values << yield(entry) }
+    values
+  end
+
   def all
     entries = []
     each { |entry| entries << entry }

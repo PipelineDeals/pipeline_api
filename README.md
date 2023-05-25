@@ -82,10 +82,12 @@ Calling `pipeline.people.all` reads all pages of people, and returns an array of
 Calling `pipeline.people.each { |p| ... }` or `pipeline.people.map { |p| ... }` iterates through all the people, but it reads only one page at a time (like rails `find_each`).
 
 ```
-people = pipeline.people.all          # all people in the account
+pipeline.deals.where(deal_value: { from: 10, to: 1000 }).map(&:name)  # return names of deals with valuebetween 10 and 1000, inclusive.
 
-pipeline.companies.each do |company|  # iterate through all companies (API pagination is handled, and only one page of records is in memory at a time)
-  puts "company name: #{company.name}
+people = pipeline.people.all                                          # all people in the account
+
+pipeline.companies.each do |company|                                  # iterate through all companies (API pagination is handled, and only one page of records is in memory at a time)
+  puts "company name: #{company.name}"
 end
 ```
 
