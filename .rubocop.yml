@@ -40,7 +40,7 @@ Style/GlobalVars:
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
-  Enabled: true
+  Enabled: false
 Style/WordArray:
   Enabled: false
 Style/TrailingCommaInArrayLiteral:
