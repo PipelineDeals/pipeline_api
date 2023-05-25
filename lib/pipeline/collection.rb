@@ -24,10 +24,12 @@ class Pipeline::Collection < Pipeline::Base
   def where(conditions)
     @conditions ||= {}
     @conditions.merge!(conditions)
+    self
   end
 
   def order(sort_by)
     @sort_by = sort_by
+    self
   end
 
   def each
@@ -41,6 +43,7 @@ class Pipeline::Collection < Pipeline::Base
         entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, attributes: attrs)
         yield(entry)
       end
+      page += 1
     end
   end
 

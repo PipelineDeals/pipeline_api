@@ -7,7 +7,7 @@ class Pipeline::User < Pipeline::Resource
     super
   end
 
-  def authenticate(app_key, email, password, mfa_code = nil)
+  def authenticate(app_key:, email:, password:, mfa_code: nil)
     auth = _post("auth.json", query: { app_key: app_key }, body: { email_or_username: email, password: password, mfa_code: mfa_code })
     if auth["token"]
       pipeline.jwt = { token: auth["token"] }

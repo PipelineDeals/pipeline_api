@@ -11,10 +11,12 @@ class Pipeline::Resource < Pipeline::Base
     @attributes = {}
     @attributes_before = {}
     @changes = {}
+
+    @attributes = attributes.clone || {}
     if id
-      reload(id)
+      @attributes_before = @attributes.clone
     else
-      @attributes = attributes.clone || {}
+      @attributes.each { |k, v| @changes[k] = [nil, v] }
     end
   end
 

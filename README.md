@@ -18,94 +18,124 @@ Or install it yourself as:
 
 ## Usage
 
-### Token-based Authentication
-
-If you are using an api_key token to authenticate with the API, you should have both an app_key and an api_key. The app_key can be created by an account admin [using the API integrations page](https://app.pipelinecrm.com/admin/modern/api). The api_key can be found for a user on [the API keys page](https://app.pipelinecrm.com/admin/modern/keys_api). In order to use your api_key, the app_key must be setup to allow api_key authentication.
-
-Once you have your app_key and api_key, you configure the Pipeline gem to use these as follows:
-```ruby
-Pipeline.configure do |config|
-  config.api_key = 'abcd1234'
-  config.app_key = 'xxxxxxxxxxxxx'
-end
-```
-
 ### JWT-based Authentication
 
 You will still need to set up an app_key, but you will need to ensure it is configured to allow JWT authentication.
 
 Once you have your app_key, you can login to the API as follows:
 ```ruby
-Pipeline.configure do |config|
-  config.app_key = 'xxxxxxxxxxxxx'
-end
+pipeline = Pipeline.new
+
 # Note the MFA Code can be set to `nil` if it is not required...
-Pipeline::Auth.authenticate("your@email.com", "yourpassword", "MFA Code (if reqiured)")
+pipeline.authenticate(app_key: 'xxxxxxxxxx', email: "your@email.com", password: "yourpassword", mfa_code: "MFA Code (if reqiured)")
 ```
 
 This will return a reference to the Pipeline::User that just logged in. And, the Authentication bearer token will automatically be set up for future API calls.
 
-Once authentication is configured using either api_key or JWT, the following API calls can be made.
+Once authentication is configured using JWT, API calls can be made from this `pipeline` client object.
 
-## Getting a single deal, person, or company:
+### Token-based Authentication
 
+If you are using an api_key token to authenticate with the API, you should have both an app_key and an api_key. The app_key can be created by an account admin [using the API integrations page](https://app.pipelinecrm.com/admin/modern/api). The api_key can be found for a user on [the API keys page](https://app.pipelinecrm.com/admin/modern/keys_api). In order to use your api_key, the app_key must be setup to allow api_key authentication. If you enable both JWT and api_key, the gem will prefer JWT-based authentication.
+
+Once you have your app_key and api_key, you configure the Pipeline gem to use these as follows:
 ```ruby
-deal = Pipeline::Deal.find(1234)      # find the deal
-deal.name = 'blah2'         # change an attribute
-deal.save                   # re-save the deal to the site
-deal.people                 # associations are respected
-deal.people.first.id
-deal.person_ids           
+pipeline = Pipeline.new(api_key: 'abcd1234', app_key: 'xxxxxxxxxxxxx')
 ```
 
-## Fetching collections of deals, people, or companies
-
+or you can authenticate as with JWT:
 ```ruby
-deals = Pipeline::Deal.find(:all)                                             # find(:all) is supported
-deals = Pipeline::Deal.find(:all, params: {conditions: {deal_name: 'blah'}})
-deals = Pipeline::Deal.where(conditions: {deal_name: 'blah'})
+pipeline = Pipeline.new
+
+# Note the MFA Code can be set to `nil` if it is not required...
+pipeline.authenticate(app_key: 'xxxxxxxxxx', email: "your@email.com", password: "yourpassword", mfa_code: "MFA Code (if reqiured)")
 ```
 
-### Filtering
+Once authentication is configured using your api_key, API calls can be made from this `pipeline` client object.
 
-You can filter your `find` or `where` call by adding a `conditions` parameter as shown above.  All
-available conditions are listed in the [Pipeline API documentation](https://www.pipelinecrm.com/api/docs)
+## Authenticated User / Account
+
+Using your authenticated `pipeline` client object, you can always get the authenticated user object:
+```ruby
+pipeline.user
+```
+
+You can also get the account of the authenticated user object:
+```ruby
+pipeline.account
+```
+
+## Reading and updating a single deals, people, or companies:
 
 ```ruby
-deals = Pipeline::Deal.where(conditions: {deal_value: {from: '500', to: '1000'}})
+deal = pipeline.deals.find(1234)      # find the deal
+deal.name = 'blah2'                   # change an attribute
+deal.save                             # save the deal updates
+```
+
+## Collections of deals, people, or companies:
+
+Calling `pipeline.people` does not immediately query Pipeline for people. You have to follow that up with `all`, `each { |e| ... }` or `map { |e| ... }`.
+
+Calling `pipeline.people.all` reads all pages of people, and returns an array of objects `Pipeline::Person`.
+
+Calling `pipeline.people.each { |p| ... }` or `pipeline.people.map { |p| ... }` iterates through all the people, but it reads only one page at a time (like rails `find_each`).
+
+```
+people = pipeline.people.all          # all people in the account
+
+pipeline.companies.each do |company|  # iterate through all companies (API pagination is handled, and only one page of records is in memory at a time)
+  puts "company name: #{company.name}
+end
+```
+
+### Filtering collections:
+
+```ruby
+deals = pipeline.deals.where(deal_name: 'blah').all                # get all deals containing 'blah' (case-insensitive)
+pipeline.deals.where(deal_name: 'blah').each { |d| puts d.name }   # iterate through matching deals
+```
+
+You can filter your `where` call by adding any of the `conditions` parameters available conditions
+documented on each object in the [Pipeline API documentation](https://app.pipelinecrm.com/api/docs)
+
+```ruby
+deals = pipeline.deals.where(deal_value: {from: 500, to: 1000}).all
 ```
 
 ### Pagination
 
-All list of things in the Pipeline API are paginated.  The default number of items per page is 200.
-
-You can access the current page and total by calling `.pagination` on the list:
-
-```ruby
-deals = Pipeline::Deal.find(:all)
-deals.pagination
-=> {"per_page"=>200, "total"=>14, "page_var"=>"page", "pages"=>1, "page"=>1}
-```
-
-You can modify the page you are on when requesting:
-
-```ruby
-deals = Pipeline::Deal.find(:all, params: { page: 2})
-# or you can use where
-deals = Deal.where({page: 2})
-```
-
-You can modify the number per page as well:
-
-```ruby
-deals = Pipeline::Deal.where(per_page: 2, page: 3)
-deals.pagination
-=> {"per_page"=>3, "total"=>14, "page_var"=>"page", "pages"=>8, "page"=>2}
-```
+All lists of things in the Pipeline API are paginated.  The default number of items per page is 200. Pagination is handled by the gem for you.
 
 ## Admin data
 
-Admin data is currently read-only.
+Admin data can be read or written in the same way that other objects can be, but the user must be an account admin.
+
+## Exceptions
+
+Various return codes will raise exceptions as shown below. Your code should rescue and handle exceptions appropriately.
+
+| Return Code | Exception                                    |
+| ----------- | -------------------------------------------- |
+| 400         | Pipeline::Exceptions::BadRequestError        |
+| 401         | Pipeline::Exceptions::NotAuthorizedError     |
+| 403         | Pipeline::Exceptions::PermissionDeniedError  |
+| 404         | Pipeline::Exceptions::NotFoundError          |
+| 406         | Pipeline::Exceptions::NotAcceptableError     |
+| 429         | Pipeline::Exceptions::TooManyRequestsError   |
+| 500         | Pipeline::Exceptions::InternalPipelineError  |
+| 3XX 4XX 5XX | Pipeline::Exceptions::ApiError               |
+
+The PipelineExceptions::ApiError object has a `code` attribute so you can see the precise error code.
+
+```ruby
+pipeline = Pipeline.new
+begin
+  user = pipeline.authenticate(app_key: 'xxxxxxxx', email: 'fake@email.com', password: 'wrong-password', mfa_code: 'bad code')
+rescue Pipeline::Exceptions::NotAuthorizedError => e
+  puts "failed authentication: #{e.message}"
+end
+```
 
 ## Contributing
 
