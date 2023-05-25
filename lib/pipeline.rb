@@ -5,7 +5,7 @@ require "rubygems"
 class Pipeline
   VERSION = "1.0.0"
 
-  attr_reader :url, :prefix, :user
+  attr_reader :url, :prefix
   attr_accessor :api_key, :app_key, :jwt
 
   def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, jwt: nil)
@@ -30,6 +30,14 @@ class Pipeline
 
   def renew_jwt
     @user.renew_jwt
+  end
+
+  def user
+    @user ||= Pipeline::User.new(pipeline: self, attributes: Pipeline::User.new(pipeline: self)._get("profile.json"))
+  end
+
+  def account
+    @account ||= Pipeline::Account.new(pipeline: self, attributes: Pipeline::Account.new(pipeline: self)._get("account.json"))
   end
 
   def people

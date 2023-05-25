@@ -80,6 +80,7 @@ class Pipeline::Resource < Pipeline::Base
   end
 end
 
+Pipeline::Account = Class.new(Pipeline::Resource)
 Pipeline::Deal = Class.new(Pipeline::Resource)
 Pipeline::Person = Class.new(Pipeline::Resource)
 Pipeline::Company = Class.new(Pipeline::Resource)

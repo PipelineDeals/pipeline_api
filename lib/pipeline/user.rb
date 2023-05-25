@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Pipeline::User < Pipeline::Resource
-  self.writable_attributes = [:first_name, :last_name, :email]
-
-  def initialize(pipeline:)
+  def initialize(pipeline:, id: nil, attributes: nil)
     super
   end
 
