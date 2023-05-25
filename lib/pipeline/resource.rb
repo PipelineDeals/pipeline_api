@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class Pipeline::Resource < Pipeline::Base
-  class_attribute :writable_attributes
+  # add an inheritable class attribute (that works prior to Ruby 3)...
+  class << self
+    attr_accessor :writable_attributes
+  end
 
   def initialize(pipeline:, id: nil, attributes: nil)
     super(pipeline: pipeline)
@@ -41,10 +44,9 @@ class Pipeline::Resource < Pipeline::Base
   def method_missing(name, *args)
     name = name.to_s
     if name.sub!(/\?$/, "")
-      check_attribute_key(name)
       @attributes[name].present?
     elsif name.sub!(/=$/, "")
-      check_attribute_key(name)
+      check_writable_attribute_key(name)
       @attributes[name] = args[0]
       if @attributes_before[name] == @attributes[name]
         @changes.delete(name)
@@ -65,10 +67,10 @@ class Pipeline::Resource < Pipeline::Base
 
   private
 
-  def check_attribute_key(key)
+  def check_writable_attribute_key(key)
     return if self.class.writable_attributes.nil? || self.class.writable_attributes.include?(key.to_sym)
 
-    raise "Unrecognized attribute #{key}"
+    raise "`#{key}` is not a writable attribute for an instance of #{self.class}"
   end
 
   def load(id)

@@ -55,7 +55,6 @@ class Pipeline::Base
 
   def handle_errors(response)
     if response.code != 200
-      puts response.code
       message = "#{response.code} #{(response.parsed_response.is_a?(Hash) && response.parsed_response["error"]) || "Error"}"
       raise Pipeline::Exceptions::BadRequestError.new(message) if response.code == 400
       raise Pipeline::Exceptions::NotAuthorizedError.new(message) if response.code == 401
