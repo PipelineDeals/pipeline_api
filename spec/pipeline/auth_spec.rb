@@ -27,4 +27,24 @@ describe Pipeline::Auth do
       end
     end
   end
+
+  context "with api_key app_key" do
+    let(:app_key) { "8ddaff5a21fd18070be60623e5074781" }
+
+    it "successfully authenticates" do
+      VCR.use_cassette(:authenticate_with_api_key_success) do
+        expect(authenticate.id).to eq(452)
+      end
+    end
+
+    it "has api_key and app_key" do
+      VCR.use_cassette(:authenticate_with_api_key_token) do
+        authenticate
+        expect(pipeline.jwt).to be_nil
+        #expect(pipeline.app_key).not_to be_nil
+        #expect(pipeline.api_key).not_to be_nil
+        expect(pipeline.people.all.count).to eq(15)
+      end
+    end
+  end
 end

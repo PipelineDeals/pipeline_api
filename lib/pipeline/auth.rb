@@ -10,12 +10,11 @@ class Pipeline::Auth < Pipeline::Resource
     auth = _post("#{collection_name}.json", query: { app_key: app_key }, body: { email_or_username: email, password: password, mfa_code: mfa_code })
     if auth["token"]
       pipeline.jwt = { token: auth["token"] }
-      Pipeline::User.new(pipeline: pipeline, id: auth["user"]["id"])
-    elsif auth["api_key"]
-      pipeline.api_key = auth["api_key"]
+    elsif auth["user"] && auth["user"]["api_key"]
+      pipeline.api_key = auth["user"]["api_key"]
       pipeline.app_key = app_key
-      Pipeline::User.new(pipeline: pipeline, id: auth["id"])
     end
+    Pipeline::User.new(pipeline: pipeline, id: auth["user"]["id"])
   end
 
   def revoke_jwt
