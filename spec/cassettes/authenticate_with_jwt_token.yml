@@ -1,0 +1,239 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://pld.com/api/v3/auth.json?app_key=010a14be40ff5deafb7de7e773b8bff0
+    body:
+      encoding: UTF-8
+      string: '{"email_or_username":"y@gmail.com","password":"xyz987$$$$","mfa_code":null}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.23.3
+      Date:
+      - Thu, 25 May 2023 14:25:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"dafe46e04c6c312e8e8a62444aaf6699"
+      X-Request-Id:
+      - 7038deca-6f23-4efc-b696-ce558fc18a87
+      X-Runtime:
+      - '0.138712'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":452,"account_id":65,"date_format":"us","email":"y@gmail.com","first_name":"Y","last_name":"Test","level":3,"read_only":false,"time_format":"us","time_zone":"America/New_York","currency_symbol":"$","features":{"hide_roi_report":true,"update_on_import":false,"import_leads":false,"activity_visibility_setting":false,"expected_close_tasks":false,"dashboard":true,"read_only_email":false,"list_view_url_builder":false,"ignored_email_list_view":false,"connect_custom_field_merge_tags":true,"show_audits_api_docs":false,"customer_management":true,"multi_currency":true,"allow_zip_export":false,"disable_stalled_deals":false,"address_geocoding":false,"external_users":true,"time_to_dollar":false,"time_to_dollar_2":false,"product_lines":true,"deal_won_reasons":false,"private_notes":true,"historical_view":true,"bcc_checks_deal_status":false,"data_exports":false,"scoreboard_deal_stages":false,"ms_graph_email_automation":false,"sales_scorecard_report_search":false,"uservoice_feedback":true,"allow_unregistered_app":true,"insta_demo":false,"search_formatting":true,"tracked_email_during_trial":false,"account_security":false,"tracked_email_dot_com":false,"static_list_views":false,"duplicate_checker":true,"disable_company_merge":false,"profile_push":false,"advanced_custom_fields_permissions":true,"enhanced_reporting":false,"reload_mantle_message":false,"customizable_dashboards":true,"customizable_dashboards_multiple":true,"customizable_dashboards_list_view":true,"customizable_dashboards_goal":true,"customizable_dashboards_report":true,"enhanced_activity_filtering":false,"drip_campaigns":true,"integrations_engine":true,"vipecloud":true,"unlimited_custom_fields":true,"automations":true,"deal_intelligence":true,"connect":true,"email_templates":true,"email_campaigns":true},"deal_profile_order":{"left":["deal-details","add-notes","activity-feed","custom-fields","files"],"right":["people","agenda"]},"person_profile_order":{"main":[{"name":"summary","status":"open"},{"name":"deals","status":"open"},{"name":"activities","status":"open"},{"name":"custom-fields","status":"open"},{"name":"mailchimp","status":"open"},{"name":"documents","status":"open"}],"side":[{"name":"contact-info","status":"open"},{"name":"tasks-and-events","status":"open"}]},"company_profile_order":{"main":[{"name":"summary","status":"open"},{"name":"deals","status":"open"},{"name":"activities","status":"open"},{"name":"custom-fields","status":"open"},{"name":"people","status":"open"},{"name":"documents","status":"open"}],"side":[{"name":"company-details","status":"open"},{"name":"tasks-and-events","status":"open"}]},"customer_profile_order":{"left":["company-details","people","activity-feed","deals","custom-fields","files"],"right":["contact-info","milestones","agenda"]},"new_person_profile_order":{"left":["person-details","deals","activity-feed","custom-fields","files","mailchimp","email-sequences"],"right":["contact-info","agenda"]},"new_company_profile_order":{"left":["company-details","deals","activity-feed","custom-fields","people","files"],"right":["contact-info","agenda"]}},"token":"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImViOTIyYjQwLWRkMzUtMDEzYi0wZmJiLTJjZGU0ODAwMTEyMiJ9.STYDsubBDc_H_XS5Tg1Rf4whF_eF5nN-qLNIbCdGuWA"}'
+  recorded_at: Thu, 25 May 2023 14:25:28 GMT
+- request:
+    method: get
+    uri: http://pld.com/api/v3/users/452.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImViOTIyYjQwLWRkMzUtMDEzYi0wZmJiLTJjZGU0ODAwMTEyMiJ9.STYDsubBDc_H_XS5Tg1Rf4whF_eF5nN-qLNIbCdGuWA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.23.3
+      Date:
+      - Thu, 25 May 2023 14:25:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '1685024729'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"d25f89b082b2e72cb6b73ced3d0ff170"
+      X-Request-Id:
+      - a8bb410d-996b-4b2c-b508-1b6c2c1a672a
+      X-Runtime:
+      - '0.136970'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":452,"account_id":65,"level":3,"first_name":"Y","last_name":"Test","name":null,"time_zone":"America/New_York","is_backend_admin":null,"mobile_number":null,"receives_sms_reminders":null,"last_seen_at":"2023/05/25
+        10:24:26 -0400","commission_rate":0.0,"is_account_admin":true,"date_format":"us","time_format":"us","w2lid":"fa6dec67f4f0","is_allowed_to_export":true,"use_keyboard_shortcuts":false,"deleted_at":null,"is_allowed_to_delete":true,"csv_column_separator":",","csv_decimal_mark":".","data_reassigned_at":null,"is_allowed_to_send_campaigns":true,"read_only":false,"team_id":null,"is_allowed_to_merge_records":true,"pipeline_email_client":true,"email":"y@gmail.com","avatar_thumb_url":null,"api_key":"ISF9pLo2dh3A45QmXtib","mfa_enabled":false,"mfa_requested_at":null,"connect_synced?":false,"other_emails":[],"is_google_apps_enabled":false,"currency":{"id":1,"name":"United
+        States Dollar","code":"USD","symbol":"$","decimal_places":2},"full_name":"Y
+        Test","is_imr":false,"can_change_company_owner":true,"manager_id":null,"visible_teams":[{"id":2,"name":"Sales
+        team"}],"default_dashboard_id":null,"permanently_remove_SGv2":null,"visited_features":[],"SGv2_open_sections":{},"features":{"hide_roi_report":true,"update_on_import":false,"import_leads":false,"activity_visibility_setting":false,"expected_close_tasks":false,"dashboard":true,"read_only_email":false,"list_view_url_builder":false,"ignored_email_list_view":false,"connect_custom_field_merge_tags":true,"show_audits_api_docs":false,"customer_management":true,"multi_currency":true,"allow_zip_export":false,"disable_stalled_deals":false,"address_geocoding":false,"external_users":true,"time_to_dollar":false,"time_to_dollar_2":false,"product_lines":true,"deal_won_reasons":false,"private_notes":true,"historical_view":true,"bcc_checks_deal_status":false,"data_exports":false,"scoreboard_deal_stages":false,"ms_graph_email_automation":false,"sales_scorecard_report_search":false,"uservoice_feedback":true,"allow_unregistered_app":true,"insta_demo":false,"search_formatting":true,"tracked_email_during_trial":false,"account_security":false,"tracked_email_dot_com":false,"static_list_views":false,"duplicate_checker":true,"disable_company_merge":false,"profile_push":false,"advanced_custom_fields_permissions":true,"enhanced_reporting":false,"reload_mantle_message":false,"customizable_dashboards":true,"customizable_dashboards_multiple":true,"customizable_dashboards_list_view":true,"customizable_dashboards_goal":true,"customizable_dashboards_report":true,"enhanced_activity_filtering":false,"drip_campaigns":true,"integrations_engine":true,"vipecloud":true,"unlimited_custom_fields":true,"automations":true,"deal_intelligence":true,"connect":true,"email_templates":true,"email_campaigns":true},"milestone_ids":[]}'
+  recorded_at: Thu, 25 May 2023 14:25:28 GMT
+- request:
+    method: get
+    uri: http://pld.com/api/v3/people.json?page=1&per_page=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImViOTIyYjQwLWRkMzUtMDEzYi0wZmJiLTJjZGU0ODAwMTEyMiJ9.STYDsubBDc_H_XS5Tg1Rf4whF_eF5nN-qLNIbCdGuWA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.23.3
+      Date:
+      - Thu, 25 May 2023 14:25:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '7'
+      X-Ratelimit-Reset:
+      - '1685024729'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"c0846e57856444e04058ab4d0f469a5b"
+      X-Request-Id:
+      - ec017166-36e0-4cf3-a15d-22cbb0537de7
+      X-Runtime:
+      - '0.643920'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[{"id":5932,"first_name":"Wilma","last_name":null,"position":null,"phone":null,"email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2023/05/24
+        14:11:14 -0400","updated_at":"2023/05/24 14:11:14 -0400","mobile":null,"company_id":null,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":false,"created_by_user_id":377,"company_name":null,"full_name":"Wilma","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":null,"has_work_address":false,"has_company_address":false,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"created_by_user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"lead_status":null,"lead_source":null,"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":0,"won_deals_total":0},{"id":5931,"first_name":"Fred","last_name":null,"position":null,"phone":null,"email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2023/05/24
+        14:09:54 -0400","updated_at":"2023/05/24 14:09:54 -0400","mobile":null,"company_id":null,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":false,"created_by_user_id":377,"company_name":null,"full_name":"Fred","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":null,"has_work_address":false,"has_company_address":false,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"created_by_user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"lead_status":null,"lead_source":null,"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":0,"won_deals_total":0},{"id":5373,"first_name":"Dawn","last_name":"Mathan","position":"Research
+        Assistant IV","phone":"(381)917-6368","email":"nmathan4@danielgroup.com","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:52 -0500","updated_at":"2023/05/24 14:03:15 -0400","mobile":null,"company_id":2625,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":"QRadar","unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Daniel
+        Group","full_name":"Dawn Mathan","deal_ids":[84,87],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=7228+Upham+Crossing%2C+Suite+849%2C+Fredericksburg%2C+VA+22405+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[{"id":84,"name":"Deal
+        2 with Daniel Group"},{"id":87,"name":"Deal with Daniel Group"}],"lead_source":{"id":8,"name":"Cold
+        Call"},"lead_status":{"id":8,"hex_color":"1480eb","name":"Cold"},"company":{"id":2625,"name":"Daniel
+        Group"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"125400.0","won_deals_total":"0.0"},{"id":5375,"first_name":"Sara-ann","last_name":"Ottey","position":"Junior
+        Executive","phone":"(161)989-1681","email":"sottey9@spencerhamill.com","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:53 -0500","updated_at":"2023/05/11 11:46:23 -0400","mobile":null,"company_id":2627,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":"DSE
+        Assessments","unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Spencer-Hamill","full_name":"Sara-ann
+        Ottey","deal_ids":[86,90],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=766+American+Hill%2C+Suite+584%2C+Brooksville%2C+FL+34605+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":"2021/08/11
+        09:04:13 -0400","days_since_last_activity":652,"hours_to_first_activity":"4844.92","deals":[{"id":86,"name":"Deal
+        2 with Spencer-Hamill"},{"id":90,"name":"Deal with Spencer-Hamill"}],"lead_source":{"id":11,"name":"Referral"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2627,"name":"Spencer-Hamill"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"93200.0","won_deals_total":"25150.0"},{"id":5385,"first_name":"Tyriesha","last_name":"McKenzie","position":"Customer
+        Care Ambassador","phone":"(866)702-7303","email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/22
+        09:37:39 -0500","updated_at":"2021/01/22 09:37:39 -0500","mobile":null,"company_id":2630,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Pipeline","full_name":"Tyriesha
+        McKenzie","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":10,"hex_color":"eb2d14","name":"Hot"},"company":{"id":2630,"name":"Pipeline"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5384,"first_name":"Sue","last_name":"Bokovitz","position":"Customer
+        Care Ambassador","phone":"(866)702-7303","email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/22
+        09:37:38 -0500","updated_at":"2021/01/22 09:37:38 -0500","mobile":null,"company_id":2630,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Pipeline","full_name":"Sue
+        Bokovitz","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2630,"name":"Pipeline"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5383,"first_name":"Paige","last_name":"Thomas","position":"Customer
+        Care Manager","phone":"(866)702-7303","email":"customercare@pipelinecrm.com","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/22
+        09:37:38 -0500","updated_at":"2021/01/22 09:37:38 -0500","mobile":null,"company_id":2630,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Pipeline","full_name":"Paige
+        Thomas","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2630,"name":"Pipeline"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5382,"first_name":"Maria","last_name":"Juarez","position":"Customer
+        Care Ambassador","phone":"(866)702-7303","email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/22
+        09:37:37 -0500","updated_at":"2021/01/22 09:37:37 -0500","mobile":null,"company_id":2630,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Pipeline","full_name":"Maria
+        Juarez","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2630,"name":"Pipeline"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5381,"first_name":"Tyriesha","last_name":"McKenzie","position":"Customer
+        Care Ambassador","phone":"(866)702-7303","email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:55 -0500","updated_at":"2021/01/21 11:08:55 -0500","mobile":null,"company_id":2629,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"PipelineDeals","full_name":"Tyriesha
+        McKenzie","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":10,"hex_color":"eb2d14","name":"Hot"},"company":{"id":2629,"name":"PipelineDeals"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5380,"first_name":"Sue","last_name":"Bokovitz","position":"Customer
+        Care Ambassador","phone":"(866)702-7303","email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:55 -0500","updated_at":"2021/01/21 11:08:55 -0500","mobile":null,"company_id":2629,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"PipelineDeals","full_name":"Sue
+        Bokovitz","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2629,"name":"PipelineDeals"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5379,"first_name":"Paige","last_name":"Thomas","position":"Customer
+        Care Manager","phone":"(866)702-7303","email":"customercare@pipelinedeals.com","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:55 -0500","updated_at":"2021/01/21 11:08:55 -0500","mobile":null,"company_id":2629,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"PipelineDeals","full_name":"Paige
+        Thomas","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2629,"name":"PipelineDeals"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5378,"first_name":"Maria","last_name":"Juarez","position":"Customer
+        Care Ambassador","phone":"(866)702-7303","email":null,"home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:55 -0500","updated_at":"2021/01/21 11:08:55 -0500","mobile":null,"company_id":2629,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":null,"unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"PipelineDeals","full_name":"Maria
+        Juarez","deal_ids":[],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=1008+Western+Ave%2C+%23401%2C+Seattle%2C+WA+98101+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2629,"name":"PipelineDeals"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5377,"first_name":"Leopold","last_name":"Drain","position":"VP
+        Product Management","phone":"(372)242-9980","email":"ldrainb@kcc.com","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:54 -0500","updated_at":"2021/01/21 11:08:54 -0500","mobile":null,"company_id":2628,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":"NCSS","unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Kutch,
+        Conroy and Cruickshank","full_name":"Leopold Drain","deal_ids":[89],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=400+Golden+Leaf+Road%2C+%2C+Lafayette%2C+LA+70505+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[{"id":89,"name":"Deal
+        with Kutch, Conroy and Cruickshank"}],"lead_source":{"id":12,"name":"Trade
+        Show"},"lead_status":{"id":7,"hex_color":"000000","name":"Archived"},"company":{"id":2628,"name":"Kutch,
+        Conroy and Cruickshank"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"0.0","won_deals_total":"0.0"},{"id":5376,"first_name":"Yank","last_name":"Fronzek","position":"Web
+        Developer II","phone":"(465)125-6189","email":"yfronzek4@spencerhamill.org","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:54 -0500","updated_at":"2021/01/21 11:08:54 -0500","mobile":"(350)164-1015","company_id":2627,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":"EEO","unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Spencer-Hamill","full_name":"Yank
+        Fronzek","deal_ids":[86,90],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=766+American+Hill%2C+Suite+584%2C+Brooksville%2C+FL+34605+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[{"id":86,"name":"Deal
+        2 with Spencer-Hamill"},{"id":90,"name":"Deal with Spencer-Hamill"}],"lead_source":{"id":13,"name":"Website"},"lead_status":{"id":9,"hex_color":"5bb75b","name":"Follow-up"},"company":{"id":2627,"name":"Spencer-Hamill"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"93200.0","won_deals_total":"25150.0"},{"id":5374,"first_name":"Andrea","last_name":"Fitzpatrick","position":"Senior
+        Editor","phone":"(226)588-3247","email":"afitzpatrick1@daugherty.com","home_address_1":null,"home_address_2":null,"home_city":null,"home_state":null,"home_postal_code":null,"home_country":null,"home_email":null,"home_phone":null,"work_address_1":null,"work_address_2":null,"work_city":null,"work_state":null,"work_postal_code":null,"work_country":null,"user_id":377,"viewed_at":null,"created_at":"2021/01/21
+        11:08:53 -0500","updated_at":"2021/01/21 11:08:53 -0500","mobile":null,"company_id":2626,"fax":null,"website":null,"email2":null,"instant_message":null,"twitter":null,"linked_in_url":null,"facebook_url":null,"type":"Contact","next_entry_name":null,"next_entry_due":null,"next_entry_all_day":null,"next_entry_id":null,"summary":"SSPS","unsubscribed":false,"bounced":false,"last_emailed_at":null,"relationship":null,"is_key_contact":null,"is_sample":true,"created_by_user_id":null,"company_name":"Daugherty
+        Inc","full_name":"Andrea Fitzpatrick","deal_ids":[85,88],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=449+Talisman+Avenue%2C+%2C+New+Orleans%2C+LA+70160+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[{"id":85,"name":"Deal
+        2 with Daugherty Inc"},{"id":88,"name":"Deal with Daugherty Inc"}],"lead_source":{"id":8,"name":"Cold
+        Call"},"lead_status":{"id":10,"hex_color":"eb2d14","name":"Hot"},"company":{"id":2626,"name":"Daugherty
+        Inc"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"71900.0","won_deals_total":"0.0"}],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":15}}'
+  recorded_at: Thu, 25 May 2023 14:25:28 GMT
+recorded_with: VCR 6.1.0

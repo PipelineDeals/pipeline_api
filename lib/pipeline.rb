@@ -16,7 +16,7 @@ class Pipeline
     @jwt = jwt
   end
 
-  def authenticate(app_key, email, password, _mfa_code = nil)
+  def authenticate(app_key, email, password, mfa_code = nil)
     Pipeline::Auth.new(pipeline: self).authenticate(app_key, email, password, mfa_code)
   end
 
