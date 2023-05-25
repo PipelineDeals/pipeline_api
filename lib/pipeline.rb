@@ -5,7 +5,7 @@ require "rubygems"
 class Pipeline
   VERSION = "1.0.0"
 
-  attr_reader :url, :prefix
+  attr_reader :url, :prefix, :user
   attr_accessor :api_key, :app_key, :jwt
 
   def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, jwt: nil)

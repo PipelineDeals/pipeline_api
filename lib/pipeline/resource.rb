@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Pipeline::Resource < Pipeline::Base
+  class_attribute :writable_attributes
+
   def initialize(pipeline:, id: nil, attributes: nil)
     super(pipeline: pipeline)
     @attributes = {}
@@ -39,8 +41,10 @@ class Pipeline::Resource < Pipeline::Base
   def method_missing(name, *args)
     name = name.to_s
     if name.sub!(/\?$/, "")
+      check_attribute_key(name)
       @attributes[name].present?
     elsif name.sub!(/=$/, "")
+      check_attribute_key(name)
       @attributes[name] = args[0]
       if @attributes_before[name] == @attributes[name]
         @changes.delete(name)
@@ -60,6 +64,12 @@ class Pipeline::Resource < Pipeline::Base
   end
 
   private
+
+  def check_attribute_key(key)
+    return if self.class.writable_attributes.nil? || self.class.writable_attributes.include?(key.to_sym)
+
+    raise "Unrecognized attribute #{key}"
+  end
 
   def load(id)
     id ? _get("#{collection_name}/#{id}.json") : {}
