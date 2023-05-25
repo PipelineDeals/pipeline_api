@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Pipeline::Auth < Pipeline::Resource
-  attr_reader :hash, :before, :changes, :_id
-
   def initialize(pipeline:)
     super
     @collection_name = "auth"

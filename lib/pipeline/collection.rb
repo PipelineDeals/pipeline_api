@@ -9,14 +9,14 @@ class Pipeline::Collection < Pipeline::Base
     [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, id: id)
   end
 
-  def new(hash = nil)
+  def new(attrs = nil)
     entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline)
-    entry.attributes = hash if hash
+    entry.attributes = attrs if attrs
     entry
   end
 
-  def create(hash)
-    entry = new(hash)
+  def create(attrs)
+    entry = new(attrs)
     entry.save
     entry
   end
@@ -37,8 +37,8 @@ class Pipeline::Collection < Pipeline::Base
       response = read_page(page: page)
       pages ||= response.is_a?(Array) || response[collection_name] ? 1 : response["pagination"]["pages"]
       list = response.is_a?(Array) ? response : (response[collection_name] || response["entries"])
-      list.each do |hash|
-        entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, hash: hash)
+      list.each do |attrs|
+        entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, attributes: attrs)
         yield(entry)
       end
     end

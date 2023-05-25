@@ -1,27 +1,25 @@
 # frozen_string_literal: true
 
 class Pipeline::Resource < Pipeline::Base
-  attr_reader :hash, :before, :changes
-
-  def initialize(pipeline:, id: nil, hash: nil)
+  def initialize(pipeline:, id: nil, attributes: nil)
     super(pipeline: pipeline)
-    @hash = {}
-    @before = {}
+    @attributes = {}
+    @attributes_before = {}
     @changes = {}
-    @hash = if id
+    @attributes = if id
               load(id)
             else
-              hash || {}
+              attributes.clone || {}
             end
   end
 
   def save
-    @before = if id
-                _put("#{collection_name}/#{id}.json", body: { collection_name.singularize => @hash.slice(*changes.keys) })
-              else
-                _post("#{collection_name}.json", body: { collection_name.singularize => @hash.slice(*changes.keys) })
-              end
-    @hash = @before.clone
+    @attributes_before = if id
+                     _put("#{collection_name}/#{id}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
+                   else
+                     _post("#{collection_name}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
+                   end
+    @attributes = @attributes_before.clone
     @changes = {}
     true
   end
@@ -31,32 +29,32 @@ class Pipeline::Resource < Pipeline::Base
   end
 
   def attributes
-    @hash.clone
+    @attributes.clone
   end
 
-  def attributes=(new_hash)
-    new_hash.each { |k, v| send("#{k}=", v) }
+  def attributes=(attrs)
+    attrs.each { |k, v| send("#{k}=", v) }
   end
 
   def method_missing(name, *args)
     name = name.to_s
     if name.sub!(/\?$/, "")
-      hash[name].present?
+      @attributes[name].present?
     elsif name.sub!(/=$/, "")
-      hash[name] = args[0]
-      if before[name] == hash[name]
-        changes.delete(name)
+      @attributes[name] = args[0]
+      if @attributes_before[name] == @attributes[name]
+        @changes.delete(name)
       else
-        changes[name] = [before[name], hash[name]]
+        @changes[name] = [@attributes_before[name], @attributes[name]]
       end
     else
-      hash[name]
+      @attributes[name]
     end
   end
 
   def reload
-    @before = load
-    @hash = @before.clone
+    @attributes_before = load
+    @attributes = @attributes_before.clone
     @changes = {}
     self
   end
