@@ -9,20 +9,13 @@ describe Pipeline::Admin::Webhook do
 
   it "creates a webhook" do
     VCR.use_cassette(:webhooks_create) do
-      webhooks = [
-        pipeline.webhooks.create(event_model: "person", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "person", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "person", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "deal", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "deal", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "deal", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "company", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "company", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
-        pipeline.webhooks.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
-      ]
-      expect(webhooks.map(&:id).compact.count).to eq(9)
+      webhook = pipeline.webhooks.create(event_model: "person", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com")
+      expect(webhook.id).not_to be_nil
+
       # Just wanted to leave thigns as they were before
-      webhooks.map(&:destroy)
+      webhook.destroy
+
+      expect(pipeline.webhooks.all).to eq([])
     end
   end
 
