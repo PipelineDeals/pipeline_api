@@ -41,8 +41,8 @@ describe Pipeline do
       VCR.use_cassette(:authenticate_with_api_key_token) do
         authenticate
         expect(pipeline.jwt).to be_nil
-        #expect(pipeline.app_key).not_to be_nil
-        #expect(pipeline.api_key).not_to be_nil
+        expect(pipeline.app_key).not_to be_nil
+        expect(pipeline.api_key).not_to be_nil
         expect(pipeline.people.all.count).to eq(15)
       end
     end
