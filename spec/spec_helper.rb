@@ -3,6 +3,7 @@
 require "rubygems"
 require "vcr"
 require "pipeline"
+require "simplecov"
 
 begin
   require "pry"
