@@ -25,11 +25,14 @@ class Pipeline
   end
 
   def revoke_jwt
-    @user.revoke_jwt
+    return unless jwt.present?
+
+    user.revoke_jwt
+    @user = @account = nil
   end
 
   def renew_jwt
-    @user.renew_jwt
+    user.renew_jwt if jwt.present?
   end
 
   def user
