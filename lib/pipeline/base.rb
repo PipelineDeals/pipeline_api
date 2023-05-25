@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "HTTParty"
+require "httparty"
 require "active_support/all"
 require "pipeline/exceptions"
 
