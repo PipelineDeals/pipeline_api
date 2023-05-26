@@ -8,7 +8,7 @@ require "./lib/pipeline"
 
 Gem::Specification.new do |gem|
   gem.name          = "pipeline"
-  gem.version       = Pipeline.VERSION
+  gem.version       = Pipeline::VERSION
   gem.authors       = ["Scott Gibson"]
   gem.email         = ["sevgibson@gmail.com"]
   gem.description   = "The pipeline gem is a ruby wrapper around the Pipeline API."
@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(/^bin\//).map { |f| File.basename(f) }
   gem.require_paths = ["lib"]
+  gem.required_ruby_version = ">= 2.2.0"
 
   gem.add_dependency("activesupport")
   gem.add_dependency("httparty")

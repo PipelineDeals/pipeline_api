@@ -25,9 +25,7 @@ class Pipeline::User < Pipeline::Resource
 
   def renew_jwt
     auth = _put("auth/renew.json")
-    if auth["token"]
-      pipeline.jwt = { token: auth["token"] }
-    end
+    pipeline.jwt = { token: auth["token"] } if auth["token"]
     reload
     self
   end

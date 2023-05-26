@@ -22,10 +22,10 @@ class Pipeline::Resource < Pipeline::Base
 
   def save
     @attributes_before = if id
-                     _put("#{collection_name}/#{id}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
-                   else
-                     _post("#{collection_name}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
-                   end
+                           _put("#{collection_name}/#{id}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
+                         else
+                           _post("#{collection_name}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
+                         end
     @attributes = @attributes_before.clone
     @changes = {}
     true
@@ -41,6 +41,10 @@ class Pipeline::Resource < Pipeline::Base
 
   def attributes=(attrs)
     attrs.each { |k, v| send("#{k}=", v) }
+  end
+
+  def respond_to_missing?(_method_name, _include_private = false)
+    true
   end
 
   def method_missing(name, *args)
