@@ -14,7 +14,8 @@ class Pipeline::Resource < Pipeline::Base
 
     @attributes = attributes.clone || {}
     if id
-      @attributes_before = @attributes.clone
+      @attributes = load(id)
+      @attributes_before = attributes.clone
     else
       @attributes.each { |k, v| @changes[k] = [nil, v] }
     end
