@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "rubygems"
+require "active_support/all"
 
 class Pipeline
   VERSION = "1.0.0"
@@ -14,7 +15,7 @@ class Pipeline
     @api_key = api_key
     @app_key = app_key
     @account_key = account_key
-    @jwt = jwt
+    @jwt = jwt && ActiveSupport::HashWithIndifferentAccess.new(jwt)
   end
 
   def authenticate(app_key:, email:, password:, mfa_code: nil)
