@@ -4,8 +4,6 @@ require "rubygems"
 require "active_support/all"
 
 class Pipeline
-  VERSION = "1.0.0"
-
   attr_reader :url, :prefix
   attr_accessor :api_key, :app_key, :jwt, :account_key
 
