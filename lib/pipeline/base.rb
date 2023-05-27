@@ -40,7 +40,7 @@ class Pipeline::Base
 
   def common_query
     common_query = {}
-    if pipeline.jwt&.fetch(:token, nil).blank?
+    if pipeline.jwt.try(:fetch, :token, nil).blank?
       common_query.merge!(api_key: pipeline.api_key) if pipeline.api_key
       common_query.merge!(app_key: pipeline.app_key) if pipeline.app_key
       common_query.merge!(account_key: pipeline.account_key) if pipeline.account_key && !pipeline.api_key
@@ -50,7 +50,7 @@ class Pipeline::Base
 
   def common_headers
     common_headers = { "Content-Type": "application/json" }
-    common_headers.merge!(Authorization: "Bearer #{pipeline.jwt[:token]}") if pipeline.jwt&.fetch(:token, nil)
+    common_headers.merge!(Authorization: "Bearer #{pipeline.jwt[:token]}") if pipeline.jwt.try(:fetch, :token, nil)
     common_headers
   end
 
