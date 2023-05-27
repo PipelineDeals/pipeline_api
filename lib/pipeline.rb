@@ -8,7 +8,7 @@ class Pipeline
   attr_reader :url, :prefix
   attr_accessor :api_key, :app_key, :jwt, :account_key
 
-  def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, jwt: nil)
+  def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, account_key: nil, jwt: nil)
     @url = url
     @prefix = prefix
     @api_key = api_key
