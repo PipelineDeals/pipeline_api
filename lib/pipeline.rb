@@ -6,13 +6,14 @@ class Pipeline
   VERSION = "1.0.0"
 
   attr_reader :url, :prefix
-  attr_accessor :api_key, :app_key, :jwt
+  attr_accessor :api_key, :app_key, :jwt, :account_key
 
   def initialize(url: "https://api.pipelinecrm.com", prefix: "/api/v3", api_key: nil, app_key: nil, jwt: nil)
     @url = url
     @prefix = prefix
     @api_key = api_key
     @app_key = app_key
+    @account_key = account_key
     @jwt = jwt
   end
 

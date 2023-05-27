@@ -42,7 +42,8 @@ class Pipeline::Base
     common_query = {}
     unless pipeline.jwt && pipeline.jwt[:token]
       common_query.merge!(api_key: pipeline.api_key) if pipeline.api_key
-      common_query.merge!(app_key: pipeline.app_key) if pipeline.app_key
+      common_query.merge!(app_key: pipeline.app_key) if pipeline.app_key && !pipeline.jwt&.fetch(:token, nil)
+      common_query.merge!(account_key: pipeline.account_key) if pipeline.account_key && !pipeline.api_key && !pipeline.jwt&.fetch(:token, nil)
     end
     common_query
   end
