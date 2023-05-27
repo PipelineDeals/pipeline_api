@@ -1,14 +1,8 @@
 # frozen_string_literal: true
 
-require "English"
-
-lib = File.expand_path("lib", __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "./lib/pipeline"
-
 Gem::Specification.new do |gem|
   gem.name          = "pipeline"
-  gem.version       = Pipeline::VERSION
+  gem.version       = "1.0.0"
   gem.authors       = ["Scott Gibson"]
   gem.email         = ["sevgibson@gmail.com"]
   gem.description   = "The pipeline gem is a ruby wrapper around the Pipeline API."
