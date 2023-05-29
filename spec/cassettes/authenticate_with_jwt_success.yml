@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://pld.com/api/v3/auth.json?app_key=010a14be40ff5deafb7de7e773b8bff0
+    body:
+      encoding: UTF-8
+      string: '{"email_or_username":"y@gmail.com","password":"xyz987$$$$","mfa_code":null}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.23.3
+      Date:
+      - Thu, 25 May 2023 16:55:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"81c22df45e9f38e14362bbdba9778030"
+      X-Request-Id:
+      - 5c16508a-b149-4cbd-96f1-7b2ddab235de
+      X-Runtime:
+      - '0.077491'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":452,"account_id":65,"date_format":"us","email":"y@gmail.com","first_name":"Y","last_name":"Test","level":3,"read_only":false,"time_format":"us","time_zone":"America/New_York","currency_symbol":"$","features":{"hide_roi_report":true,"update_on_import":false,"import_leads":false,"activity_visibility_setting":false,"expected_close_tasks":false,"dashboard":true,"read_only_email":false,"list_view_url_builder":false,"ignored_email_list_view":false,"connect_custom_field_merge_tags":true,"show_audits_api_docs":false,"customer_management":true,"multi_currency":true,"allow_zip_export":false,"disable_stalled_deals":false,"address_geocoding":false,"external_users":true,"time_to_dollar":false,"time_to_dollar_2":false,"product_lines":true,"deal_won_reasons":false,"private_notes":true,"historical_view":true,"bcc_checks_deal_status":false,"data_exports":false,"scoreboard_deal_stages":false,"ms_graph_email_automation":false,"sales_scorecard_report_search":false,"uservoice_feedback":true,"allow_unregistered_app":true,"insta_demo":false,"search_formatting":true,"tracked_email_during_trial":false,"account_security":false,"tracked_email_dot_com":false,"static_list_views":false,"duplicate_checker":true,"disable_company_merge":false,"profile_push":false,"advanced_custom_fields_permissions":true,"enhanced_reporting":false,"reload_mantle_message":false,"customizable_dashboards":true,"customizable_dashboards_multiple":true,"customizable_dashboards_list_view":true,"customizable_dashboards_goal":true,"customizable_dashboards_report":true,"enhanced_activity_filtering":false,"drip_campaigns":true,"integrations_engine":true,"vipecloud":true,"unlimited_custom_fields":true,"automations":true,"deal_intelligence":true,"connect":true,"email_templates":true,"email_campaigns":true},"deal_profile_order":{"left":["deal-details","add-notes","activity-feed","custom-fields","files"],"right":["people","agenda"]},"person_profile_order":{"main":[{"name":"summary","status":"open"},{"name":"deals","status":"open"},{"name":"activities","status":"open"},{"name":"custom-fields","status":"open"},{"name":"mailchimp","status":"open"},{"name":"documents","status":"open"}],"side":[{"name":"contact-info","status":"open"},{"name":"tasks-and-events","status":"open"}]},"company_profile_order":{"main":[{"name":"summary","status":"open"},{"name":"deals","status":"open"},{"name":"activities","status":"open"},{"name":"custom-fields","status":"open"},{"name":"people","status":"open"},{"name":"documents","status":"open"}],"side":[{"name":"company-details","status":"open"},{"name":"tasks-and-events","status":"open"}]},"customer_profile_order":{"left":["company-details","people","activity-feed","deals","custom-fields","files"],"right":["contact-info","milestones","agenda"]},"new_person_profile_order":{"left":["person-details","deals","activity-feed","custom-fields","files","mailchimp","email-sequences"],"right":["contact-info","agenda"]},"new_company_profile_order":{"left":["company-details","deals","activity-feed","custom-fields","people","files"],"right":["contact-info","agenda"]}},"token":"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImRlODQ5NGYwLWRkNGEtMDEzYi0wZmMyLTJjZGU0ODAwMTEyMiJ9.SXCHAymGqpuQlHer656NUZt4ZjUsZEcE4vGK1DV3ZxU"}'
+  recorded_at: Thu, 25 May 2023 16:55:25 GMT
+- request:
+    method: get
+    uri: http://pld.com/api/v3/users/452.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImRlODQ5NGYwLWRkNGEtMDEzYi0wZmMyLTJjZGU0ODAwMTEyMiJ9.SXCHAymGqpuQlHer656NUZt4ZjUsZEcE4vGK1DV3ZxU
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.23.3
+      Date:
+      - Thu, 25 May 2023 16:55:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '9'
+      X-Ratelimit-Reset:
+      - '1685033726'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"1060eb27ef289d76536c2b420b8bac29"
+      X-Request-Id:
+      - cf1c51c8-ab6e-4aa5-b515-468e984e177c
+      X-Runtime:
+      - '0.065826'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":452,"account_id":65,"level":3,"first_name":"Y","last_name":"Test","name":null,"time_zone":"America/New_York","is_backend_admin":null,"mobile_number":null,"receives_sms_reminders":null,"last_seen_at":"2023/05/25
+        10:46:39 -0400","commission_rate":0.0,"is_account_admin":true,"date_format":"us","time_format":"us","w2lid":"fa6dec67f4f0","is_allowed_to_export":true,"use_keyboard_shortcuts":false,"deleted_at":null,"is_allowed_to_delete":true,"csv_column_separator":",","csv_decimal_mark":".","data_reassigned_at":null,"is_allowed_to_send_campaigns":true,"read_only":false,"team_id":null,"is_allowed_to_merge_records":true,"pipeline_email_client":true,"email":"y@gmail.com","avatar_thumb_url":null,"api_key":"ISF9pLo2dh3A45QmXtib","mfa_enabled":false,"mfa_requested_at":null,"connect_synced?":false,"other_emails":[],"is_google_apps_enabled":false,"currency":{"id":1,"name":"United
+        States Dollar","code":"USD","symbol":"$","decimal_places":2},"full_name":"Y
+        Test","is_imr":false,"can_change_company_owner":true,"manager_id":null,"visible_teams":[{"id":2,"name":"Sales
+        team"}],"default_dashboard_id":null,"permanently_remove_SGv2":null,"visited_features":[],"SGv2_open_sections":{},"features":{"hide_roi_report":true,"update_on_import":false,"import_leads":false,"activity_visibility_setting":false,"expected_close_tasks":false,"dashboard":true,"read_only_email":false,"list_view_url_builder":false,"ignored_email_list_view":false,"connect_custom_field_merge_tags":true,"show_audits_api_docs":false,"customer_management":true,"multi_currency":true,"allow_zip_export":false,"disable_stalled_deals":false,"address_geocoding":false,"external_users":true,"time_to_dollar":false,"time_to_dollar_2":false,"product_lines":true,"deal_won_reasons":false,"private_notes":true,"historical_view":true,"bcc_checks_deal_status":false,"data_exports":false,"scoreboard_deal_stages":false,"ms_graph_email_automation":false,"sales_scorecard_report_search":false,"uservoice_feedback":true,"allow_unregistered_app":true,"insta_demo":false,"search_formatting":true,"tracked_email_during_trial":false,"account_security":false,"tracked_email_dot_com":false,"static_list_views":false,"duplicate_checker":true,"disable_company_merge":false,"profile_push":false,"advanced_custom_fields_permissions":true,"enhanced_reporting":false,"reload_mantle_message":false,"customizable_dashboards":true,"customizable_dashboards_multiple":true,"customizable_dashboards_list_view":true,"customizable_dashboards_goal":true,"customizable_dashboards_report":true,"enhanced_activity_filtering":false,"drip_campaigns":true,"integrations_engine":true,"vipecloud":true,"unlimited_custom_fields":true,"automations":true,"deal_intelligence":true,"connect":true,"email_templates":true,"email_campaigns":true},"milestone_ids":[]}'
+  recorded_at: Thu, 25 May 2023 16:55:25 GMT
+recorded_with: VCR 6.1.0

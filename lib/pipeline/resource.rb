@@ -1,60 +1,110 @@
-module Pipeline
-  class Resource < ActiveResource::Base
-    class << self
-      include ThreadsafeAttributes
-      threadsafe_attribute :account_key, :api_key, :app_key, :app_version, :bearer_token, :auth_type
-    end
+# frozen_string_literal: true
 
-    self.collection_parser = Pipeline::Collection
-    self.include_root_in_json = true
-    self.prefix = "/api/v3/"
-    self.site = "https://api.pipelinecrm.com"
+class Pipeline::Resource < Pipeline::Base
+  # add an inheritable class attribute (that works prior to Ruby 3)...
+  class << self
+    attr_accessor :writable_attributes
+  end
 
-    def self.add_keys(hash)
-      hash[:api_key] = Pipeline::Resource.api_key if Pipeline::Resource.api_key && !Pipeline::Resource.account_key && !Pipeline::Resource.bearer_token
-      hash[:account_key] = Pipeline::Resource.account_key if Pipeline::Resource.account_key
+  def initialize(pipeline:, id: nil, attributes: nil)
+    super(pipeline: pipeline)
+    @attributes = {}
+    @attributes_before = {}
+    @changes = {}
 
-      hash[:app_key] = Pipeline::Resource.app_key if Pipeline::Resource.app_key
-      hash[:app_version] = Pipeline::Resource.app_version if Pipeline::Resource.app_version
-    end
-
-    def self.find(*arguments)
-      scope = arguments.slice!(0)
-      options = arguments.slice!(0) || {}
-
-      add_keys(options[:params] ||= {})
-
-      super(scope, options)
-    end
-
-    def save
-      Pipeline::Resource.add_keys(prefix_options)
-
-      super
-    end
-
-    def exists?
-      Pipeline::Resource.add_keys(prefix_options)
-
-      super
-    end
-
-    def destroy
-      Pipeline::Resource.add_keys(prefix_options)
-
-      super
-    end
-
-    def self.exists?(id, options = {})
-      add_keys(options)
-
-      super(id, options)
-    end
-
-    def self.delete(id, options = {})
-      add_keys(options)
-
-      super(id, options)
+    @attributes = attributes.clone || {}
+    if id
+      @attributes = load(id)
+      @attributes_before = attributes.clone
+    else
+      @attributes.each { |k, v| @changes[k] = [nil, v] }
     end
   end
+
+  def save
+    @attributes_before = if id
+                           _put("#{collection_name}/#{id}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
+                         else
+                           _post("#{collection_name}.json", body: { collection_name.singularize => @attributes.slice(*@changes.keys) })
+                         end
+    @attributes = @attributes_before.clone
+    @changes = {}
+    true
+  end
+
+  def destroy
+    _delete("#{collection_name}/#{id}.json") if id
+  end
+
+  def attributes
+    @attributes.clone
+  end
+
+  def attributes=(attrs)
+    attrs.each { |k, v| send("#{k}=", v) }
+  end
+
+  def respond_to_missing?(_method_name, _include_private = false)
+    true
+  end
+
+  def method_missing(name, *args)
+    name = name.to_s
+    if name.sub!(/\?$/, "")
+      @attributes[name].present?
+    elsif name.sub!(/=$/, "")
+      check_writable_attribute_key(name)
+      @attributes[name] = args[0]
+      if @attributes_before[name] == @attributes[name]
+        @changes.delete(name)
+      else
+        @changes[name] = [@attributes_before[name], @attributes[name]]
+      end
+    else
+      @attributes[name]
+    end
+  end
+
+  def reload(id = send("id"))
+    @attributes_before = load(id)
+    @attributes = @attributes_before.clone
+    @changes = {}
+    self
+  end
+
+  private
+
+  # Explicitlyl for loading an entity from a non-standard endpoint...
+  def get(endpoint)
+    @attributes_before = _get(endpoint)
+    @attributes = @attributes_before.clone
+    @changes = {}
+    self
+  end
+
+  def check_writable_attribute_key(key)
+    return if self.class.writable_attributes.nil? || self.class.writable_attributes.include?(key.to_sym)
+
+    raise "`#{key}` is not a writable attribute for an instance of #{self.class}"
+  end
+
+  def load(id)
+    id ? _get("#{collection_name}/#{id}.json") : {}
+  end
 end
+
+Pipeline::Account = Class.new(Pipeline::Resource)
+Pipeline::Deal = Class.new(Pipeline::Resource)
+Pipeline::Person = Class.new(Pipeline::Resource)
+Pipeline::Company = Class.new(Pipeline::Resource)
+Pipeline::AccountNotification = Class.new(Pipeline::Resource)
+Pipeline::Document = Class.new(Pipeline::Resource)
+Pipeline::Note = Class.new(Pipeline::Resource)
+Pipeline::CalendarEntry = Class.new(Pipeline::Resource)
+Pipeline::CalendarEvent = Class.new(Pipeline::Resource)
+Pipeline::CalendarTask = Class.new(Pipeline::Resource)
+module Pipeline::Admin
+  Webhook = Class.new(Pipeline::Resource)
+end
+
+require "pipeline/user"

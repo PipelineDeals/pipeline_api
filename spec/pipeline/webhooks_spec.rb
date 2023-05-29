@@ -2,52 +2,35 @@
 
 require "spec_helper"
 
-describe Pipeline::Webhook do
-  before { Pipeline.configure { |c| c.app_key = "010a14be40ff5deafb7de7e773b8bff0" } }
-
-  after { Pipeline.configure { |c| c.app_key = nil } }
+describe Pipeline::Admin::Webhook do
+  let(:pipeline) { Pipeline.new(url: "http://pld.com", jwt: { token: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImJmZmNlNzkwLWRjYWYtMDEzYi0wZmIxLTJjZGU0ODAwMTEyMiJ9.Yz_l8laGdXwhBQcb7ymODeh4ajH_K7p3FJIfcmLcpKA" }) }
 
   # it_behaves_like "a paginated collection"
 
   it "creates a webhook" do
     VCR.use_cassette(:webhooks_create) do
-      webhooks = [
-        described_class.create(event_model: "person", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "person", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "person", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "deal", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "deal", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "deal", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "company", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "company", event_action: "update", failure_email: "test@test.com", url: "http://this.pld.com"),
-        described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
-      ]
-      expect(webhooks.map(&:id).compact.count).to eq(9)
+      webhook = pipeline.webhooks.create(event_model: "person", event_action: "create", failure_email: "test@test.com", url: "http://this.pld.com")
+      expect(webhook.id).not_to be_nil
+
       # Just wanted to leave thigns as they were before
-      webhooks.map(&:destroy)
+      webhook.destroy
+
+      expect(pipeline.webhooks.all).to eq([])
     end
   end
 
   it "lists webhooks" do
     VCR.use_cassette(:webhooks_index) do
-      webhooks = described_class.all
-      expect(webhooks.size).to eq(9)
-    end
-  end
-
-  it "deletes a webhook" do
-    VCR.use_cassette(:webhooks_delete) do
-      webhook = described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
-      described_class.delete(webhook.id)
-      expect(webhook).not_to exist
+      webhooks = pipeline.webhooks.all
+      expect(webhooks.count).to eq(9)
     end
   end
 
   it "destroys a webhook" do
-    VCR.use_cassette(:webhooks_destroy) do
-      webhook = described_class.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
+    VCR.use_cassette(:webhooks_delete) do
+      webhook = pipeline.webhooks.create(event_model: "company", event_action: "destroy", failure_email: "test@test.com", url: "http://this.pld.com")
       webhook.destroy
-      expect(webhook).not_to exist
+      expect(pipeline.webhooks.all.map(&:id)).not_to include(webhook.id)
     end
   end
 end

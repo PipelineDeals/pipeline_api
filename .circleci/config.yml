@@ -42,6 +42,10 @@ jobs:
           path: test-results/rspec.xml
           destination: test-results
 
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
   rubocop:
     <<: *defaults
     resource_class: small

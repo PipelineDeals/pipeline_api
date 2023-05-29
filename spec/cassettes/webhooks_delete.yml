@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v3/admin/webhooks.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    uri: http://pld.com/api/v3/admin/webhooks.json
     body:
       encoding: UTF-8
       string: '{"webhook":{"event_model":"company","event_action":"destroy","failure_email":"test@test.com","url":"http://this.pld.com"}}'
     headers:
       Content-Type:
       - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImJmZmNlNzkwLWRjYWYtMDEzYi0wZmIxLTJjZGU0ODAwMTEyMiJ9.Yz_l8laGdXwhBQcb7ymODeh4ajH_K7p3FJIfcmLcpKA
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,28 +22,32 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx/1.23.3
       Date:
-      - Wed, 10 May 2023 18:23:28 GMT
+      - Thu, 25 May 2023 16:55:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
-      - close
+      - keep-alive
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '9'
+      - '5'
       X-Ratelimit-Reset:
-      - '1683743009'
+      - '1685033728'
       Cache-Control:
       - no-store
-      Content-Type:
-      - application/json; charset=utf-8
       Vary:
       - Origin
       Etag:
-      - W/"04d6f92967d17537ae099ce20927a50a"
+      - W/"72cba73d566559a9e048dfa0b0486f62"
       X-Request-Id:
-      - cb1fcf68-1279-45fa-bf6d-44a293d869eb
+      - f2ee50ea-62cf-45d9-a681-df5b1803b555
       X-Runtime:
-      - '0.212906'
+      - '0.125489'
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
@@ -54,20 +60,24 @@ http_interactions:
       - none
     body:
       encoding: UTF-8
-      string: '{"id":113,"event_model":"company","name":"Testing JWT company:destroy","is_activated":true,"created_at":"2023-05-10T18:23:28.687Z","updated_at":"2023-05-10T18:23:28.687Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"destroy","description":"Testing
+      string: '{"id":79,"event_model":"company","name":"Testing JWT company:destroy","is_activated":true,"created_at":"2023-05-25T16:55:28.062Z","updated_at":"2023-05-25T16:55:28.062Z","account_id":65,"account_key":"GVHA6Kon3pE18CEeSvgWn6xGYFwGOv1rqQ","last_run_at":null,"event_action":"destroy","description":"Testing
         JWT company:destroy =\u003e http://this.pld.com","updated_by":null,"debug_enabled":false,"app_id":32,"event_elapsed_time_subject":null,"event_elapsed_time_value":null,"event_elapsed_time_unit":null,"event_column":null,"event_column_delta":null,"event_trigger_time":null,"automation_folder_id":null,"source":"user"}'
-  recorded_at: Wed, 10 May 2023 18:23:28 GMT
+  recorded_at: Thu, 25 May 2023 16:55:28 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/api/v3/admin/webhooks/113.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    uri: http://pld.com/api/v3/admin/webhooks/79.json
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
+      Content-Type:
       - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImJmZmNlNzkwLWRjYWYtMDEzYi0wZmIxLTJjZGU0ODAwMTEyMiJ9.Yz_l8laGdXwhBQcb7ymODeh4ajH_K7p3FJIfcmLcpKA
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -75,28 +85,32 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx/1.23.3
       Date:
-      - Wed, 10 May 2023 18:23:28 GMT
+      - Thu, 25 May 2023 16:55:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
-      - close
+      - keep-alive
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '8'
+      - '4'
       X-Ratelimit-Reset:
-      - '1683743009'
+      - '1685033729'
       Cache-Control:
       - no-store
-      Content-Type:
-      - application/json; charset=utf-8
       Vary:
       - Origin
       Etag:
       - W/"74234e98afe7498fb5daf1f36ac2d78a"
       X-Request-Id:
-      - b4ad8597-da7d-4930-8bef-202d79aff53f
+      - 5c1259c9-7d3f-4d99-a1f3-eaf44f3b14c3
       X-Runtime:
-      - '0.168186'
+      - '0.116890'
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
@@ -110,37 +124,55 @@ http_interactions:
     body:
       encoding: UTF-8
       string: 'null'
-  recorded_at: Wed, 10 May 2023 18:23:28 GMT
+  recorded_at: Thu, 25 May 2023 16:55:28 GMT
 - request:
-    method: head
-    uri: http://localhost:3000/api/v3/admin/webhooks/113.json?api_key=iJHyFkMUBSfjUovt29&app_key=010a14be40ff5deafb7de7e773b8bff0
+    method: get
+    uri: http://pld.com/api/v3/admin/webhooks.json?page=1&per_page=200
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
+      Content-Type:
       - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBhMTRiZTQwZmY1ZGVhZmI3ZGU3ZTc3M2I4YmZmMCIsImp0aSI6ImJmZmNlNzkwLWRjYWYtMDEzYi0wZmIxLTJjZGU0ODAwMTEyMiJ9.Yz_l8laGdXwhBQcb7ymODeh4ajH_K7p3FJIfcmLcpKA
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
       User-Agent:
       - Ruby
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
+      Server:
+      - nginx/1.23.3
       Date:
-      - Wed, 10 May 2023 18:23:29 GMT
-      Connection:
-      - close
+      - Thu, 25 May 2023 16:55:28 GMT
       Content-Type:
-      - text/html; charset=utf-8
-      Content-Length:
-      - '694949'
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '4'
+      X-Ratelimit-Reset:
+      - '1685033729'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"d03ff1e2df7ad33907b2086ec5f9e0a9"
       X-Request-Id:
-      - 88ae7b89-658a-46e4-b3e2-cd21bbe5593d
+      - f98889b8-d62d-4351-a9c1-2fab6435908a
       X-Runtime:
-      - '0.912218'
+      - '0.117253'
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
@@ -153,6 +185,6 @@ http_interactions:
       - none
     body:
       encoding: UTF-8
-      string: ''
-  recorded_at: Wed, 10 May 2023 18:23:29 GMT
+      string: '{"webhooks":[]}'
+  recorded_at: Thu, 25 May 2023 16:55:28 GMT
 recorded_with: VCR 6.1.0

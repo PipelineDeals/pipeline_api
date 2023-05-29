@@ -1,5 +1,25 @@
 # frozen_string_literal: true
 
+if ENV["TEST_REPORTER"] || ENV["CI"]
+  require "simplecov"
+  require "active_support/inflector"
+
+  SimpleCov.start "rails" do
+    enable_coverage :branch
+    coverage_criterion :branch
+
+    add_filter "/spec/"
+    add_filter "/vendor/"
+
+    Dir["lib/*"].each do |dir|
+      add_group File.basename(dir).humanize, dir
+    end
+
+    minimum_coverage 0
+    merge_timeout 3600
+  end
+end
+
 require "rubygems"
 require "vcr"
 require "pipeline"
@@ -8,27 +28,6 @@ begin
   require "pry"
 rescue LoadError
 end
-
-require "support/pagination_spec"
-require "support/has_documents"
-require "support/has_notes"
-require "support/has_calendar_entries"
-require "support/has_people"
-require "support/has_deals"
-
-def reset_config
-  Pipeline.configure do |c|
-    c.site = ENV["PIPELINEDEALS_URL"] || "http://localhost:3000"
-    c.api_key = ENV["PIPELINEDEALS_API_KEY"] || "iJHyFkMUBSfjUovt29"
-    c.app_key = nil
-    c.auth_type = nil
-    c.bearer_token = nil
-  end
-end
-
-reset_config
-
-# ActiveResource::Base.logger = Logger.new(STDOUT)
 
 VCR.configure do |c|
   c.cassette_library_dir = "./spec/cassettes"
