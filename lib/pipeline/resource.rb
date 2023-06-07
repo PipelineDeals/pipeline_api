@@ -6,6 +6,8 @@ class Pipeline::Resource < Pipeline::Base
     attr_accessor :writable_attributes
   end
 
+  attr_reader :attributes_before, :changes
+
   def initialize(pipeline:, id: nil, attributes: nil)
     super(pipeline: pipeline)
     @attributes = {}
@@ -15,7 +17,7 @@ class Pipeline::Resource < Pipeline::Base
     @attributes = attributes.clone || {}
     if id
       @attributes = load(id)
-      @attributes_before = attributes.clone
+      @attributes_before = @attributes.clone
     else
       @attributes.each { |k, v| @changes[k] = [nil, v] }
     end
