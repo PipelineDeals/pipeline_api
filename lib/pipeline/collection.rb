@@ -32,6 +32,11 @@ class Pipeline::Collection < Pipeline::Base
     self
   end
 
+  def first
+    response = read_page(page: 1, per_page: 1)
+    (response.is_a?(Array) ? response : (response[collection_name] || response["entries"]))&.first
+  end
+
   def each
     page = 1
     pages = nil
