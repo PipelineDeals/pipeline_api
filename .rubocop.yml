@@ -2,7 +2,7 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.2.0
+  TargetRubyVersion: 3.2.2
   NewCops: enable
   Exclude:
     - 'db/**/*'
@@ -17,7 +17,7 @@ AllCops:
 
 Metrics/AbcSize:
   Max: 25 # Default: 15
-Metrics/LineLength:
+Layout/LineLength:
   Max: 160 # Default: 80
 Metrics/MethodLength:
   Max: 25 # Default: 10
