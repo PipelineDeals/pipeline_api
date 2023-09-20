@@ -83,6 +83,10 @@ class Pipeline
     Pipeline::CalendarTasks.new(pipeline: self)
   end
 
+  def notes
+    Pipeline::Notes.new(pipeline: self)
+  end
+
   def webhooks
     Pipeline::Admin::Webhooks.new(pipeline: self)
   end
