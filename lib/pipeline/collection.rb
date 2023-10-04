@@ -65,8 +65,8 @@ class Pipeline::Collection < Pipeline::Base
 
   private
 
-  def read_page(page: 1, per_page: 200)
-    query = { page: page, per_page: per_page }
+  def read_page(page: 1, per_page: nil)
+    query = { page: page, per_page: per_page }.select { |_k, v| v.present? }
     query.merge!(conditions: conditions) if conditions.present?
     _get("#{collection_name}.json", query: query)
   end

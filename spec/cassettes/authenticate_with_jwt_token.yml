@@ -122,7 +122,7 @@ http_interactions:
   recorded_at: Thu, 25 May 2023 16:55:26 GMT
 - request:
     method: get
-    uri: http://pld.com/api/v3/people.json?page=1&per_page=200
+    uri: http://pld.com/api/v3/people.json?page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -234,6 +234,6 @@ http_interactions:
         Inc","full_name":"Andrea Fitzpatrick","deal_ids":[85,88],"image_thumb_url":"//localhost:3808/webpack/images/thumb/missing.png","image_mobile_url":"//localhost:3808/webpack/images/mobile/missing.png","work_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","home_address_google_maps_url":"http://maps.google.com/maps?q=%2C+%2C+%2C+++","company_address_google_maps_url":"http://maps.google.com/maps?q=449+Talisman+Avenue%2C+%2C+New+Orleans%2C+LA+70160+US","has_work_address":false,"has_company_address":true,"shared_user_ids":[],"date_of_first_activity":null,"days_since_last_activity":null,"hours_to_first_activity":null,"deals":[{"id":85,"name":"Deal
         2 with Daugherty Inc"},{"id":88,"name":"Deal with Daugherty Inc"}],"lead_source":{"id":8,"name":"Cold
         Call"},"lead_status":{"id":10,"hex_color":"eb2d14","name":"Hot"},"company":{"id":2626,"name":"Daugherty
-        Inc"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"71900.0","won_deals_total":"0.0"}],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":15}}'
+        Inc"},"user":{"id":377,"first_name":"Scott","last_name":"Gibson"},"predefined_contacts_tag_ids":[],"predefined_contacts_tags":[],"custom_fields":{},"total_pipeline":"71900.0","won_deals_total":"0.0"}],"pagination":{"page":1,"page_var":"page","pages":1,"total":15}}'
   recorded_at: Thu, 25 May 2023 16:55:26 GMT
 recorded_with: VCR 6.1.0
