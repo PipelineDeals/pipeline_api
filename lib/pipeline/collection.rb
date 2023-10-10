@@ -33,7 +33,9 @@ class Pipeline::Collection < Pipeline::Base
   end
 
   def first
-    each(per_page: 1)&.first
+    entries = []
+    each(per_page: 1) { |entry| entries << entry }
+    entries.first
   end
 
   def each(per_page: nil)

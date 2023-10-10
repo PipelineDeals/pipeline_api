@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "pipeline"
-  gem.version       = "1.0.2"
+  gem.version       = "1.0.3"
   gem.authors       = ["Scott Gibson"]
   gem.email         = ["sevgibson@gmail.com"]
   gem.description   = "The pipeline gem is a ruby wrapper around the Pipeline API."
