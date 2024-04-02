@@ -110,3 +110,4 @@ module Pipeline::Admin
 end
 
 require "pipeline/user"
+require "pipeline/admin/feature"

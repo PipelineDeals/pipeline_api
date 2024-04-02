@@ -86,4 +86,5 @@ Pipeline::CalendarEvents = Class.new(Pipeline::Collection)
 Pipeline::CalendarTasks = Class.new(Pipeline::Collection)
 module Pipeline::Admin
   Webhooks = Class.new(Pipeline::Collection)
+  Features = Class.new(Pipeline::Collection)
 end
