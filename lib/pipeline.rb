@@ -87,6 +87,10 @@ class Pipeline
     Pipeline::Admin::Webhooks.new(pipeline: self)
   end
 
+  def features
+    Pipeline::Admin::Features.new(pipeline: self)
+  end
+
   # account
   # user
   # users
