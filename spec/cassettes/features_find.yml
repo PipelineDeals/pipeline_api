@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://pld.com/api/v3/admin/features/sms_support.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTBmZjZkMjYwMmJiZTZhMWM2Y2MxZDY1ZDAxNjBkYyIsImp0aSI6ImQyYjM4OWYwLWNhYWYtMDEzYy1jNTU0LTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0MjY3MTUxMH0.NgNTIAf216IIKItSJmVqRkAgiYD1JRuQfrEkX9alPeU
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Wed, 03 Apr 2024 16:18:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1712161137'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"1fb5f5816b1827884b3d8d1bbe4f9514"
+      X-Request-Id:
+      - 7e38ca1c-52fc-4237-bec0-d8cd157952c1
+      X-Runtime:
+      - '0.032415'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":"sms_support","providers":null}'
+  recorded_at: Wed, 03 Apr 2024 16:18:56 GMT
+recorded_with: VCR 6.1.0
