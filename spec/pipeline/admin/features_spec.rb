@@ -26,7 +26,7 @@ describe Pipeline::Admin::Feature do
     VCR.use_cassette(:features_remove_provider) do
       feature = pipeline.features.find(:sms_support)
       feature.add_provider("JustCall", { this: :that })
-      expect(feature.remove_provider("JustCall")).to eq({"id"=>"sms_support", "providers"=>nil})
+      expect(feature.remove_provider("JustCall")).to eq("id" => "sms_support", "providers" => nil)
     end
   end
 end
