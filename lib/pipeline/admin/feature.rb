@@ -6,10 +6,10 @@ class Pipeline::Admin::Feature < Pipeline::Resource
   end
 
   def remove_provider(provided_by)
-    _delete("features/#{id}", query: { provided_by: })
+    _delete("features/#{id}", query: { provided_by: provided_by })
   end
 
   def add_provider(provided_by, data)
-    _put("features/#{id}", body: { provided_by:, data: })
+    _put("features/#{id}", body: { provided_by: provided_by, data: data })
   end
 end

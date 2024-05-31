@@ -55,6 +55,10 @@ class Pipeline
     Pipeline::Companies.new(pipeline: self)
   end
 
+  def customers
+    Pipeline::Customers.new(pipeline: self)
+  end
+
   def users
     Pipeline::Users.new(pipeline: self)
   end
@@ -65,6 +69,10 @@ class Pipeline
 
   def documents
     Pipeline::Documents.new(pipeline: self)
+  end
+
+  def searches
+    Pipeline::Search.new(pipeline: self)
   end
 
   def notes
@@ -83,6 +91,106 @@ class Pipeline
     Pipeline::CalendarTasks.new(pipeline: self)
   end
 
+  def comments
+    Pipeline::Comments.new(pipeline: self)
+  end
+
+  def predefined_contacts_tags
+    Pipeline::Admin::PredefinedContactsTags.new(pipeline: self)
+  end
+
+  def deal_custom_field_labels
+    Pipeline::Admin::DealCustomFieldLabels.new(pipeline: self)
+  end
+
+  def person_custom_field_labels
+    Pipeline::Admin::PersonCustomFieldLabels.new(pipeline: self)
+  end
+
+  def company_custom_field_labels
+    Pipeline::Admin::CompanyCustomFieldLabels.new(pipeline: self)
+  end
+
+  def calendar_entry_priorities
+    Pipeline::Admin::CalendarEntryPriorities.new(pipeline: self)
+  end
+
+  def company_custom_field_groups
+    Pipeline::Admin::CompanyCustomFieldGroups.new(pipeline: self)
+  end
+
+  def company_tags
+    Pipeline::Admin::CompanyTags.new(pipeline: self)
+  end
+
+  def custom_field_label_dropdown_entries
+    Pipeline::Admin::CustomFieldLabelDropdownEntries.new(pipeline: self)
+  end
+
+  def deal_custom_field_groups
+    Pipeline::Admin::DealCustomFieldGroups.new(pipeline: self)
+  end
+
+  def deal_loss_reasons
+    Pipeline::Admin::DealLossReasons.new(pipeline: self)
+  end
+
+  def deal_stages
+    Pipeline::Admin::DealStages.new(pipeline: self)
+  end
+
+  def deal_statuses
+    Pipeline::Admin::DealStatuses.new(pipeline: self)
+  end
+
+  def deal_tags
+    Pipeline::Admin::DealTags.new(pipeline: self)
+  end
+
+  def document_tags
+    Pipeline::Admin::DocumentTags.new(pipeline: self)
+  end
+
+  def event_categories
+    Pipeline::Admin::EventCategories.new(pipeline: self)
+  end
+
+  def lead_sources
+    Pipeline::Admin::LeadSources.new(pipeline: self)
+  end
+
+  def lead_statuses
+    Pipeline::Admin::LeadStatuses.new(pipeline: self)
+  end
+
+  def note_categories
+    Pipeline::Admin::NoteCategories.new(pipeline: self)
+  end
+
+  def person_custom_field_groups
+    Pipeline::Admin::PersonCustomFieldGroups.new(pipeline: self)
+  end
+
+  def performance_lanes
+    Pipeline::Admin::PerformanceLanes.new(pipeline: self)
+  end
+
+  def revenue_types
+    Pipeline::Admin::RevenueTypes.new(pipeline: self)
+  end
+
+  def teams
+    Pipeline::Admin::Teams.new(pipeline: self)
+  end
+
+  def todo_templates
+    Pipeline::Admin::TodoTemplates.new(pipeline: self)
+  end
+
+  def todo_template_items
+    Pipeline::Admin::TodoTemplateItems.new(pipeline: self)
+  end
+
   def webhooks
     Pipeline::Admin::Webhooks.new(pipeline: self)
   end
@@ -90,30 +198,6 @@ class Pipeline
   def features
     Pipeline::Admin::Features.new(pipeline: self)
   end
-
-  # account
-  # user
-  # users
-  # people
-  # deals
-  # companies
-  # notes
-  # documents
-  # calendar_entires
-  # calendar_events
-  # calendar_tasks
-  # account_notifications
-  #
-  # deal_stages
-  # note_categories
-  # deal_custom_field_labels
-  # person_custom_field_labels
-  # company_custom_field_labels
-  # custom_field_label_dropdown_entries
-  # lead_statuses
-  # lead_sources
-  # predefined_contacts_tags
-  # event_categories
 end
 
 require "pipeline/base"
