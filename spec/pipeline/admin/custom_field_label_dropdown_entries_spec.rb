@@ -37,7 +37,8 @@ describe Pipeline::Admin::CustomFieldLabelDropdownEntries do
       custom_field_label_dropdown_entry = pipeline.custom_field_label_dropdown_entries.create(name: "test custom field dropdown entry for deletion",
                                                                                               custom_field_label_id: custom_field.id)
       custom_field_label_dropdown_entry.destroy
-      expect(pipeline.custom_field_label_dropdown_entries.where(custom_field_label_id: custom_field.id).all.map(&:id)).not_to include(custom_field_label_dropdown_entry.id)
+      expect(pipeline.custom_field_label_dropdown_entries.where(custom_field_label_id: custom_field.id).all.map(&:id))
+        .not_to include(custom_field_label_dropdown_entry.id)
     end
   end
 end
