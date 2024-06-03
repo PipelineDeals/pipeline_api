@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://pld.com/api/v3/admin/todo_templates.json
+    body:
+      encoding: UTF-8
+      string: '{"todo_template":{"name":"test todo tmeplate"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Mon, 03 Jun 2024 18:46:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717440416'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"63872fcdcee9a892e7307859d242a5e9"
+      X-Request-Id:
+      - 71a4f0ec-5309-4477-800c-eaeb04f229d0
+      X-Runtime:
+      - '1.411161'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":689196,"name":"test todo tmeplate","account_id":448688,"template_type":null,"is_default":null,"todo_template_types":[],"todo_template_items":[]}'
+  recorded_at: Mon, 03 Jun 2024 18:46:56 GMT
+recorded_with: VCR 6.1.0

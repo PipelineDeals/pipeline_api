@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://pld.com/api/v3/admin/person_custom_field_labels.json?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Mon, 03 Jun 2024 17:03:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717434201'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"2236363402b8ce528645ae8c29e9036e"
+      X-Request-Id:
+      - 24a4df5f-8b08-4d26-83de-79a0dc259630
+      X-Runtime:
+      - '0.042313'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[{"id":1,"name":"string field","field_type":"text","report_behavior":null,"is_required":null,"position":1,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:20:50 -0400","updated_at":"2024/05/01 16:21:24 -0400","custom_field_group_id":null,"output_type":"text","locked":false,"custom_field_permissions":[{"id":1,"account_id":448688,"team_id":null,"custom_field_label_id":1,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:20:50 -0400","updated_at":"2024/05/01 16:20:50 -0400"}]},{"id":2,"name":"boolean
+        field","field_type":"boolean","report_behavior":null,"is_required":null,"position":2,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:21:02 -0400","updated_at":"2024/05/01 16:21:02 -0400","custom_field_group_id":null,"output_type":"boolean","locked":false,"custom_field_permissions":[{"id":2,"account_id":448688,"team_id":null,"custom_field_label_id":2,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:21:02 -0400","updated_at":"2024/05/01 16:21:02 -0400"}]},{"id":3,"name":"currency
+        field","field_type":"currency","report_behavior":null,"is_required":null,"position":3,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:21:12 -0400","updated_at":"2024/05/01 16:21:12 -0400","custom_field_group_id":null,"output_type":"currency","locked":false,"custom_field_permissions":[{"id":3,"account_id":448688,"team_id":null,"custom_field_label_id":3,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:21:12 -0400","updated_at":"2024/05/01 16:21:12 -0400"}]},{"id":4,"name":"date
+        field","field_type":"date","report_behavior":null,"is_required":null,"position":4,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:21:34 -0400","updated_at":"2024/05/01 16:21:34 -0400","custom_field_group_id":null,"output_type":"date","locked":false,"custom_field_permissions":[{"id":4,"account_id":448688,"team_id":null,"custom_field_label_id":4,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:21:34 -0400","updated_at":"2024/05/01 16:21:34 -0400"}]},{"id":5,"name":"dropdown
+        field","field_type":"dropdown","report_behavior":null,"is_required":null,"position":5,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:22:04 -0400","updated_at":"2024/05/01 16:22:04 -0400","custom_field_group_id":null,"output_type":"dropdown","custom_field_label_dropdown_entries":[{"id":1,"custom_field_label_id":5,"account_id":448688,"name":"value
+        1","position":1,"created_at":"2024/05/01 16:22:04 -0400","updated_at":"2024/05/01
+        16:22:04 -0400"},{"id":2,"custom_field_label_id":5,"account_id":448688,"name":"value
+        2","position":2,"created_at":"2024/05/01 16:22:04 -0400","updated_at":"2024/05/01
+        16:22:04 -0400"}],"locked":false,"custom_field_permissions":[{"id":5,"account_id":448688,"team_id":null,"custom_field_label_id":5,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:22:04 -0400","updated_at":"2024/05/01 16:22:04 -0400"}]},{"id":6,"name":"numeric
+        field","field_type":"numeric","report_behavior":null,"is_required":null,"position":6,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:22:22 -0400","updated_at":"2024/05/01 16:22:22 -0400","custom_field_group_id":null,"output_type":"numeric","locked":false,"custom_field_permissions":[{"id":6,"account_id":448688,"team_id":null,"custom_field_label_id":6,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:22:22 -0400","updated_at":"2024/05/01 16:22:22 -0400"}]},{"id":7,"name":"picklist
+        field","field_type":"multi_select","report_behavior":null,"is_required":null,"position":7,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:23:00 -0400","updated_at":"2024/05/01 16:23:00 -0400","custom_field_group_id":null,"output_type":"multi_select","custom_field_label_dropdown_entries":[{"id":3,"custom_field_label_id":7,"account_id":448688,"name":"p
+        value 1","position":1,"created_at":"2024/05/01 16:23:00 -0400","updated_at":"2024/05/01
+        16:23:00 -0400"},{"id":4,"custom_field_label_id":7,"account_id":448688,"name":"p
+        value 2","position":2,"created_at":"2024/05/01 16:23:00 -0400","updated_at":"2024/05/01
+        16:23:00 -0400"},{"id":5,"custom_field_label_id":7,"account_id":448688,"name":"p
+        value 3","position":3,"created_at":"2024/05/01 16:23:00 -0400","updated_at":"2024/05/01
+        16:23:00 -0400"}],"locked":false,"custom_field_permissions":[{"id":7,"account_id":448688,"team_id":null,"custom_field_label_id":7,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:23:00 -0400","updated_at":"2024/05/01 16:23:00 -0400"}]}],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":7}}'
+  recorded_at: Mon, 03 Jun 2024 17:03:20 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,184 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://pld.com/api/v3/admin/document_tags.json
+    body:
+      encoding: UTF-8
+      string: '{"document_tag":{"name":"test document tag for deletion"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Mon, 03 Jun 2024 16:44:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717433049'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"c5fcc587776dcac5e3235ab803e3ec1d"
+      X-Request-Id:
+      - 1ce79184-7a2a-4d04-9223-03b571e48d68
+      X-Runtime:
+      - '0.075437'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":2,"name":"test document tag for deletion","created_at":"2024/06/03
+        12:44:08 -0400","updated_at":"2024/06/03 12:44:08 -0400"}'
+  recorded_at: Mon, 03 Jun 2024 16:44:08 GMT
+- request:
+    method: delete
+    uri: http://pld.com/api/v3/admin/document_tags/2.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Mon, 03 Jun 2024 16:44:08 GMT
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717433049'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      X-Request-Id:
+      - f293dd19-2520-44ed-9071-eae2e55ba8e9
+      X-Runtime:
+      - '0.072409'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 03 Jun 2024 16:44:08 GMT
+- request:
+    method: get
+    uri: http://pld.com/api/v3/admin/document_tags.json?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Mon, 03 Jun 2024 16:44:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717433049'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"45ea7c2bbd1a94d22ac27a0198377553"
+      X-Request-Id:
+      - 0baf9ae9-16a9-461b-b00f-496155df3a80
+      X-Runtime:
+      - '0.034593'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":0}}'
+  recorded_at: Mon, 03 Jun 2024 16:44:08 GMT
+recorded_with: VCR 6.1.0

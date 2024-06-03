@@ -43,7 +43,7 @@ class Pipeline::Collection < Pipeline::Base
     pages = nil
     while pages.nil? || page < pages
       response = read_page(page: page, per_page: per_page)
-      pages ||= response.is_a?(Array) || response[collection_name] ? 1 : response["pagination"]["pages"]
+      pages ||= response.is_a?(Array) || response[collection_name] || response["entries"] ? 1 : response["pagination"]["pages"]
       list = response.is_a?(Array) ? response : (response[collection_name] || response["entries"])
       list.each do |attrs|
         entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, attributes: attrs)
@@ -100,6 +100,7 @@ module Pipeline::Admin
   CustomFieldLabelDropdownEntries = Class.new(Pipeline::Collection)
   DealCustomFieldGroups = Class.new(Pipeline::Collection)
   DealLossReasons = Class.new(Pipeline::Collection)
+  DealWonReasons = Class.new(Pipeline::Collection)
   DealStages = Class.new(Pipeline::Collection)
   DealStatuses = Class.new(Pipeline::Collection)
   DealTags = Class.new(Pipeline::Collection)
@@ -109,7 +110,7 @@ module Pipeline::Admin
   LeadStatuses = Class.new(Pipeline::Collection)
   NoteCategories = Class.new(Pipeline::Collection)
   PersonCustomFieldGroups = Class.new(Pipeline::Collection)
-  PerformanceLanes = Class.new(Pipeline::Collection)
+  ProductLines = Class.new(Pipeline::Collection)
   RevenueTypes = Class.new(Pipeline::Collection)
   Teams = Class.new(Pipeline::Collection)
   TodoTemplates = Class.new(Pipeline::Collection)

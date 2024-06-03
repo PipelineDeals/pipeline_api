@@ -135,6 +135,10 @@ class Pipeline
     Pipeline::Admin::DealLossReasons.new(pipeline: self)
   end
 
+  def deal_won_reasons
+    Pipeline::Admin::DealWonReasons.new(pipeline: self)
+  end
+
   def deal_stages
     Pipeline::Admin::DealStages.new(pipeline: self)
   end
@@ -171,8 +175,8 @@ class Pipeline
     Pipeline::Admin::PersonCustomFieldGroups.new(pipeline: self)
   end
 
-  def performance_lanes
-    Pipeline::Admin::PerformanceLanes.new(pipeline: self)
+  def product_lines
+    Pipeline::Admin::ProductLines.new(pipeline: self)
   end
 
   def revenue_types
