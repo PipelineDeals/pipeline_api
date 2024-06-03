@@ -19,7 +19,8 @@ describe Pipeline::Admin::TodoTemplateItems do
 
   it "creates a todo_template_item" do
     VCR.use_cassette(:todo_template_items_create) do
-      todo_template_item = pipeline.todo_template_items.create(description: "test todo template item", todo_template_id: todo_template.id, event_category_id: account.event_categories.first["id"])
+      todo_template_item = pipeline.todo_template_items.create(description: "test todo template item", todo_template_id: todo_template.id,
+                                                               event_category_id: account.event_categories.first["id"])
       expect(todo_template_item.id).not_to be_nil
 
       # Just wanted to leave thigns as they were before
@@ -38,7 +39,8 @@ describe Pipeline::Admin::TodoTemplateItems do
 
   it "destroys a todo_template_item" do
     VCR.use_cassette(:todo_template_items_delete) do
-      todo_template_item = pipeline.todo_template_items.create(description: "test todo template item for deletion", todo_template_id: todo_template.id, event_category_id: account.event_categories.first["id"])
+      todo_template_item = pipeline.todo_template_items.create(description: "test todo template item for deletion", todo_template_id: todo_template.id,
+                                                               event_category_id: account.event_categories.first["id"])
       todo_template_item.destroy
       expect(pipeline.todo_template_items.all.map(&:id)).not_to include(todo_template_item.id)
     end

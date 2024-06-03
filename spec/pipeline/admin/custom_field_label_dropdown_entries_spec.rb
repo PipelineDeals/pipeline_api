@@ -14,7 +14,8 @@ describe Pipeline::Admin::CustomFieldLabelDropdownEntries do
 
   it "creates a custom_field_label_dropdown_entry" do
     VCR.use_cassette(:custom_field_label_dropdown_entries_create) do
-      custom_field_label_dropdown_entry = pipeline.custom_field_label_dropdown_entries.create(name: "test custom field dropdown entry", custom_field_label_id: custom_field.id)
+      custom_field_label_dropdown_entry = pipeline.custom_field_label_dropdown_entries.create(name: "test custom field dropdown entry",
+                                                                                              custom_field_label_id: custom_field.id)
       expect(custom_field_label_dropdown_entry.id).not_to be_nil
 
       # Just wanted to leave thigns as they were before
@@ -33,7 +34,8 @@ describe Pipeline::Admin::CustomFieldLabelDropdownEntries do
 
   it "destroys a custom_field_label_dropdown_entry" do
     VCR.use_cassette(:custom_field_label_dropdown_entries_delete) do
-      custom_field_label_dropdown_entry = pipeline.custom_field_label_dropdown_entries.create(name: "test custom field dropdown entry for deletion", custom_field_label_id: custom_field.id)
+      custom_field_label_dropdown_entry = pipeline.custom_field_label_dropdown_entries.create(name: "test custom field dropdown entry for deletion",
+                                                                                              custom_field_label_id: custom_field.id)
       custom_field_label_dropdown_entry.destroy
       expect(pipeline.custom_field_label_dropdown_entries.where(custom_field_label_id: custom_field.id).all.map(&:id)).not_to include(custom_field_label_dropdown_entry.id)
     end
