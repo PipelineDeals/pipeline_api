@@ -72,7 +72,7 @@ class Pipeline
   end
 
   def searches
-    Pipeline::Search.new(pipeline: self)
+    Pipeline::Searches.new(pipeline: self)
   end
 
   def notes
