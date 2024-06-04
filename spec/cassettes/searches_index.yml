@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://pld.com/api/v3/searches.json?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Tue, 04 Jun 2024 13:09:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717506591'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"c3e7c068ab0007b1a308c0740b46b778"
+      X-Request-Id:
+      - 9e4c11a6-26f7-4ebb-93a1-8d666d5c7bce
+      X-Runtime:
+      - '0.261317'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"entries":[{"id":17473265,"user_id":684638,"name":"All Customers","is_shared":false,"is_default":false,"query":{"company_is_customer":["Yes"]},"columns":["company_name","company_is_customer","company_owner","company_phone","company_city","company_state","company_total_pipeline","company_won_value","customer_health_score","company_notes"],"sort":"-companies.updated_at","search_type":"companies","is_sentence_search":false,"is_starred":false},{"id":17473266,"user_id":684638,"name":"My
+        Customers","is_shared":false,"is_default":false,"query":{"company_is_customer":["Yes"],"company_owner":[684638]},"columns":["company_name","company_is_customer","company_owner","company_phone","company_city","company_state","company_total_pipeline","company_won_value","customer_health_score","company_notes"],"sort":"-companies.updated_at","search_type":"companies","is_sentence_search":false,"is_starred":false},{"id":17473267,"user_id":684638,"name":"Customer
+        Health","is_shared":false,"is_default":false,"query":{"company_is_customer":["Yes"]},"columns":["company_name","customer_health_score","customer_days_in_health","company_owner","company_total_pipeline","company_won_value","company_notes","next_milestone_name","next_milestone_due","company_is_customer"],"sort":"-won_value
+        alias","search_type":"companies","is_sentence_search":false,"is_starred":false}],"pagination":{"page":1,"page_var":"page","per_page":200,"pages":1,"total":3}}'
+  recorded_at: Tue, 04 Jun 2024 13:09:50 GMT
+recorded_with: VCR 6.1.0

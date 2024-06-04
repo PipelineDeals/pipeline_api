@@ -1,0 +1,225 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://pld.com/api/v3/account.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2JkYTBlMjFhMTc4ZjI5OGI3OWIzMTA5NDViMzI1OCIsImp0aSI6IjVhZjg3MDAwLTAxODMtMDEzZC00M2ZmLTJjZGU0ODAwMTEyMiIsImV4cCI6MTc0ODY5OTcyMH0.wACkSpBq3A9aXxfIkXJ-Syovv8JrPgG5Pa6qlAZLrqQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.25.3
+      Date:
+      - Mon, 03 Jun 2024 15:54:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1717430052'
+      Cache-Control:
+      - no-store
+      Vary:
+      - Origin
+      Etag:
+      - W/"77f41f010c755ea1406b539b804f22e2"
+      X-Request-Id:
+      - e73cfe80-bcbb-46a8-8799-b91842add0fb
+      X-Runtime:
+      - '0.076884'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"id":448688,"company_name":null,"currency_id":77,"billing_phone_number":null,"yearly_seats_paid_for":0,"sales_team_size":"1-3","milestone_event_category_id":null,"technical_contact_email":null,"activities_follow_hierarchy_on_company_profile_pages":false,"show_deal_loss_reason_dialog":true,"address_autocompleter":false,"use_case":null,"deal_loss_reason_required":false,"deal_won_reason_required":false,"show_deal_won_reason_dialog":false,"show_deal_won_reason_deal_profile":true,"show_deal_loss_reason_deal_profile":true,"account_exports":[],"deal_stages":[{"id":1,"percent":100,"name":"Won","account_id":448688,"created_at":"2024/06/03
+        11:52:08 -0400","updated_at":"2024/06/03 11:52:08 -0400","deal_pipeline_id":1},{"id":2,"percent":0,"name":"Lost","account_id":448688,"created_at":"2024/06/03
+        11:52:08 -0400","updated_at":"2024/06/03 11:52:08 -0400","deal_pipeline_id":1}],"deal_loss_reasons":[],"deal_won_reasons":[],"currency_symbol":"$","deal_pipelines":[{"id":1,"account_id":448688,"name":"Sales","default":true,"created_at":"2024/06/03
+        11:52:08 -0400","updated_at":"2024/06/03 11:52:08 -0400","pipeline_type":"new_revenue","description":null}],"note_categories":[],"event_categories":[{"id":2107082,"name":"todo","account_id":448688,"is_system_category":false,"position":1,"created_at":"2024/01/12
+        13:12:32 -0500","updated_at":"2024/01/12 13:12:32 -0500"}],"visibility_settings":"private_people_shared_companies","note_categories_with_system_categories":[{"id":2292797,"name":"Deal","account_id":null,"position":1,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":false},{"id":2292798,"name":"CalendarEvent","account_id":null,"position":2,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":false},{"id":2292799,"name":"CalendarTask","account_id":null,"position":3,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":false},{"id":2292800,"name":"Email","account_id":null,"position":4,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":true},{"id":2292801,"name":"Trackable
+        Email Action","account_id":null,"position":5,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":true},{"id":2292802,"name":"Customer","account_id":null,"position":6,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":false},{"id":2292803,"name":"Company","account_id":null,"position":7,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":false},{"id":2292804,"name":"Person","account_id":null,"position":8,"system_category":true,"created_at":"2023/12/04
+        11:41:25 -0500","updated_at":"2023/12/04 11:41:25 -0500","editable":false}],"selected_currencies":[{"id":77,"name":"United
+        States Dollar","code":"USD","symbol":"$","decimal_places":2,"position":1}],"is_batchbook?":false,"billed_by_appdirect?":false,"date_format":"us","time_format":"us","email_settings":{"automatic_note_creation":true,"automatic_attachment_creation":true},"predefined_contacts_tags":[{"id":2,"name":"asdf"},{"id":1,"name":"TEST
+        TAG"}],"document_tags":[],"company_tags":[],"deal_tags":[],"lead_sources":[{"id":1,"name":"source","people_count":null,"cost_per_lead_in_cents":null,"flat_fee_in_cents":null,"is_system_lead_source":false}],"lead_statuses":[{"id":1,"hex_color":"fff","name":"status","position":1}],"product_lines":[],"teams":[{"id":1392359,"name":"Sales
+        team","parent_id":null}],"calendar_entry_priorities":[],"currencies":[{"id":77,"name":"United
+        States Dollar"}],"users":[{"account_id":448688,"commission_rate":0.0,"date_format":"us","email":"viola.champlin@mayer.info","other_emails":[],"first_name":"Jaclyn","last_name":"Senger","full_name":"Jaclyn
+        Senger","is_account_admin":true,"is_allowed_to_delete":true,"is_allowed_to_export":true,"is_allowed_to_merge_records":true,"level":3,"manager_id":null,"time_format":"US","time_zone":"America/New_York","id":684638,"name":"sevgibson","deleted_at":null,"read_only":false,"team_id":null,"email_sync_enabled":true}],"inactive_users":[],"deal_custom_field_labels":[{"id":12,"name":"dropdown
+        field","field_type":"dropdown","report_behavior":null,"is_required":null,"position":1,"type":"DealCustomFieldLabel","created_at":"2024/06/03
+        10:57:47 -0400","updated_at":"2024/06/03 10:57:47 -0400","custom_field_group_id":null,"output_type":"dropdown","custom_field_label_dropdown_entries":[],"locked":false,"custom_field_permissions":[]},{"id":13,"name":"test
+        dropdown field","field_type":"dropdown","report_behavior":null,"is_required":null,"position":2,"type":"DealCustomFieldLabel","created_at":"2024/06/03
+        11:22:17 -0400","updated_at":"2024/06/03 11:31:13 -0400","custom_field_group_id":null,"output_type":"dropdown","custom_field_label_dropdown_entries":[],"locked":false,"custom_field_permissions":[]}],"person_custom_field_labels":[{"id":1,"name":"string
+        field","field_type":"text","report_behavior":null,"is_required":null,"position":1,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:20:50 -0400","updated_at":"2024/05/01 16:21:24 -0400","custom_field_group_id":null,"output_type":"text","locked":false,"custom_field_permissions":[{"id":1,"account_id":448688,"team_id":null,"custom_field_label_id":1,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:20:50 -0400","updated_at":"2024/05/01 16:20:50 -0400"}]},{"id":2,"name":"boolean
+        field","field_type":"boolean","report_behavior":null,"is_required":null,"position":2,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:21:02 -0400","updated_at":"2024/05/01 16:21:02 -0400","custom_field_group_id":null,"output_type":"boolean","locked":false,"custom_field_permissions":[{"id":2,"account_id":448688,"team_id":null,"custom_field_label_id":2,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:21:02 -0400","updated_at":"2024/05/01 16:21:02 -0400"}]},{"id":3,"name":"currency
+        field","field_type":"currency","report_behavior":null,"is_required":null,"position":3,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:21:12 -0400","updated_at":"2024/05/01 16:21:12 -0400","custom_field_group_id":null,"output_type":"currency","locked":false,"custom_field_permissions":[{"id":3,"account_id":448688,"team_id":null,"custom_field_label_id":3,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:21:12 -0400","updated_at":"2024/05/01 16:21:12 -0400"}]},{"id":4,"name":"date
+        field","field_type":"date","report_behavior":null,"is_required":null,"position":4,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:21:34 -0400","updated_at":"2024/05/01 16:21:34 -0400","custom_field_group_id":null,"output_type":"date","locked":false,"custom_field_permissions":[{"id":4,"account_id":448688,"team_id":null,"custom_field_label_id":4,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:21:34 -0400","updated_at":"2024/05/01 16:21:34 -0400"}]},{"id":5,"name":"dropdown
+        field","field_type":"dropdown","report_behavior":null,"is_required":null,"position":5,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:22:04 -0400","updated_at":"2024/05/01 16:22:04 -0400","custom_field_group_id":null,"output_type":"dropdown","custom_field_label_dropdown_entries":[{"id":1,"custom_field_label_id":5,"account_id":448688,"name":"value
+        1","position":1,"created_at":"2024/05/01 16:22:04 -0400","updated_at":"2024/05/01
+        16:22:04 -0400"},{"id":2,"custom_field_label_id":5,"account_id":448688,"name":"value
+        2","position":2,"created_at":"2024/05/01 16:22:04 -0400","updated_at":"2024/05/01
+        16:22:04 -0400"}],"locked":false,"custom_field_permissions":[{"id":5,"account_id":448688,"team_id":null,"custom_field_label_id":5,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:22:04 -0400","updated_at":"2024/05/01 16:22:04 -0400"}]},{"id":6,"name":"numeric
+        field","field_type":"numeric","report_behavior":null,"is_required":null,"position":6,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:22:22 -0400","updated_at":"2024/05/01 16:22:22 -0400","custom_field_group_id":null,"output_type":"numeric","locked":false,"custom_field_permissions":[{"id":6,"account_id":448688,"team_id":null,"custom_field_label_id":6,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:22:22 -0400","updated_at":"2024/05/01 16:22:22 -0400"}]},{"id":7,"name":"picklist
+        field","field_type":"multi_select","report_behavior":null,"is_required":null,"position":7,"type":"PersonCustomFieldLabel","created_at":"2024/05/01
+        16:23:00 -0400","updated_at":"2024/05/01 16:23:00 -0400","custom_field_group_id":null,"output_type":"multi_select","custom_field_label_dropdown_entries":[{"id":3,"custom_field_label_id":7,"account_id":448688,"name":"p
+        value 1","position":1,"created_at":"2024/05/01 16:23:00 -0400","updated_at":"2024/05/01
+        16:23:00 -0400"},{"id":4,"custom_field_label_id":7,"account_id":448688,"name":"p
+        value 2","position":2,"created_at":"2024/05/01 16:23:00 -0400","updated_at":"2024/05/01
+        16:23:00 -0400"},{"id":5,"custom_field_label_id":7,"account_id":448688,"name":"p
+        value 3","position":3,"created_at":"2024/05/01 16:23:00 -0400","updated_at":"2024/05/01
+        16:23:00 -0400"}],"locked":false,"custom_field_permissions":[{"id":7,"account_id":448688,"team_id":null,"custom_field_label_id":7,"read":true,"edit":true,"add":true,"created_at":"2024/05/01
+        16:23:00 -0400","updated_at":"2024/05/01 16:23:00 -0400"}]}],"company_custom_field_labels":[],"custom_field_groups":[],"currency":{"id":77,"decimal_places":2,"code":"USD","symbol":"$","name":"United
+        States Dollar"},"revenue_types":[],"forms":{"company":[{"id":"displayed_fields","label":"Displayed
+        fields","parent_id":null,"opened":true,"system":true,"display_as_field":false,"group":true,"hide_group_header":true,"children":[{"id":"name","label":"Company
+        name","parent_id":"displayed_fields","immovable":true,"type":"String"},{"id":"phone1","label":"Phone","parent_id":"displayed_fields","type":"Phone"},{"id":"fax","label":"Fax","parent_id":"displayed_fields","type":"Phone"},{"id":"address_1","label":"Address","parent_id":"displayed_fields","type":"String","data":{"autocompleter-id":"address_1","autocomplete-type":"street_address","toggle":"google-place-autocompleter"}},{"id":"address_2","label":"Address
+        line 2","parent_id":"displayed_fields","type":"String","data":{"autocompleter-id":"address_1","autocomplete-type":"street_address_two"}},{"id":"city","label":"City","parent_id":"displayed_fields","type":"String","data":{"autocompleter-id":"address_1","autocomplete-type":"locality"}},{"id":"state","label":"State","parent_id":"displayed_fields","type":"String","data":{"autocompleter-id":"address_1","autocomplete-type":"administrative_area_level_1"}},{"id":"postal_code","label":"Postal
+        code","parent_id":"displayed_fields","type":"String","data":{"autocompleter-id":"address_1","autocomplete-type":"postal_code"}},{"id":"country","label":"Country","parent_id":"displayed_fields","type":"String","data":{"autocompleter-id":"address_1","autocomplete-type":"country"}},{"id":"web","label":"Website","parent_id":"displayed_fields","type":"String"},{"id":"email","label":"Email","parent_id":"displayed_fields","type":"Email"},{"id":"description","label":"Summary","parent_id":"displayed_fields","type":"Text"},{"id":"owner_id","label":"Owner","parent_id":"displayed_fields","type":"Select"},{"id":"tag_ids","label":"Tags","parent_id":"displayed_fields","type":"MultiSelect"}]},{"id":"other_fields","label":"System
+        fields","parent_id":null,"opened":false,"system":true,"display_as_field":false,"group":true,"children":[]},{"id":"custom_fields","label":"Custom
+        fields","parent_id":null,"opened":false,"system":true,"display_as_field":false,"group":true,"children":[]}],"deal":[{"id":"displayed_fields","label":"Displayed
+        fields","parent_id":null,"opened":true,"system":true,"display_as_field":false,"group":true,"hide_group_header":true,"children":[{"id":"name","label":"Deal
+        name","parent_id":"displayed_fields","immovable":true,"type":"String"},{"id":"summary","label":"Summary","parent_id":"displayed_fields","type":"Text"},{"id":"company_id","label":"Company
+        name","parent_id":"displayed_fields","type":"CompanySearch"},{"id":"deal_primary_contact_id","label":"Primary
+        contact","parent_id":"displayed_fields","type":"PeopleSearch"},{"id":"deal_value","label":"Amount","parent_id":"displayed_fields","type":"Currency"},{"id":"deal_pipeline_id","label":"Pipeline","parent_id":"displayed_fields","type":"Select","read_only":true},{"id":"deal_stage_id","label":"Stage","parent_id":"displayed_fields","type":"Select"},{"id":"user_id","label":"Owner","parent_id":"displayed_fields","type":"Select"},{"id":"probability","label":"Probability","parent_id":"displayed_fields","type":"Probability"},{"id":"source_id","label":"Source","parent_id":"displayed_fields","type":"Select"},{"id":"status","label":"Status","parent_id":"displayed_fields","type":"Select"},{"id":"expected_close_date","label":"Expected
+        Close","parent_id":"displayed_fields","type":"Date"},{"id":"deal_revenue_type","label":"Revenue
+        type","parent_id":"displayed_fields","type":"Select"},{"id":"deal_product_lines_ids","label":"Deal
+        Performance Lane","parent_id":"displayed_fields","type":"Select"},{"id":"tag_ids","label":"Tags","parent_id":"displayed_fields","type":"MultiSelect"}]},{"id":"other_fields","label":"System
+        fields","parent_id":null,"opened":false,"system":true,"display_as_field":false,"group":true,"children":[]},{"id":"custom_fields","label":"Custom
+        fields","parent_id":null,"opened":false,"system":true,"display_as_field":false,"group":true,"children":[{"id":"custom_label_12","label":"dropdown
+        field","position":1,"parent_id":"custom_fields","type":"dropdown","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_13","label":"test
+        dropdown field","position":2,"parent_id":"custom_fields","type":"dropdown","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true}]}],"person":[{"id":"displayed_fields","label":"Displayed
+        fields","parent_id":null,"opened":true,"system":true,"display_as_field":false,"group":true,"hide_group_header":true,"children":[{"id":"first_name","label":"First
+        Name","parent_id":"displayed_fields","type":"String"},{"id":"last_name","label":"Last
+        Name","parent_id":"displayed_fields","type":"String"},{"id":"company_id","label":"Company
+        name","parent_id":"displayed_fields","type":"CompanySearch"},{"id":"position","label":"Title","parent_id":"displayed_fields","type":"String"},{"id":"phone","label":"Work
+        phone","parent_id":"displayed_fields","type":"Phone"},{"id":"email","label":"Work
+        email","parent_id":"displayed_fields","type":"Email"},{"id":"website","label":"Website","parent_id":"displayed_fields","type":"String"},{"id":"mobile","label":"Mobile","parent_id":"displayed_fields","type":"Phone"},{"id":"summary","label":"Summary","parent_id":"displayed_fields","type":"Text"},{"id":"predefined_contacts_tag_ids","label":"Tags","parent_id":"displayed_fields","type":"MultiSelect"},{"id":"is_lead","label":"This
+        person is a lead","parent_id":"displayed_fields","type":"Boolean"},{"id":"lead_status_id","label":"Status","parent_id":"displayed_fields","type":"Select"},{"id":"lead_source_id","label":"Source","parent_id":"displayed_fields","type":"Select"},{"id":"deal_ids","label":"Deal
+        name","parent_id":"displayed_fields","type":"DealSearch"},{"id":"user_id","label":"Owner","parent_id":"displayed_fields","type":"Select"},{"id":"assignment_note","label":"Assignment
+        activity","parent_id":"displayed_fields","type":"Text"},{"id":"work_address_fields","label":"Work
+        address fields","parent_id":"displayed_fields","opened":true,"system":true,"display_as_field":true,"group":true,"children":[{"id":"work_address_1","label":"Work
+        address","parent_id":"work_address_fields","type":"Address","data":{"autocompleter-id":"work_address_1","autocomplete-type":"street_address","toggle":"google-place-autocompleter"}},{"id":"work_address_2","label":"Work
+        address line 2","parent_id":"work_address_fields","type":"String","data":{"autocompleter-id":"work_address_1","autocomplete-type":"street_address_two"}},{"id":"work_city","label":"Work
+        city","parent_id":"work_address_fields","type":"String","data":{"autocompleter-id":"work_address_1","autocomplete-type":"locality"}},{"id":"work_state","label":"Work
+        state","parent_id":"work_address_fields","type":"String","data":{"autocompleter-id":"work_address_1","autocomplete-type":"administrative_area_level_1"}},{"id":"work_postal_code","label":"Work
+        postal code","parent_id":"work_address_fields","type":"String","data":{"autocompleter-id":"work_address_1","autocomplete-type":"postal_code"}},{"id":"work_country","label":"Work
+        country","parent_id":"work_address_fields","type":"String","data":{"autocompleter-id":"work_address_1","autocomplete-type":"country"}}]},{"id":"home_address_fields","label":"Home
+        address fields","parent_id":"displayed_fields","opened":true,"system":true,"display_as_field":true,"group":true,"children":[{"id":"home_address_1","label":"Home
+        address","parent_id":"home_address_fields","type":"Address","data":{"autocompleter-id":"home_address_1","autocomplete-type":"street_address","toggle":"google-place-autocompleter"}},{"id":"home_address_2","label":"Home
+        address line 2","parent_id":"home_address_fields","type":"String","data":{"autocompleter-id":"home_address_1","autocomplete-type":"street_address_two"}},{"id":"home_city","label":"Home
+        city","parent_id":"home_address_fields","type":"String","data":{"autocompleter-id":"home_address_1","autocomplete-type":"locality"}},{"id":"home_state","label":"Home
+        state","parent_id":"home_address_fields","type":"String","data":{"autocompleter-id":"home_address_1","autocomplete-type":"administrative_area_level_1"}},{"id":"home_postal_code","label":"Home
+        postal code","parent_id":"home_address_fields","type":"String","data":{"autocompleter-id":"home_address_1","autocomplete-type":"postal_code"}},{"id":"home_country","label":"Home
+        country","parent_id":"home_address_fields","type":"String","data":{"autocompleter-id":"home_address_1","autocomplete-type":"country"}}]}]},{"id":"other_fields","label":"System
+        fields","parent_id":null,"opened":false,"system":true,"display_as_field":false,"group":true,"children":[{"id":"bounced","label":"Bounced","parent_id":"other_fields","type":"Boolean"},{"id":"facebook_url","label":"Facebook
+        URL","parent_id":"other_fields","type":"String"},{"id":"fax","label":"Fax","parent_id":"other_fields","type":"Phone"},{"id":"home_email","label":"Home
+        email","parent_id":"other_fields","type":"Email"},{"id":"home_phone","label":"Home
+        phone","parent_id":"other_fields","type":"Phone"},{"id":"instant_message","label":"Instant
+        messenger","parent_id":"other_fields","type":"String"},{"id":"last_emailed_at","label":"Last
+        emailed at","parent_id":"other_fields","type":"ReadOnly"},{"id":"linked_in_url","label":"LinkedIn
+        URL","parent_id":"other_fields","type":"String"},{"id":"email2","label":"Other
+        email","parent_id":"other_fields","type":"Email"},{"id":"twitter","label":"Twitter
+        user","parent_id":"other_fields","type":"String"},{"id":"unsubscribed","label":"Unsubscribed","parent_id":"other_fields","type":"Boolean"}]},{"id":"custom_fields","label":"Custom
+        fields","parent_id":null,"opened":false,"system":true,"display_as_field":false,"group":true,"children":[{"id":"custom_label_1","label":"string
+        field","position":1,"parent_id":"custom_fields","type":"text","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_2","label":"boolean
+        field","position":2,"parent_id":"custom_fields","type":"boolean","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_3","label":"currency
+        field","position":3,"parent_id":"custom_fields","type":"currency","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_4","label":"date
+        field","position":4,"parent_id":"custom_fields","type":"date","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_5","label":"dropdown
+        field","position":5,"parent_id":"custom_fields","type":"dropdown","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_6","label":"numeric
+        field","position":6,"parent_id":"custom_fields","type":"numeric","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true},{"id":"custom_label_7","label":"picklist
+        field","position":7,"parent_id":"custom_fields","type":"multi_select","immovable":false,"custom_field_group_name":"Custom
+        Fields","locked":false,"edit":true,"locked_add":false,"add":true}]}],"calendar_task":[{"id":"displayed_fields","label":"Displayed
+        fields","parent_id":null,"opened":true,"system":true,"display_as_field":false,"group":true,"hide_group_header":true,"children":[{"id":"name","label":"Name","parent_id":"displayed_fields","type":"String"},{"id":"association_name","label":"Associate
+        to","parent_id":"displayed_fields","type":"AssociationSearch"},{"id":"category_id","label":"Type","parent_id":"displayed_fields","type":"Select"},{"id":"owner_id","label":"Assign
+        to","parent_id":"displayed_fields","type":"Select"},{"id":"milestone_id","label":"Milestone","parent_id":"displayed_fields","type":"Select"},{"id":"calendar_entry_priority_id","label":"Priority","parent_id":"displayed_fields","type":"Select"},{"id":"due_date","label":"Due
+        date","parent_id":"displayed_fields","type":"Date"},{"id":"repeat_this_entry","label":"Repeat
+        this task","parent_id":"displayed_fields","type":"Boolean"},{"id":"recurrence_frequency","label":"Repeat
+        frequency","parent_id":"recurrence_options","type":"Select"},{"id":"recurrence_end","label":"End","parent_id":"recurrence_options","type":"Date"},{"id":"description","label":"Description","parent_id":"displayed_fields","type":"Text"}]}],"calendar_event":[{"id":"displayed_fields","label":"Displayed
+        fields","parent_id":null,"opened":true,"system":true,"display_as_field":false,"group":true,"hide_group_header":true,"children":[{"id":"name","label":"Name","parent_id":"displayed_fields","type":"String"},{"id":"association_name","label":"Associate
+        to","parent_id":"displayed_fields","type":"AssociationSearch"},{"id":"category_id","label":"Type","parent_id":"displayed_fields","type":"Select"},{"id":"owner_id","label":"Assign
+        to","parent_id":"displayed_fields","type":"Select"},{"id":"milestone_id","label":"Milestone","parent_id":"displayed_fields","type":"Select"},{"id":"calendar_entry_priority_id","label":"Priority","parent_id":"displayed_fields","type":"Select"},{"id":"start_time_date","label":"Start
+        time","parent_id":"displayed_fields","type":"DateTime"},{"id":"end_time_date","label":"End
+        time","parent_id":"displayed_fields","type":"DateTime"},{"id":"all_day","label":"This
+        is an all-day event","parent_id":"displayed_fields","type":"Boolean"},{"id":"repeat_this_entry","label":"Repeat
+        this event","parent_id":"displayed_fields","type":"Boolean"},{"id":"recurrence_frequency","label":"Repeat
+        frequency","parent_id":"recurrence_options","type":"Select"},{"id":"recurrence_end","label":"End","parent_id":"recurrence_options","type":"Date"},{"id":"description","label":"Description","parent_id":"displayed_fields","type":"Text"}]}]},"deal_statuses":[],"todo_templates":[{"id":689192,"name":"template","account_id":448688,"template_type":"people","is_default":null,"todo_template_items":[{"id":3300806,"event_category_id":2107082,"due_date":null,"description":"asd","todo_template_id":689192,"account_id":448688,"calendar_entry_priority_id":null}],"todo_template_types":[{"id":1,"template_type":"people"}]}],"is_on_trial":false,"is_trial_converted_early":false,"future_changes":[],"default_quotas":{"start":{"lateral_teams":1,"automations":1,"deal_pipelines":1,"file_size":200,"deals":-1,"read_only_users":0,"monthly_exports_per_user":-1,"email_trackables_per_user":-1,"custom_fields":25,"monthly_ai_email_per_user":25},"develop":{"lateral_teams":2,"automations":2,"deal_pipelines":2,"file_size":200,"deals":-1,"read_only_users":0,"monthly_exports_per_user":-1,"email_trackables_per_user":-1,"custom_fields":35,"monthly_ai_email_per_user":50},"grow":{"lateral_teams":200,"automations":20,"deal_pipelines":5,"file_size":200,"deals":-1,"read_only_users":0,"monthly_exports_per_user":-1,"email_trackables_per_user":-1,"custom_fields":-1,"monthly_ai_email_per_user":100}},"quotas_in_use":["teams","deal_pipelines","read_only_users","monthly_ai_email_per_user"],"trial_end_date":null,"onboarding_state":{"account_data":0,"sample_data":0},"seat_licenses":1,"seat_licenses_used":1,"license_count":1,"plan":"start","sales_person":{"name":"Sales
+        Team Member","calendar_url":null},"cx_person":null,"quickbooks_enabled":false,"setup_guide_v2":true,"deal_owners_with_teams":[{"full_name":"Me","id":684638,"avatar_thumb_url":null,"deleted_at":null,"team_id":null,"read_only":false}],"password_requirements":{"lower_case":0,"upper_case":0,"number":0,"special_character":0,"length":[6,128]},"sso_restricted":false,"password_expiration":null,"calendar_entry_recurring_end_date_months":null,"calendar_entry_postpone_periods":[1,7,30],"calendar_entry_postpone_weekends":true,"calendar_entry_use_calendar_to_postpone":true,"calendar_entry_task_due_date_required":null,"todo_templates_ignore_weekends":true,"is_allowed_to_track_emails":true,"deal_name_tooltip":null,"upgrade_to_grow":"http://billing.pld.com/upgrade/grow","upgrade_to_develop":"http://billing.pld.com/upgrade/develop","conditional_fields_automations_app_id":140,"conditional_fields":[],"conditional_fields_defaults":[{"id":null,"name":"Required
+        Company Fields","description":"By default, the following fields are required
+        for a company record: Company Name","event_model":"company","event_action":"create_update","is_activated":true,"triggers":[],"actions":[{"id":null,"fields":[{"name":"name","value":"required"}]}]},{"id":null,"name":"Required
+        Deal Fields","description":"By default, the following fields are required
+        for a deal record: Deal Name, Pipeline","event_model":"deal","event_action":"create_update","is_activated":true,"triggers":[],"actions":[{"id":null,"fields":[{"name":"name","value":"required"}]},{"id":null,"fields":[{"name":"deal_pipeline_id","value":"required"}]}]},{"id":null,"name":"Required
+        Person Fields","description":"By default, no fields are required to create
+        a person record.","event_model":"person","event_action":"create_update","is_activated":true,"triggers":[],"actions":[{"id":null,"fields":[]}]},{"id":null,"name":"Required
+        Event Fields","description":"By default, the following fields are required
+        for an event record: Event Name, Start Time, End Time","event_model":"calendar_event","event_action":"create_update","is_activated":true,"triggers":[],"actions":[{"id":null,"fields":[{"name":"name","value":"required"},{"name":"start_time_date","value":"required"},{"name":"end_time_date","value":"required"}]}]},{"id":null,"name":"Required
+        Task Fields","description":"By default, the following fields are required
+        for a task record: Task Name","event_model":"calendar_task","event_action":"create_update","is_activated":true,"triggers":[],"actions":[{"id":null,"fields":[{"name":"name","value":"required"}]}]}],"conditional_dropdowns_automations_app_id":141,"conditional_dropdowns":[],"conditional_dropdowns_stack_conditions":null,"conditional_dropdowns_disabled_options_last":null,"email_sequence_recipient_statuses":{"active":0,"stopped":1,"exited":2,"paused":3,"completed":4},"bulk_update_deal_fields":["bonus","company_name","currency_id","deal_loss_reason_id","deal_loss_reason_notes","deal_value","deal_won_reason_id","deal_won_reason_notes","expected_close_date","name","probability","revenue_type_id","source_id","status","summary"],"bulk_update_person_fields":["bounced","company_id","email","email2","facebook_url","fax","first_name","home_email","home_phone","instant_message","last_name","lead_source_id","lead_status_id","linked_in_url","mobile","phone","position","summary","twitter","type","unsubscribed","website","home_address_1","home_address_2","home_city","home_state","home_postal_code","home_country","work_address_1","work_address_2","work_city","work_state","work_postal_code","work_country"],"bulk_update_company_fields":["address_1","address_2","city","country","description","email","fax","name","phone1","postal_code","state","web"],"merge_tags":[{"tag":"{{first
+        name, fallback=}}","name":"First name","type":"person"},{"tag":"{{last name,
+        fallback=}}","name":"Last name","type":"person"},{"tag":"{{summary, fallback=}}","name":"Summary","type":"person"},{"tag":"{{title,
+        fallback=}}","name":"Title","type":"person"},{"tag":"{{phone, fallback=}}","name":"Work
+        phone","type":"person"},{"tag":"{{mobile, fallback=}}","name":"Mobile phone","type":"person"},{"tag":"{{fax,
+        fallback=}}","name":"Fax","type":"person"},{"tag":"{{email, fallback=}}","name":"Work
+        email","type":"person"},{"tag":"{{home email, fallback=}}","name":"Home email","type":"person"},{"tag":"{{other
+        email, fallback=}}","name":"Other email","type":"person"},{"tag":"{{website,
+        fallback=}}","name":"Website","type":"person"},{"tag":"{{tags, fallback=}}","name":"Tags","type":"person"},{"tag":"{{company
+        name, fallback=}}","name":"Name","type":"company"},{"tag":"{{company summary,
+        fallback=}}","name":"Summary","type":"company"},{"tag":"{{company phone, fallback=}}","name":"Phone","type":"company"},{"tag":"{{company
+        fax, fallback=}}","name":"Fax","type":"company"},{"tag":"{{company email,
+        fallback=}}","name":"Email","type":"company"},{"tag":"{{company website, fallback=}}","name":"Website","type":"company"},{"tag":"{{deal
+        name, fallback=}}","name":"Name","type":"deal"},{"tag":"{{deal summary, fallback=}}","name":"Summary","type":"deal"},{"tag":"{{deal
+        company name, fallback=}}","name":"Company name","type":"deal"},{"tag":"{{deal
+        amount, fallback=}}","name":"Amount","type":"deal"},{"tag":"{{signature}}","name":"Signature","type":"global"}],"mfa_enforced":null,"global_search_attributes":null,"global_search_user_can_customize":null,"global_search_owner_default_filter":null}'
+  recorded_at: Mon, 03 Jun 2024 15:54:11 GMT
+recorded_with: VCR 6.1.0

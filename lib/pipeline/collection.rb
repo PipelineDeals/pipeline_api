@@ -43,7 +43,7 @@ class Pipeline::Collection < Pipeline::Base
     pages = nil
     while pages.nil? || page < pages
       response = read_page(page: page, per_page: per_page)
-      pages ||= response.is_a?(Array) || response[collection_name] ? 1 : response["pagination"]["pages"]
+      pages ||= (response.is_a?(Hash) && response.dig(:pagination, :pages)) || 1
       list = response.is_a?(Array) ? response : (response[collection_name] || response["entries"])
       list.each do |attrs|
         entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, attributes: attrs)
@@ -75,6 +75,7 @@ class Pipeline::Collection < Pipeline::Base
 end
 
 Pipeline::Companies = Class.new(Pipeline::Collection)
+Pipeline::Customers = Class.new(Pipeline::Collection)
 Pipeline::People = Class.new(Pipeline::Collection)
 Pipeline::Deals = Class.new(Pipeline::Collection)
 Pipeline::Users = Class.new(Pipeline::Collection)
@@ -84,7 +85,34 @@ Pipeline::Notes = Class.new(Pipeline::Collection)
 Pipeline::CalendarEntries = Class.new(Pipeline::Collection)
 Pipeline::CalendarEvents = Class.new(Pipeline::Collection)
 Pipeline::CalendarTasks = Class.new(Pipeline::Collection)
+Pipeline::Searches = Class.new(Pipeline::Collection)
+Pipeline::Comments = Class.new(Pipeline::Collection)
 module Pipeline::Admin
   Webhooks = Class.new(Pipeline::Collection)
   Features = Class.new(Pipeline::Collection)
+  PredefinedContactsTags = Class.new(Pipeline::Collection)
+  DealCustomFieldLabels = Class.new(Pipeline::Collection)
+  PersonCustomFieldLabels = Class.new(Pipeline::Collection)
+  CompanyCustomFieldLabels = Class.new(Pipeline::Collection)
+  CalendarEntryPriorities = Class.new(Pipeline::Collection)
+  CompanyCustomFieldGroups = Class.new(Pipeline::Collection)
+  CompanyTags = Class.new(Pipeline::Collection)
+  CustomFieldLabelDropdownEntries = Class.new(Pipeline::Collection)
+  DealCustomFieldGroups = Class.new(Pipeline::Collection)
+  DealLossReasons = Class.new(Pipeline::Collection)
+  DealWonReasons = Class.new(Pipeline::Collection)
+  DealStages = Class.new(Pipeline::Collection)
+  DealStatuses = Class.new(Pipeline::Collection)
+  DealTags = Class.new(Pipeline::Collection)
+  DocumentTags = Class.new(Pipeline::Collection)
+  EventCategories = Class.new(Pipeline::Collection)
+  LeadSources = Class.new(Pipeline::Collection)
+  LeadStatuses = Class.new(Pipeline::Collection)
+  NoteCategories = Class.new(Pipeline::Collection)
+  PersonCustomFieldGroups = Class.new(Pipeline::Collection)
+  ProductLines = Class.new(Pipeline::Collection)
+  RevenueTypes = Class.new(Pipeline::Collection)
+  Teams = Class.new(Pipeline::Collection)
+  TodoTemplates = Class.new(Pipeline::Collection)
+  TodoTemplateItems = Class.new(Pipeline::Collection)
 end
