@@ -41,9 +41,9 @@ class Pipeline::Collection < Pipeline::Base
   def each(per_page: nil)
     page = 1
     pages = nil
-    while pages.nil? || page < pages
+    while pages.nil? || page <= pages
       response = read_page(page: page, per_page: per_page)
-      pages ||= (response.is_a?(Hash) && response.dig(:pagination, :pages)) || 1
+      pages = (response.is_a?(Hash) && response.dig("pagination", "pages")) || 1
       list = response.is_a?(Array) ? response : (response[collection_name] || response["entries"])
       list.each do |attrs|
         entry = [module_name, collection_name.singularize.camelize].join("::").constantize.new(pipeline: pipeline, attributes: attrs)
