@@ -108,7 +108,6 @@ Pipeline::CalendarEvent = Class.new(Pipeline::Resource)
 Pipeline::CalendarTask = Class.new(Pipeline::Resource)
 Pipeline::Search = Class.new(Pipeline::Resource)
 Pipeline::Comment = Class.new(Pipeline::Resource)
-Pipeline::Import = Class.new(Pipeline::Resource)
 module Pipeline::Admin
   Webhook = Class.new(Pipeline::Resource)
   PredefinedContactsTag = Class.new(Pipeline::Resource)
@@ -139,4 +138,5 @@ module Pipeline::Admin
 end
 
 require "pipeline/user"
+require "pipeline/import"
 require "pipeline/admin/feature"
