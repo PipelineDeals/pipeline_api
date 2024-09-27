@@ -202,6 +202,10 @@ class Pipeline
   def features
     Pipeline::Admin::Features.new(pipeline: self)
   end
+
+  def imports
+    Pipeline::Imports.new(pipeline: self)
+  end
 end
 
 require "pipeline/base"
