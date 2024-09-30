@@ -5,7 +5,7 @@ class Pipeline::Import < Pipeline::Resource
     super
   end
 
-  def start(import_ids: [])
-    _post("imports/#{id}/start", body: { import_ids: })
+  def start(import_ids_sequence: [])
+    _post("imports/#{id}/start", body: { import_ids_sequence: })
   end
 end
