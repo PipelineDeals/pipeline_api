@@ -138,4 +138,5 @@ module Pipeline::Admin
 end
 
 require "pipeline/user"
+require "pipeline/import"
 require "pipeline/admin/feature"
