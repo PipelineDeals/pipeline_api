@@ -1,7 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'activesupport'
+gem 'activesupport', '~> 7.0.7.1'
 gem 'httparty'
 
 group :development, :test, :ci do
