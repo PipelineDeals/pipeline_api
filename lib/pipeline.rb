@@ -206,6 +206,10 @@ class Pipeline
   def imports
     Pipeline::Imports.new(pipeline: self)
   end
+
+  def call_logs
+    Pipeline::CallLogs.new(pipeline: self)
+  end
 end
 
 require "pipeline/base"
