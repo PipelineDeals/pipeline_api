@@ -88,6 +88,7 @@ Pipeline::CalendarTasks = Class.new(Pipeline::Collection)
 Pipeline::Searches = Class.new(Pipeline::Collection)
 Pipeline::Comments = Class.new(Pipeline::Collection)
 Pipeline::Imports = Class.new(Pipeline::Collection)
+Pipeline::CallLogs = Class.new(Pipeline::Collection)
 module Pipeline::Admin
   Webhooks = Class.new(Pipeline::Collection)
   Features = Class.new(Pipeline::Collection)
