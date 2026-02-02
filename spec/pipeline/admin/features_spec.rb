@@ -15,18 +15,18 @@ describe Pipeline::Admin::Feature do
   it "adds a feature with a provider" do
     VCR.use_cassette(:features_add_provider) do
       feature = pipeline.features.find(:sms_support)
-      result = feature.add_provider("JustCall", { this: :that })
+      result = feature.add_provider(provided_by: "JustCall", data: { this: :that }, provider_key: "justcall")
       expect(result["id"]).to eq("sms_support")
       expect(result["providers"][0]).to match(hash_including("provided_by" => "JustCall", "data" => { "this" => "that" }))
-      feature.remove_provider("JustCall")
+      feature.remove_provider("justcall")
     end
   end
 
   it "removes a provided feature" do
     VCR.use_cassette(:features_remove_provider) do
       feature = pipeline.features.find(:sms_support)
-      feature.add_provider("JustCall", { this: :that })
-      expect(feature.remove_provider("JustCall")).to eq("id" => "sms_support", "providers" => nil)
+      feature.add_provider(provided_by: "JustCall", data: { this: :that }, provider_key: "justcall")
+      expect(feature.remove_provider("justcall")).to eq("id" => "sms_support", "providers" => nil)
     end
   end
 end
