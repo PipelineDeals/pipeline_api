@@ -67,7 +67,7 @@ http_interactions:
     uri: http://pld.com/api/v3/admin/features/sms_support
     body:
       encoding: UTF-8
-      string: '{"provided_by":"JustCall","data":{"this":"that"}}'
+      string: '{"provided_by":"JustCall","data":{"this":"that"},"provider_key":"justcall"}'
     headers:
       Content-Type:
       - application/json
@@ -127,7 +127,7 @@ http_interactions:
   recorded_at: Wed, 03 Apr 2024 16:20:32 GMT
 - request:
     method: delete
-    uri: http://pld.com/api/v3/admin/features/sms_support?provided_by=JustCall
+    uri: http://pld.com/api/v3/admin/features/sms_support?provider_key=justcall
     body:
       encoding: US-ASCII
       string: ''
