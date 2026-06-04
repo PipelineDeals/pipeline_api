@@ -109,6 +109,7 @@ Pipeline::CalendarTask = Class.new(Pipeline::Resource)
 Pipeline::Search = Class.new(Pipeline::Resource)
 Pipeline::Comment = Class.new(Pipeline::Resource)
 Pipeline::CallLog = Class.new(Pipeline::Resource)
+Pipeline::RingCentralCallRecording = Class.new(Pipeline::Resource)
 module Pipeline::Admin
   Webhook = Class.new(Pipeline::Resource)
   PredefinedContactsTag = Class.new(Pipeline::Resource)

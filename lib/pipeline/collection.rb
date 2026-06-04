@@ -90,6 +90,14 @@ Pipeline::Searches = Class.new(Pipeline::Collection)
 Pipeline::Comments = Class.new(Pipeline::Collection)
 Pipeline::Imports = Class.new(Pipeline::Collection)
 Pipeline::CallLogs = Class.new(Pipeline::Collection)
+
+class Pipeline::RingCentralCallRecordings < Pipeline::Collection
+  # POST /api/v3/ring_central_call_recordings/:id/confirm.json
+  def confirm(id)
+    _post("#{collection_name}/#{id}/confirm.json")
+  end
+end
+
 module Pipeline::Admin
   Webhooks = Class.new(Pipeline::Collection)
   Features = Class.new(Pipeline::Collection)

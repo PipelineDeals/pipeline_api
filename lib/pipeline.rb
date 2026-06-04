@@ -71,6 +71,10 @@ class Pipeline
     Pipeline::Documents.new(pipeline: self)
   end
 
+  def ring_central_call_recordings
+    Pipeline::RingCentralCallRecordings.new(pipeline: self)
+  end
+
   def searches
     Pipeline::Searches.new(pipeline: self)
   end
