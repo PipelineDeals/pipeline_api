@@ -89,7 +89,19 @@ Pipeline::CalendarTasks = Class.new(Pipeline::Collection)
 Pipeline::Searches = Class.new(Pipeline::Collection)
 Pipeline::Comments = Class.new(Pipeline::Collection)
 Pipeline::Imports = Class.new(Pipeline::Collection)
-Pipeline::CallLogs = Class.new(Pipeline::Collection)
+Pipeline::CallLogs = Class.new(Pipeline::Collection) do
+  # RCR-2 recording capture, keyed by conference_name (the shared per-call
+  # session id) rather than the p.core id, since p.int may not hold the id.
+  # Mint a presigned S3 PUT URL, then confirm once the bytes have landed.
+  def recording_upload_url(conference_name:, recording_mime: nil)
+    _post("call_logs/recording_upload_url.json",
+          body: { call_log: { conference_name: conference_name, recording_mime: recording_mime } })
+  end
+
+  def confirm_recording(conference_name:)
+    _post("call_logs/confirm_recording.json", body: { call_log: { conference_name: conference_name } })
+  end
+end
 module Pipeline::Admin
   Webhooks = Class.new(Pipeline::Collection)
   Features = Class.new(Pipeline::Collection)
