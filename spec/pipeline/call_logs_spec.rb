@@ -47,4 +47,31 @@ describe Pipeline::CallLogs do
       expect(call_log.changes).to include("status" => [nil, "completed"])
     end
   end
+
+  describe "#recording_upload_url" do
+    it "posts conference_name + mime to the recording_upload_url endpoint and returns the payload" do
+      collection = pipeline.call_logs
+      allow(collection).to receive(:_post)
+        .with("call_logs/recording_upload_url.json",
+              body: { call_log: { conference_name: "tele-1", recording_mime: "audio/mpeg" } })
+        .and_return("recording_upload_url" => "https://s3/put", "file_key" => "k")
+
+      result = collection.recording_upload_url(conference_name: "tele-1", recording_mime: "audio/mpeg")
+
+      expect(result["recording_upload_url"]).to eq("https://s3/put")
+    end
+  end
+
+  describe "#confirm_recording" do
+    it "posts the conference_name to the confirm_recording endpoint" do
+      collection = pipeline.call_logs
+      allow(collection).to receive(:_post)
+        .with("call_logs/confirm_recording.json", body: { call_log: { conference_name: "tele-1" } })
+        .and_return("recording_status" => "captured")
+
+      result = collection.confirm_recording(conference_name: "tele-1")
+
+      expect(result["recording_status"]).to eq("captured")
+    end
+  end
 end
