@@ -8,8 +8,8 @@ describe Pipeline::Endpoint do
 
   it "GETs a path outside the /api/v3 prefix, authenticated, and returns the parsed body" do
     stub = stub_request(:get, "http://pld.com/api/internal/phone_lookup")
-           .with(query: { "phone" => "+15551234567" }, headers: { "Authorization" => "Bearer jwt-token" })
-           .to_return(status: 200, body: { "people" => [{ "id" => 1 }] }.to_json, headers: { "Content-Type" => "application/json" })
+      .with(query: { "phone" => "+15551234567" }, headers: { "Authorization" => "Bearer jwt-token" })
+      .to_return(status: 200, body: { "people" => [{ "id" => 1 }] }.to_json, headers: { "Content-Type" => "application/json" })
 
     result = pipeline.get("/api/internal/phone_lookup", query: { phone: "+15551234567" })
 
@@ -20,8 +20,8 @@ describe Pipeline::Endpoint do
   it "authenticates with key params when there is no jwt" do
     pipeline = Pipeline.new(url: "http://pld.com", app_key: "app-key", account_key: "account-key")
     stub = stub_request(:get, "http://pld.com/api/internal/phone_lookup")
-           .with(query: { "app_key" => "app-key", "account_key" => "account-key" })
-           .to_return(status: 200, body: { "companies" => [] }.to_json)
+      .with(query: { "app_key" => "app-key", "account_key" => "account-key" })
+      .to_return(status: 200, body: { "companies" => [] }.to_json)
 
     pipeline.get("/api/internal/phone_lookup")
 
