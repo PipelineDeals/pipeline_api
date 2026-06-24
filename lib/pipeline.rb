@@ -210,6 +210,14 @@ class Pipeline
   def call_logs
     Pipeline::CallLogs.new(pipeline: self)
   end
+
+  # Query a p.core endpoint outside the standard /api/v3 resource prefix
+  # (e.g. "/api/internal/phone_lookup"), reusing this client's authentication
+  # and error handling. `path` is relative to the host root.
+  def get(path, query: {}, headers: {})
+    Pipeline::Endpoint.new(pipeline: self).get(path, query: query, headers: headers)
+  end
 end
 
 require "pipeline/base"
+require "pipeline/endpoint"
