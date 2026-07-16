@@ -14,28 +14,34 @@ class Pipeline::Base
     @module_name = self.class.name.sub(/::#{collection_name.singularize.camelize}$/, "").sub(/::#{collection_name.camelize}$/, "")
   end
 
-  def _post(endpoint, query: {}, body: {}, headers: {})
-    handle_errors(HTTParty.post(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
+  def _post(endpoint, query: {}, body: {}, headers: {}, prefix: nil)
+    handle_errors(HTTParty.post(full_endpoint(endpoint, prefix: prefix),
+                                query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
-  def _get(endpoint, query: {}, headers: {})
-    handle_errors(HTTParty.get(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers)))
+  def _get(endpoint, query: {}, headers: {}, prefix: nil)
+    handle_errors(HTTParty.get(full_endpoint(endpoint, prefix: prefix), query: query.merge(common_query), headers: headers.merge(common_headers)))
   end
 
-  def _put(endpoint, query: {}, body: {}, headers: {})
-    handle_errors(HTTParty.put(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
+  def _put(endpoint, query: {}, body: {}, headers: {}, prefix: nil)
+    handle_errors(HTTParty.put(full_endpoint(endpoint, prefix: prefix),
+                               query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
-  def _patch(endpoint, query: {}, body: {}, headers: {})
-    handle_errors(HTTParty.patch(full_endpoint(endpoint), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
+  def _patch(endpoint, query: {}, body: {}, headers: {}, prefix: nil)
+    handle_errors(HTTParty.patch(full_endpoint(endpoint, prefix: prefix),
+                                 query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
-  def _delete(endpoint, query: {}, headers: {})
-    handle_errors(HTTParty.delete(full_endpoint(endpoint), query: query.merge(common_query), headers: headers.merge(common_headers)))
+  def _delete(endpoint, query: {}, headers: {}, prefix: nil)
+    handle_errors(HTTParty.delete(full_endpoint(endpoint, prefix: prefix), query: query.merge(common_query), headers: headers.merge(common_headers)))
   end
 
-  def full_endpoint(endpoint)
-    "#{pipeline.url}#{pipeline.prefix}#{admin}/#{endpoint}"
+  # `prefix:` overrides pipeline.prefix for callers that need to reach a
+  # different mount point on p.core than the default /api/v3 (e.g.,
+  # engine-only endpoints mounted under a sibling namespace).
+  def full_endpoint(endpoint, prefix: nil)
+    "#{pipeline.url}#{prefix || pipeline.prefix}#{admin}/#{endpoint}"
   end
 
   def common_query
