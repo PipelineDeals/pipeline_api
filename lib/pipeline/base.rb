@@ -15,7 +15,8 @@ class Pipeline::Base
   end
 
   def _post(endpoint, query: {}, body: {}, headers: {}, prefix: nil)
-    handle_errors(HTTParty.post(full_endpoint(endpoint, prefix: prefix), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
+    handle_errors(HTTParty.post(full_endpoint(endpoint, prefix: prefix),
+                                query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
   def _get(endpoint, query: {}, headers: {}, prefix: nil)
@@ -23,11 +24,13 @@ class Pipeline::Base
   end
 
   def _put(endpoint, query: {}, body: {}, headers: {}, prefix: nil)
-    handle_errors(HTTParty.put(full_endpoint(endpoint, prefix: prefix), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
+    handle_errors(HTTParty.put(full_endpoint(endpoint, prefix: prefix),
+                               query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
   def _patch(endpoint, query: {}, body: {}, headers: {}, prefix: nil)
-    handle_errors(HTTParty.patch(full_endpoint(endpoint, prefix: prefix), query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
+    handle_errors(HTTParty.patch(full_endpoint(endpoint, prefix: prefix),
+                                 query: query.merge(common_query), body: body.to_json, headers: headers.merge(common_headers)))
   end
 
   def _delete(endpoint, query: {}, headers: {}, prefix: nil)
