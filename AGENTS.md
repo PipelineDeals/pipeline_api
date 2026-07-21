@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 Context file for agents and developers working in this repo.
 
