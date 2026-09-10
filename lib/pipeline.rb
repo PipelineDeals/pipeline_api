@@ -43,6 +43,12 @@ class Pipeline
     @account ||= Pipeline::Account.new(pipeline: self).send(:get, "account.json")
   end
 
+  # The current user's own record via the singular self-service `profile.json`
+  # endpoint — editable by the user without account-admin rights, unlike `users`.
+  def profile
+    @profile ||= Pipeline::Profile.new(pipeline: self).send(:get, "profile.json")
+  end
+
   def people
     Pipeline::People.new(pipeline: self)
   end

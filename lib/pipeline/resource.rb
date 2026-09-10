@@ -140,4 +140,5 @@ end
 
 require "pipeline/user"
 require "pipeline/import"
+require "pipeline/profile"
 require "pipeline/admin/feature"
