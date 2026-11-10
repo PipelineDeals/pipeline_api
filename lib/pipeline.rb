@@ -217,6 +217,10 @@ class Pipeline
     Pipeline::CallLogs.new(pipeline: self)
   end
 
+  def sms_logs
+    Pipeline::SmsLogs.new(pipeline: self)
+  end
+
   # Query a p.core endpoint outside the standard /api/v3 resource prefix
   # (e.g. "/api/internal/phone_lookup"), reusing this client's authentication
   # and error handling. `path` is relative to the host root.
