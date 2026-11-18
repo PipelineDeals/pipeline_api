@@ -102,6 +102,7 @@ Pipeline::CallLogs = Class.new(Pipeline::Collection) do
     _post("call_logs/confirm_recording.json", body: { call_log: { conference_name: conference_name } })
   end
 end
+Pipeline::SmsLogs = Class.new(Pipeline::Collection)
 module Pipeline::Admin
   Webhooks = Class.new(Pipeline::Collection)
   Features = Class.new(Pipeline::Collection)
